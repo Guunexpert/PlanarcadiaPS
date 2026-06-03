@@ -20,7 +20,7 @@ pub fn onGetMail(session: *Session, _: *const Packet, allocator: Allocator) !voi
     mail.title = .{ .Const = "Readme" };
     mail.is_read = false;
     mail.id = 1;
-    mail.content = .{ .Const = "Himeko•NovaSR is a free and open-source sofware\nJoin our discord: https://discord.gg/reversedrooms\nUse https://relic-builder.vercel.app to setup relic :Đ" };
+    mail.content = .{ .Const = "PlanarcadiaPS is free and based on Himeko•NovaSR from ReversedRooms" };
     mail.time = 1723334400;
     mail.expire_time = 17186330890;
     mail.mail_type = protocol.MailType.MAIL_TYPE_STAR;

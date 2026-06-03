@@ -26,12 +26,12 @@ pub fn onGetFriendListInfo(session: *Session, _: *const Packet, allocator: Alloc
     var friend = protocol.FriendSimpleInfo.init(allocator);
     friend.playing_state = .PLAYING_CHALLENGE_PEAK;
     friend.create_time = 0; //timestamp
-    friend.remark_name = .{ .Const = "ReversedRooms" }; //friend_custom_nickname
+    friend.remark_name = .{ .Const = "PlanarcadiaPS" }; //friend_custom_nickname
     friend.is_marked = true;
     friend.player_info = protocol.PlayerSimpleInfo{
         .personal_card = 253001,
-        .signature = .{ .Const = "https://discord.gg/reversedrooms" },
-        .nickname = .{ .Const = "Himeko•NovaSR" },
+        .signature = .{ .Const = "Anjai mabar" },
+        .nickname = .{ .Const = "Rin Tohsaka" },
         .level = 70,
         .uid = 2000,
         .head_icon = 200140,
@@ -62,7 +62,7 @@ pub fn onPrivateChatHistory(session: *Session, _: *const Packet, allocator: Allo
     rsp.target_side = 1;
     rsp.contact_side = 2000;
     try rsp.chat_message_list.appendSlice(&[_]protocol.ChatMessageData{
-        try makeTextChat(allocator, 2000, "Use https://relic-builder.vercel.app/ to setup config"),
+        try makeTextChat(allocator, 2000, "Use https://srtools.neonteam.dev/ to setup config"),
         try makeTextChat(allocator, 2000, "/help for command list"),
         try makeTextChat(allocator, 2000, "to use command, use '/' first"),
     });
@@ -76,7 +76,7 @@ pub fn onGetAiPamChatHistory(session: *Session, _: *const Packet, allocator: All
     rsp.retcode = 0;
     rsp.target_side = 1;
     try rsp.JPCMGNGNONJ.appendSlice(&[_]protocol.ChatMessageData{
-        try makeTextChat(allocator, 2000, "Kill all nantong :Đ"),
+        try makeTextChat(allocator, 2000, "Rin Tohsaka beloved"),
     });
 
     try session.send(CmdID.CmdGetAiPamChatHistoryScRsp, rsp);

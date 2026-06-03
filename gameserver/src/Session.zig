@@ -2,7 +2,7 @@ const std = @import("std");
 const protocol = @import("protocol");
 const handlers = @import("handlers.zig");
 const Packet = @import("Packet.zig");
-const ConfigManager = @import("../src/manager/config_mgr.zig");
+const ConfigManager = @import("./manager/config_mgr.zig");
 
 const Allocator = std.mem.Allocator;
 const Stream = std.net.Stream;
@@ -16,6 +16,9 @@ stream: Stream,
 allocator: Allocator,
 main_allocator: Allocator,
 game_config_cache: *ConfigManager.GameConfigCache,
+pending_lua_script: ?[]u8 = null,
+last_starlite_sent_ms: u64 = 0,
+last_seen_game_config_mtime: i128 = 0,
 
 pub fn init(
     address: Address,
@@ -30,8 +33,19 @@ pub fn init(
         .allocator = session_allocator,
         .main_allocator = main_allocator,
         .game_config_cache = game_config_cache,
+        .pending_lua_script = null,
+        .last_starlite_sent_ms = 0,
+        .last_seen_game_config_mtime = 0,
     };
 }
+
+pub fn deinit(self: *Self) void {
+    if (self.pending_lua_script) |buf| {
+        self.allocator.free(buf);
+        self.pending_lua_script = null;
+    }
+}
+
 
 pub fn run(self: *Self) !void {
     defer self.stream.close();
@@ -60,4 +74,15 @@ pub fn send_empty(self: *Self, cmd_id: protocol.CmdID) !void {
 
     _ = try self.stream.write(packet);
     log.debug("sent EMPTY packet with id {}", .{cmd_id});
+}
+
+pub fn setPendingLuaScript(self: *Self, buf: []u8) void {
+    if (self.pending_lua_script) |old| self.allocator.free(old);
+    self.pending_lua_script = buf;
+}
+
+pub fn takePendingLuaScript(self: *Self) ?[]u8 {
+    const buf = self.pending_lua_script orelse return null;
+    self.pending_lua_script = null;
+    return buf;
 }

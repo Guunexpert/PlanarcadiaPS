@@ -56,6 +56,13 @@ pub fn onSyncAvatar(session: *Session, _: []const u8, allocator: Allocator) !voi
     try session.send(CmdID.CmdPlayerSyncScNotify, sync);
 }
 
+pub fn syncFromConfigUpdate(session: *Session, allocator: Allocator) !void {
+    try ConfigManager.UpdateGameConfig();
+    try syncItems(session, allocator, false);
+    try syncItems(session, allocator, true);
+    try onSyncAvatar(session, "", allocator);
+}
+
 pub fn onGenerateAndSync(session: *Session, placeholder: []const u8, allocator: Allocator) !void {
     try commandhandler.sendMessage(session, "Sync items with config\n", allocator);
     try syncItems(session, allocator, false);

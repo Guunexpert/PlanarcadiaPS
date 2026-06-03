@@ -27,10 +27,10 @@ pub fn onQueryDispatch(_: *httpz.Request, res: *httpz.Response) !void {
     proto.retcode = 0;
 
     try proto.region_list.append(.{
-        .name = .{ .Const = "Himeko•NovaSR" },
-        .display_name = .{ .Const = "Himeko•NovaSR" },
+        .name = .{ .Const = "RinTohsaka" },
+        .display_name = .{ .Const = "RinTohsaka" },
         .env_type = .{ .Const = "9" },
-        .title = .{ .Const = "Himeko•NovaSR" },
+        .title = .{ .Const = "RinTohsaka" },
         .dispatch_url = .{ .Const = "http://127.0.0.1:21000/query_gateway" },
     });
 

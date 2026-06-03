@@ -12,6 +12,7 @@ const tp_command = @import("./commands/tp.zig");
 const unstuck_command = @import("./commands/unstuck.zig");
 const sync_command = @import("./commands/sync.zig");
 const refill_command = @import("./commands/refill.zig");
+const lua_command = @import("./commands/lua.zig");
 
 const CommandFn = *const fn (session: *Session, args: []const u8, allocator: Allocator) anyerror!void;
 
@@ -32,6 +33,7 @@ const commandList = [_]Command{
     .{ .name = "refill", .action = "", .func = refill_command.onRefill },
     .{ .name = "id", .action = "", .func = value_command.onBuffId },
     .{ .name = "funmode", .action = "", .func = value_command.FunMode },
+    .{ .name = "lua", .action = "", .func = lua_command.handle },
 };
 
 pub fn handleCommand(session: *Session, msg: []const u8, allocator: Allocator) !void {

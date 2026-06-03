@@ -11,11 +11,26 @@ pub const ChallengeConfig = @import("../data/challenge_config.zig");
 pub const MiscConfig = @import("../data/misc_config.zig");
 pub const ResConfig = @import("../data/res_config.zig");
 pub const AvatarConfig = @import("../data/avatar_config.zig");
+pub const FreesrAdapter = @import("../data/freesr_adapter.zig");
+pub const MiscDefaults = @import("../data/misc_defaults.zig");
 
 const ArrayList = std.ArrayList;
 const Allocator = std.mem.Allocator;
 
 const Data = @import("../data.zig");
+
+fn gameConfigFilePath() []const u8 {
+    std.fs.cwd().access("config.json", .{}) catch return "freesr-data.json";
+    return "config.json";
+}
+
+fn loadGameConfig(allocator: Allocator) !GameConfig.GameConfig {
+    const filename = gameConfigFilePath();
+    if (std.mem.eql(u8, filename, "freesr-data.json")) {
+        return FreesrAdapter.loadFromFreesr(allocator);
+    }
+    return loadConfig(GameConfig.GameConfig, GameConfig.parseConfig, allocator, filename);
+}
 
 pub const GameConfigCache = struct {
     allocator: Allocator,
@@ -42,7 +57,7 @@ pub const GameConfigCache = struct {
     buff_info_config: MiscConfig.TextMapConfig,
 
     pub fn init(allocator: Allocator) !GameConfigCache {
-        var game_cfg = try loadConfig(GameConfig.GameConfig, GameConfig.parseConfig, allocator, "config.json");
+        var game_cfg = try loadGameConfig(allocator);
         errdefer game_cfg.deinit();
 
         var res_cfg = try loadConfig(ResConfig.SceneConfig, ResConfig.parseAnchor, allocator, "resources/res.json");
@@ -155,9 +170,20 @@ pub const GameConfigCache = struct {
 };
 pub var global_game_config_cache: GameConfigCache = undefined;
 pub var global_main_allocator: Allocator = undefined;
+pub var global_misc_defaults: MiscDefaults.MiscDefaults = undefined;
+
 pub fn initGameGlobals(main_allocator: Allocator) !void {
     global_main_allocator = main_allocator;
+    global_misc_defaults = MiscDefaults.loadFromFile(main_allocator, "misc.json") catch |err| switch (err) {
+        error.FileNotFound => try MiscDefaults.defaults(main_allocator),
+        else => blk: {
+            std.log.warn("failed to load misc.json ({s}), using defaults", .{@errorName(err)});
+            break :blk try MiscDefaults.defaults(main_allocator);
+        },
+    };
+    errdefer global_misc_defaults.deinit(main_allocator);
     global_game_config_cache = try GameConfigCache.init(main_allocator);
+    game_config_mtime = (try std.fs.cwd().statFile(gameConfigFilePath())).mtime;
 
     const avatars = &global_game_config_cache.avatar_config.avatar_config.items;
     var all = ArrayList(u32).init(main_allocator);
@@ -179,13 +205,25 @@ pub fn initGameGlobals(main_allocator: Allocator) !void {
         }
     }
 }
+
 pub fn deinitGameGlobals() void {
+    global_misc_defaults.deinit(global_main_allocator);
     global_game_config_cache.deinit();
 }
 
+var game_config_mtime: i128 = 0;
+
+pub fn getGameConfigMtime() i128 {
+    return game_config_mtime;
+}
+
 pub fn UpdateGameConfig() !void {
-    global_game_config_cache.game_config.deinit();
-    global_game_config_cache.game_config = try loadConfig(GameConfig.GameConfig, GameConfig.parseConfig, global_main_allocator, "config.json");
+    const stat = try std.fs.cwd().statFile(gameConfigFilePath());
+    if (stat.mtime > game_config_mtime) {
+        global_game_config_cache.game_config.deinit();
+        global_game_config_cache.game_config = try loadGameConfig(global_main_allocator);
+        game_config_mtime = stat.mtime;
+    }
 }
 pub fn loadConfig(
     comptime ConfigType: type,

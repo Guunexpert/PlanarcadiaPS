@@ -32,7 +32,7 @@ pub fn onPlayerLogin(session: *Session, packet: *const Packet, allocator: Alloca
     var basic_info = protocol.PlayerBasicInfo.init(allocator);
     basic_info.stamina = 300;
     basic_info.level = 70;
-    basic_info.nickname = .{ .Const = "ReversedRooms" };
+    basic_info.nickname = .{ .Const = "PlanarcadiaPS" };
     basic_info.world_level = 6;
     basic_info.mcoin = 99999990;
     basic_info.hcoin = 99999990; //Jade

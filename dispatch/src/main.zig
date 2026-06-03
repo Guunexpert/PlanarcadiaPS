@@ -2,6 +2,7 @@ const std = @import("std");
 const builtin = @import("builtin");
 const httpz = @import("httpz");
 const protocol = @import("protocol");
+const srtools = @import("srtools.zig");
 
 const authentication = @import("authentication.zig");
 const dispatch = @import("dispatch.zig");
@@ -18,7 +19,13 @@ pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     const allocator = gpa.allocator();
 
-    var server = try httpz.Server(void).init(allocator, .{ .port = PORT }, {});
+    var server = try httpz.Server(void).init(allocator, .{
+    .port = PORT,
+    .request = .{
+        .max_body_size = 16 * 1024 * 1024,
+    },
+}, {});
+
     defer server.stop();
     defer server.deinit();
     var router = try server.router(.{});
@@ -31,6 +38,11 @@ pub fn main() !void {
     router.post("/:product_name/combo/granter/login/v2/login", authentication.onComboTokenReq, .{});
     router.post("/account/ma-cn-passport/app/loginByPassword", authentication.onappLoginByPassword, .{});
     router.post("/account/ma-cn-session/app/verify", authentication.onVerify, .{});
+    router.options("/srtools", srtools.onSrtoolsOptions, .{});
+    router.post("/srtools", srtools.onSrtoolsSave, .{});
+    router.options("/srtools/", srtools.onSrtoolsOptions, .{});
+    router.post("/srtools/", srtools.onSrtoolsSave, .{});
+    router.post("/srtools/save", srtools.onSrtoolsSave, .{});
 
     std.log.info("Dispatch is listening at localhost:{?}", .{server.config.port});
     try server.listen();

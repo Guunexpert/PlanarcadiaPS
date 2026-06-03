@@ -9,7 +9,7 @@ pub fn onShieldLogin(req: *httpz.Request, res: *httpz.Response) !void {
         .data = .{
             .account = .{
                 .area_code = "**",
-                .email = "ReversedRoooms@StarRail.com",
+                .email = "Planarcadia@StarRail.com",
                 .country = "RU",
                 .is_email_verify = "1",
                 .token = "aa",
@@ -32,7 +32,7 @@ pub fn onShieldVerify(req: *httpz.Request, res: *httpz.Response) !void {
         .data = .{
             .account = .{
                 .area_code = "**",
-                .email = "ReversedRoooms@StarRail.com",
+                .email = "Planarcadia@StarRail.com",
                 .country = "RU",
                 .is_email_verify = "1",
                 .token = "aa",
@@ -70,7 +70,7 @@ pub fn onVerifyLogin(req: *httpz.Request, res: *httpz.Response) !void {
                 .area_code = "**",
                 .country = "CN",
                 .is_email_verify = "1",
-                .email = "ReversedRoooms@StarRail.com",
+                .email = "Planarcadia@StarRail.com",
                 .token = token,
                 .uid = uid,
             },
@@ -205,7 +205,7 @@ pub fn onappLoginByPassword(req: *httpz.Request, res: *httpz.Response) !void {
                 .mid = "1337",
                 .area_code = "**",
                 .country = "RU",
-                .email = "ReversedRoooms@StarRail.com",
+                .email = "Planarcadia@StarRail.com",
                 .is_email_verify = "1",
                 .is_adult = "1",
             },
@@ -228,7 +228,7 @@ pub fn onVerify(req: *httpz.Request, res: *httpz.Response) !void {
                 .mid = "1337",
                 .area_code = "**",
                 .country = "RU",
-                .email = "ReversedRoooms@StarRail.com",
+                .email = "Planarcadia@StarRail.com",
                 .is_email_verify = "1",
                 .is_adult = "1",
             },
