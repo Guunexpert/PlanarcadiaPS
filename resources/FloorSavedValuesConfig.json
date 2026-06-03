@@ -4037,151 +4037,7 @@
           "MaxValue": 1
         },
         {
-          "Name": "Crowd_MainMission_Common",
-          "MaxValue": 2
-        },
-        {
-          "Name": "OpenDoor_Topaz",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly_Small",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityEntrance230",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityBird",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_ShipSign",
-          "MaxValue": 3
-        },
-        {
-          "Name": "Crowd_MainMission_Rouge",
-          "MaxValue": 2
-        },
-        {
-          "Name": "Crowd_MainMission_Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CustomCrowd",
-          "MaxValue": 3
-        },
-        {
-          "Name": "ArcadeNumber",
-          "MaxValue": 6
-        },
-        {
-          "Name": "StatueOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "PortraitOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "DefaultStatue",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FCV_ParkCar",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_North",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_South",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_East",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_West",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyNPCState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyPuzzleBlockState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyMissionChest",
-          "MaxValue": 5
-        },
-        {
-          "Name": "Activity230DIYEntrance",
-          "MaxValue": 6
-        },
-        {
-          "Name": "FSV_SideMissionCrowd01",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_SideMissionCrowd02",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_OpenProjector",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ClockToyMissionChest02",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_OpenCaptainDoor",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueTourn_ExpLevel",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_BarBGM",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueEntrance",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueCollectionStatus",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueTourn_ShopActivated",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RougueUnlockArcade",
-          "MaxValue": 1
-        },
-        {
-          "Name": "Rougue2.5Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MatchThreeArcade",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_HolyGrailOpen",
+          "Name": "FSV_440Activity01",
           "MaxValue": 1
         },
         {
@@ -4333,151 +4189,7 @@
           "MaxValue": 1
         },
         {
-          "Name": "Crowd_MainMission_Common",
-          "MaxValue": 2
-        },
-        {
-          "Name": "OpenDoor_Topaz",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly_Small",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityEntrance230",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityBird",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_ShipSign",
-          "MaxValue": 3
-        },
-        {
-          "Name": "Crowd_MainMission_Rouge",
-          "MaxValue": 2
-        },
-        {
-          "Name": "Crowd_MainMission_Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CustomCrowd",
-          "MaxValue": 3
-        },
-        {
-          "Name": "ArcadeNumber",
-          "MaxValue": 6
-        },
-        {
-          "Name": "StatueOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "PortraitOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "DefaultStatue",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FCV_ParkCar",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_North",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_South",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_East",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_West",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyNPCState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyPuzzleBlockState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyMissionChest",
-          "MaxValue": 5
-        },
-        {
-          "Name": "Activity230DIYEntrance",
-          "MaxValue": 6
-        },
-        {
-          "Name": "FSV_SideMissionCrowd01",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_SideMissionCrowd02",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_OpenProjector",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ClockToyMissionChest02",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_OpenCaptainDoor",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueTourn_ExpLevel",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_BarBGM",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueEntrance",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueCollectionStatus",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueTourn_ShopActivated",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RougueUnlockArcade",
-          "MaxValue": 1
-        },
-        {
-          "Name": "Rougue2.5Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MatchThreeArcade",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_HolyGrailOpen",
+          "Name": "FSV_440Activity01",
           "MaxValue": 1
         },
         {
@@ -4629,151 +4341,7 @@
           "MaxValue": 1
         },
         {
-          "Name": "Crowd_MainMission_Common",
-          "MaxValue": 2
-        },
-        {
-          "Name": "OpenDoor_Topaz",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly_Small",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityEntrance230",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityBird",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_ShipSign",
-          "MaxValue": 3
-        },
-        {
-          "Name": "Crowd_MainMission_Rouge",
-          "MaxValue": 2
-        },
-        {
-          "Name": "Crowd_MainMission_Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CustomCrowd",
-          "MaxValue": 3
-        },
-        {
-          "Name": "ArcadeNumber",
-          "MaxValue": 6
-        },
-        {
-          "Name": "StatueOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "PortraitOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "DefaultStatue",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FCV_ParkCar",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_North",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_South",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_East",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_West",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyNPCState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyPuzzleBlockState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyMissionChest",
-          "MaxValue": 5
-        },
-        {
-          "Name": "Activity230DIYEntrance",
-          "MaxValue": 6
-        },
-        {
-          "Name": "FSV_SideMissionCrowd01",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_SideMissionCrowd02",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_OpenProjector",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ClockToyMissionChest02",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_OpenCaptainDoor",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueTourn_ExpLevel",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_BarBGM",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueEntrance",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueCollectionStatus",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueTourn_ShopActivated",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RougueUnlockArcade",
-          "MaxValue": 1
-        },
-        {
-          "Name": "Rougue2.5Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MatchThreeArcade",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_HolyGrailOpen",
+          "Name": "FSV_440Activity01",
           "MaxValue": 1
         },
         {
@@ -4925,151 +4493,7 @@
           "MaxValue": 1
         },
         {
-          "Name": "Crowd_MainMission_Common",
-          "MaxValue": 2
-        },
-        {
-          "Name": "OpenDoor_Topaz",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly_Small",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityEntrance230",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityBird",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_ShipSign",
-          "MaxValue": 3
-        },
-        {
-          "Name": "Crowd_MainMission_Rouge",
-          "MaxValue": 2
-        },
-        {
-          "Name": "Crowd_MainMission_Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CustomCrowd",
-          "MaxValue": 3
-        },
-        {
-          "Name": "ArcadeNumber",
-          "MaxValue": 6
-        },
-        {
-          "Name": "StatueOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "PortraitOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "DefaultStatue",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FCV_ParkCar",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_North",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_South",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_East",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_West",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyNPCState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyPuzzleBlockState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyMissionChest",
-          "MaxValue": 5
-        },
-        {
-          "Name": "Activity230DIYEntrance",
-          "MaxValue": 6
-        },
-        {
-          "Name": "FSV_SideMissionCrowd01",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_SideMissionCrowd02",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_OpenProjector",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ClockToyMissionChest02",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_OpenCaptainDoor",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueTourn_ExpLevel",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_BarBGM",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueEntrance",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueCollectionStatus",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueTourn_ShopActivated",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RougueUnlockArcade",
-          "MaxValue": 1
-        },
-        {
-          "Name": "Rougue2.5Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MatchThreeArcade",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_HolyGrailOpen",
+          "Name": "FSV_440Activity01",
           "MaxValue": 1
         },
         {
@@ -5221,151 +4645,7 @@
           "MaxValue": 1
         },
         {
-          "Name": "Crowd_MainMission_Common",
-          "MaxValue": 2
-        },
-        {
-          "Name": "OpenDoor_Topaz",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly_Small",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityEntrance230",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityBird",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_ShipSign",
-          "MaxValue": 3
-        },
-        {
-          "Name": "Crowd_MainMission_Rouge",
-          "MaxValue": 2
-        },
-        {
-          "Name": "Crowd_MainMission_Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CustomCrowd",
-          "MaxValue": 3
-        },
-        {
-          "Name": "ArcadeNumber",
-          "MaxValue": 6
-        },
-        {
-          "Name": "StatueOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "PortraitOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "DefaultStatue",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FCV_ParkCar",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_North",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_South",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_East",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_West",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyNPCState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyPuzzleBlockState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyMissionChest",
-          "MaxValue": 5
-        },
-        {
-          "Name": "Activity230DIYEntrance",
-          "MaxValue": 6
-        },
-        {
-          "Name": "FSV_SideMissionCrowd01",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_SideMissionCrowd02",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_OpenProjector",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ClockToyMissionChest02",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_OpenCaptainDoor",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueTourn_ExpLevel",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_BarBGM",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueEntrance",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueCollectionStatus",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueTourn_ShopActivated",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RougueUnlockArcade",
-          "MaxValue": 1
-        },
-        {
-          "Name": "Rougue2.5Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MatchThreeArcade",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_HolyGrailOpen",
+          "Name": "FSV_440Activity01",
           "MaxValue": 1
         },
         {
@@ -5517,151 +4797,7 @@
           "MaxValue": 1
         },
         {
-          "Name": "Crowd_MainMission_Common",
-          "MaxValue": 2
-        },
-        {
-          "Name": "OpenDoor_Topaz",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly",
-          "MaxValue": 1
-        },
-        {
-          "Name": "OpenDoor_Firefly_Small",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityEntrance230",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ActivityBird",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_ShipSign",
-          "MaxValue": 3
-        },
-        {
-          "Name": "Crowd_MainMission_Rouge",
-          "MaxValue": 2
-        },
-        {
-          "Name": "Crowd_MainMission_Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CustomCrowd",
-          "MaxValue": 3
-        },
-        {
-          "Name": "ArcadeNumber",
-          "MaxValue": 6
-        },
-        {
-          "Name": "StatueOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "PortraitOfCaptain",
-          "MaxValue": 1
-        },
-        {
-          "Name": "DefaultStatue",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FCV_ParkCar",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_North",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_South",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_East",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToy_West",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyNPCState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyPuzzleBlockState",
-          "MaxValue": 5
-        },
-        {
-          "Name": "ClockToyMissionChest",
-          "MaxValue": 5
-        },
-        {
-          "Name": "Activity230DIYEntrance",
-          "MaxValue": 6
-        },
-        {
-          "Name": "FSV_SideMissionCrowd01",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_SideMissionCrowd02",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_OpenProjector",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ClockToyMissionChest02",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_OpenCaptainDoor",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueTourn_ExpLevel",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_BarBGM",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueEntrance",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RogueCollectionStatus",
-          "MaxValue": 4
-        },
-        {
-          "Name": "RogueTourn_ShopActivated",
-          "MaxValue": 1
-        },
-        {
-          "Name": "RougueUnlockArcade",
-          "MaxValue": 1
-        },
-        {
-          "Name": "Rougue2.5Finish",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MatchThreeArcade",
-          "MaxValue": 4
-        },
-        {
-          "Name": "FSV_HolyGrailOpen",
+          "Name": "FSV_440Activity01",
           "MaxValue": 1
         },
         {
@@ -5810,6 +4946,1074 @@
         },
         {
           "Name": "FSV_HolyGrailOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_440Activity01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Crowd_MainMission_Common",
+          "MaxValue": 2
+        },
+        {
+          "Name": "OpenDoor_Topaz",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly_Small",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityEntrance230",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityBird",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_ShipSign",
+          "MaxValue": 3
+        },
+        {
+          "Name": "Crowd_MainMission_Rouge",
+          "MaxValue": 2
+        },
+        {
+          "Name": "Crowd_MainMission_Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "CustomCrowd",
+          "MaxValue": 3
+        },
+        {
+          "Name": "ArcadeNumber",
+          "MaxValue": 6
+        },
+        {
+          "Name": "StatueOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "PortraitOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "DefaultStatue",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FCV_ParkCar",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_North",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_South",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_East",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_West",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyNPCState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyPuzzleBlockState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyMissionChest",
+          "MaxValue": 5
+        },
+        {
+          "Name": "Activity230DIYEntrance",
+          "MaxValue": 6
+        },
+        {
+          "Name": "FSV_SideMissionCrowd01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SideMissionCrowd02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenProjector",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ClockToyMissionChest02",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_OpenCaptainDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueTourn_ExpLevel",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_BarBGM",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueEntrance",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueCollectionStatus",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueTourn_ShopActivated",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RougueUnlockArcade",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Rougue2.5Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MatchThreeArcade",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_HolyGrailOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_440Activity01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Crowd_MainMission_Common",
+          "MaxValue": 2
+        },
+        {
+          "Name": "OpenDoor_Topaz",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly_Small",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityEntrance230",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityBird",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_ShipSign",
+          "MaxValue": 3
+        },
+        {
+          "Name": "Crowd_MainMission_Rouge",
+          "MaxValue": 2
+        },
+        {
+          "Name": "Crowd_MainMission_Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "CustomCrowd",
+          "MaxValue": 3
+        },
+        {
+          "Name": "ArcadeNumber",
+          "MaxValue": 6
+        },
+        {
+          "Name": "StatueOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "PortraitOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "DefaultStatue",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FCV_ParkCar",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_North",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_South",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_East",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_West",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyNPCState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyPuzzleBlockState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyMissionChest",
+          "MaxValue": 5
+        },
+        {
+          "Name": "Activity230DIYEntrance",
+          "MaxValue": 6
+        },
+        {
+          "Name": "FSV_SideMissionCrowd01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SideMissionCrowd02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenProjector",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ClockToyMissionChest02",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_OpenCaptainDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueTourn_ExpLevel",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_BarBGM",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueEntrance",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueCollectionStatus",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueTourn_ShopActivated",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RougueUnlockArcade",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Rougue2.5Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MatchThreeArcade",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_HolyGrailOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_440Activity01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Crowd_MainMission_Common",
+          "MaxValue": 2
+        },
+        {
+          "Name": "OpenDoor_Topaz",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly_Small",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityEntrance230",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityBird",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_ShipSign",
+          "MaxValue": 3
+        },
+        {
+          "Name": "Crowd_MainMission_Rouge",
+          "MaxValue": 2
+        },
+        {
+          "Name": "Crowd_MainMission_Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "CustomCrowd",
+          "MaxValue": 3
+        },
+        {
+          "Name": "ArcadeNumber",
+          "MaxValue": 6
+        },
+        {
+          "Name": "StatueOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "PortraitOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "DefaultStatue",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FCV_ParkCar",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_North",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_South",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_East",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_West",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyNPCState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyPuzzleBlockState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyMissionChest",
+          "MaxValue": 5
+        },
+        {
+          "Name": "Activity230DIYEntrance",
+          "MaxValue": 6
+        },
+        {
+          "Name": "FSV_SideMissionCrowd01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SideMissionCrowd02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenProjector",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ClockToyMissionChest02",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_OpenCaptainDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueTourn_ExpLevel",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_BarBGM",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueEntrance",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueCollectionStatus",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueTourn_ShopActivated",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RougueUnlockArcade",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Rougue2.5Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MatchThreeArcade",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_HolyGrailOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_440Activity01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Crowd_MainMission_Common",
+          "MaxValue": 2
+        },
+        {
+          "Name": "OpenDoor_Topaz",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly_Small",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityEntrance230",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityBird",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_ShipSign",
+          "MaxValue": 3
+        },
+        {
+          "Name": "Crowd_MainMission_Rouge",
+          "MaxValue": 2
+        },
+        {
+          "Name": "Crowd_MainMission_Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "CustomCrowd",
+          "MaxValue": 3
+        },
+        {
+          "Name": "ArcadeNumber",
+          "MaxValue": 6
+        },
+        {
+          "Name": "StatueOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "PortraitOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "DefaultStatue",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FCV_ParkCar",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_North",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_South",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_East",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_West",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyNPCState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyPuzzleBlockState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyMissionChest",
+          "MaxValue": 5
+        },
+        {
+          "Name": "Activity230DIYEntrance",
+          "MaxValue": 6
+        },
+        {
+          "Name": "FSV_SideMissionCrowd01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SideMissionCrowd02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenProjector",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ClockToyMissionChest02",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_OpenCaptainDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueTourn_ExpLevel",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_BarBGM",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueEntrance",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueCollectionStatus",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueTourn_ShopActivated",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RougueUnlockArcade",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Rougue2.5Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MatchThreeArcade",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_HolyGrailOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_440Activity01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Crowd_MainMission_Common",
+          "MaxValue": 2
+        },
+        {
+          "Name": "OpenDoor_Topaz",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly_Small",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityEntrance230",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityBird",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_ShipSign",
+          "MaxValue": 3
+        },
+        {
+          "Name": "Crowd_MainMission_Rouge",
+          "MaxValue": 2
+        },
+        {
+          "Name": "Crowd_MainMission_Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "CustomCrowd",
+          "MaxValue": 3
+        },
+        {
+          "Name": "ArcadeNumber",
+          "MaxValue": 6
+        },
+        {
+          "Name": "StatueOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "PortraitOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "DefaultStatue",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FCV_ParkCar",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_North",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_South",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_East",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_West",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyNPCState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyPuzzleBlockState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyMissionChest",
+          "MaxValue": 5
+        },
+        {
+          "Name": "Activity230DIYEntrance",
+          "MaxValue": 6
+        },
+        {
+          "Name": "FSV_SideMissionCrowd01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SideMissionCrowd02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenProjector",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ClockToyMissionChest02",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_OpenCaptainDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueTourn_ExpLevel",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_BarBGM",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueEntrance",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueCollectionStatus",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueTourn_ShopActivated",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RougueUnlockArcade",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Rougue2.5Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MatchThreeArcade",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_HolyGrailOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_440Activity01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Crowd_MainMission_Common",
+          "MaxValue": 2
+        },
+        {
+          "Name": "OpenDoor_Topaz",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly_Small",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityEntrance230",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityBird",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_ShipSign",
+          "MaxValue": 3
+        },
+        {
+          "Name": "Crowd_MainMission_Rouge",
+          "MaxValue": 2
+        },
+        {
+          "Name": "Crowd_MainMission_Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "CustomCrowd",
+          "MaxValue": 3
+        },
+        {
+          "Name": "ArcadeNumber",
+          "MaxValue": 6
+        },
+        {
+          "Name": "StatueOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "PortraitOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "DefaultStatue",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FCV_ParkCar",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_North",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_South",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_East",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_West",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyNPCState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyPuzzleBlockState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyMissionChest",
+          "MaxValue": 5
+        },
+        {
+          "Name": "Activity230DIYEntrance",
+          "MaxValue": 6
+        },
+        {
+          "Name": "FSV_SideMissionCrowd01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SideMissionCrowd02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenProjector",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ClockToyMissionChest02",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_OpenCaptainDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueTourn_ExpLevel",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_BarBGM",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueEntrance",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueCollectionStatus",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueTourn_ShopActivated",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RougueUnlockArcade",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Rougue2.5Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MatchThreeArcade",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_HolyGrailOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_440Activity01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Crowd_MainMission_Common",
+          "MaxValue": 2
+        },
+        {
+          "Name": "OpenDoor_Topaz",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly",
+          "MaxValue": 1
+        },
+        {
+          "Name": "OpenDoor_Firefly_Small",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityEntrance230",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ActivityBird",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_ShipSign",
+          "MaxValue": 3
+        },
+        {
+          "Name": "Crowd_MainMission_Rouge",
+          "MaxValue": 2
+        },
+        {
+          "Name": "Crowd_MainMission_Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "CustomCrowd",
+          "MaxValue": 3
+        },
+        {
+          "Name": "ArcadeNumber",
+          "MaxValue": 6
+        },
+        {
+          "Name": "StatueOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "PortraitOfCaptain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "DefaultStatue",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FCV_ParkCar",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_North",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_South",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_East",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToy_West",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyNPCState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyPuzzleBlockState",
+          "MaxValue": 5
+        },
+        {
+          "Name": "ClockToyMissionChest",
+          "MaxValue": 5
+        },
+        {
+          "Name": "Activity230DIYEntrance",
+          "MaxValue": 6
+        },
+        {
+          "Name": "FSV_SideMissionCrowd01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SideMissionCrowd02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenProjector",
+          "MaxValue": 1
+        },
+        {
+          "Name": "ClockToyMissionChest02",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_OpenCaptainDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueTourn_ExpLevel",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_BarBGM",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueEntrance",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RogueCollectionStatus",
+          "MaxValue": 4
+        },
+        {
+          "Name": "RogueTourn_ShopActivated",
+          "MaxValue": 1
+        },
+        {
+          "Name": "RougueUnlockArcade",
+          "MaxValue": 1
+        },
+        {
+          "Name": "Rougue2.5Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MatchThreeArcade",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_HolyGrailOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_440Activity01",
           "MaxValue": 1
         }
       ]
@@ -12499,8 +12703,112 @@
           "MaxValue": 1
         },
         {
-          "Name": "FSV_",
-          "MaxValue": 0
+          "Name": "FSV_CerydraTalkOrder",
+          "MaxValue": 6
+        },
+        {
+          "Name": "FSV_YHatmosphere",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_YHatmosphere2",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_XilianLeft",
+          "MaxValue": 1
+        },
+        {
+          "Name": "YH_Phase",
+          "MaxValue": 10
+        },
+        {
+          "Name": "CT_Phase",
+          "MaxValue": 10
+        },
+        {
+          "Name": "TD_Phase",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_LittlePost01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_LittlePost02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_LittlePost03",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_LittlePost04",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ActivityCerydra",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_ActivityHyacine",
+          "MaxValue": 1
+        },
+        {
+          "Name": "CF_Phase",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_ActivityMydeimos",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_ActivityPhainon",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_ActivityAglaea",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ActivityCastorice",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ActivityTribbie",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ActivityCipher",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ActivityHysilens",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_QTEGotchard_RewardGet_31",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_QTEGotchard_RewardGet_32",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_whiteChime",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OracleMachine_Chest_1",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OracleMachine_Chest_2",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_WhiteChimeLoad",
+          "MaxValue": 1
         },
         {
           "Name": "FSV_CerydraTalkOrder",
@@ -12611,10 +12919,6 @@
           "MaxValue": 1
         },
         {
-          "Name": "FSV_",
-          "MaxValue": 0
-        },
-        {
           "Name": "FSV_CerydraTalkOrder",
           "MaxValue": 6
         },
@@ -12721,122 +13025,6 @@
         {
           "Name": "FSV_WhiteChimeLoad",
           "MaxValue": 1
-        },
-        {
-          "Name": "FSV_",
-          "MaxValue": 0
-        },
-        {
-          "Name": "FSV_CerydraTalkOrder",
-          "MaxValue": 6
-        },
-        {
-          "Name": "FSV_YHatmosphere",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_YHatmosphere2",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_XilianLeft",
-          "MaxValue": 1
-        },
-        {
-          "Name": "YH_Phase",
-          "MaxValue": 10
-        },
-        {
-          "Name": "CT_Phase",
-          "MaxValue": 10
-        },
-        {
-          "Name": "TD_Phase",
-          "MaxValue": 10
-        },
-        {
-          "Name": "FSV_LittlePost01",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_LittlePost02",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_LittlePost03",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_LittlePost04",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_ActivityCerydra",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_ActivityHyacine",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CF_Phase",
-          "MaxValue": 10
-        },
-        {
-          "Name": "FSV_ActivityMydeimos",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_ActivityPhainon",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_ActivityAglaea",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_ActivityCastorice",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_ActivityTribbie",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_ActivityCipher",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_ActivityHysilens",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_QTEGotchard_RewardGet_31",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_QTEGotchard_RewardGet_32",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_whiteChime",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_OracleMachine_Chest_1",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_OracleMachine_Chest_2",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_WhiteChimeLoad",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_",
-          "MaxValue": 0
         },
         {
           "Name": "FSV_CerydraTalkOrder",
@@ -13004,292 +13192,8 @@
           "MaxValue": 3
         },
         {
-          "Name": "FSV_pedestrian",
+          "Name": "FSV_DevilCityTeleportUnlock",
           "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MoonSwitch",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_WhiteSparkle",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_OpenMusic",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MetroTeleport",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_EntranceUnlockGe",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_EntranceUnlockWu",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_SpecialRoom",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_AnywhereDoor01",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_AnywhereDoor02",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_SubStateByMainMission",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_FirstTran",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_2054004_1",
-          "MaxValue": 20
-        },
-        {
-          "Name": "FSV_2054004_2",
-          "MaxValue": 150
-        },
-        {
-          "Name": "FSV_IsAnimalSaved",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockFlute1050101",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockFlute1050001",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_CenterScreen",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_4DMissionCheck",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockFlute1050002",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockFlute1050003",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockFlute1050004",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MainMusicLevel",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockLimao10501",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_ChangeMap",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MusicLevelCrowd",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Achievement",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_TrainingChange",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_FiveDim_FlyCar_Enable",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_OpenDoor",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_EntranceUnlockZX",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_1054110_Pedestrian_1",
-          "MaxValue": 100
-        },
-        {
-          "Name": "FSV_1054110_Pedestrian_2",
-          "MaxValue": 200
-        },
-        {
-          "Name": "FSV_1054110_Pedestrian_3",
-          "MaxValue": 150
-        },
-        {
-          "Name": "FSV_EntranceUnlockHY",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_430AirBattleState",
-          "MaxValue": 3
-        },
-        {
-          "Name": "FSV_pedestrian",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MoonSwitch",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_WhiteSparkle",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_OpenMusic",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MetroTeleport",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_EntranceUnlockGe",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_EntranceUnlockWu",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_SpecialRoom",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_AnywhereDoor01",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_AnywhereDoor02",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_SubStateByMainMission",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_FirstTran",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_2054004_1",
-          "MaxValue": 20
-        },
-        {
-          "Name": "FSV_2054004_2",
-          "MaxValue": 150
-        },
-        {
-          "Name": "FSV_IsAnimalSaved",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockFlute1050101",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockFlute1050001",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_CenterScreen",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_4DMissionCheck",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockFlute1050002",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockFlute1050003",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockFlute1050004",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MainMusicLevel",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_UnlockLimao10501",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_ChangeMap",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_MusicLevelCrowd",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Achievement",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_TrainingChange",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_FiveDim_FlyCar_Enable",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_OpenDoor",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_EntranceUnlockZX",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_1054110_Pedestrian_1",
-          "MaxValue": 100
-        },
-        {
-          "Name": "FSV_1054110_Pedestrian_2",
-          "MaxValue": 200
-        },
-        {
-          "Name": "FSV_1054110_Pedestrian_3",
-          "MaxValue": 150
-        },
-        {
-          "Name": "FSV_EntranceUnlockHY",
-          "MaxValue": 2
-        },
-        {
-          "Name": "FSV_430AirBattleState",
-          "MaxValue": 3
         },
         {
           "Name": "FSV_pedestrian",
@@ -13436,6 +13340,10 @@
           "MaxValue": 3
         },
         {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
           "Name": "FSV_pedestrian",
           "MaxValue": 1
         },
@@ -13580,6 +13488,10 @@
           "MaxValue": 3
         },
         {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
           "Name": "FSV_pedestrian",
           "MaxValue": 1
         },
@@ -13722,6 +13634,602 @@
         {
           "Name": "FSV_430AirBattleState",
           "MaxValue": 3
+        },
+        {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_pedestrian",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MoonSwitch",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_WhiteSparkle",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_OpenMusic",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MetroTeleport",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockGe",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockWu",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SpecialRoom",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnywhereDoor01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_AnywhereDoor02",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_SubStateByMainMission",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_FirstTran",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_2054004_1",
+          "MaxValue": 20
+        },
+        {
+          "Name": "FSV_2054004_2",
+          "MaxValue": 150
+        },
+        {
+          "Name": "FSV_IsAnimalSaved",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050001",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_CenterScreen",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_4DMissionCheck",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050002",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050003",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050004",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MainMusicLevel",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockLimao10501",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ChangeMap",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelCrowd",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Achievement",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_TrainingChange",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim_FlyCar_Enable",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockZX",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_1",
+          "MaxValue": 100
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_2",
+          "MaxValue": 200
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_3",
+          "MaxValue": 150
+        },
+        {
+          "Name": "FSV_EntranceUnlockHY",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_430AirBattleState",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_pedestrian",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MoonSwitch",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_WhiteSparkle",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_OpenMusic",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MetroTeleport",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockGe",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockWu",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SpecialRoom",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnywhereDoor01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_AnywhereDoor02",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_SubStateByMainMission",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_FirstTran",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_2054004_1",
+          "MaxValue": 20
+        },
+        {
+          "Name": "FSV_2054004_2",
+          "MaxValue": 150
+        },
+        {
+          "Name": "FSV_IsAnimalSaved",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050001",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_CenterScreen",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_4DMissionCheck",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050002",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050003",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050004",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MainMusicLevel",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockLimao10501",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ChangeMap",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelCrowd",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Achievement",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_TrainingChange",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim_FlyCar_Enable",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockZX",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_1",
+          "MaxValue": 100
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_2",
+          "MaxValue": 200
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_3",
+          "MaxValue": 150
+        },
+        {
+          "Name": "FSV_EntranceUnlockHY",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_430AirBattleState",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_pedestrian",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MoonSwitch",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_WhiteSparkle",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_OpenMusic",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MetroTeleport",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockGe",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockWu",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SpecialRoom",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnywhereDoor01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_AnywhereDoor02",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_SubStateByMainMission",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_FirstTran",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_2054004_1",
+          "MaxValue": 20
+        },
+        {
+          "Name": "FSV_2054004_2",
+          "MaxValue": 150
+        },
+        {
+          "Name": "FSV_IsAnimalSaved",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050001",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_CenterScreen",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_4DMissionCheck",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050002",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050003",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050004",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MainMusicLevel",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockLimao10501",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ChangeMap",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelCrowd",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Achievement",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_TrainingChange",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim_FlyCar_Enable",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockZX",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_1",
+          "MaxValue": 100
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_2",
+          "MaxValue": 200
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_3",
+          "MaxValue": 150
+        },
+        {
+          "Name": "FSV_EntranceUnlockHY",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_430AirBattleState",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_pedestrian",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MoonSwitch",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_WhiteSparkle",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_OpenMusic",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MetroTeleport",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockGe",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockWu",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SpecialRoom",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnywhereDoor01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_AnywhereDoor02",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_SubStateByMainMission",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_FirstTran",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_2054004_1",
+          "MaxValue": 20
+        },
+        {
+          "Name": "FSV_2054004_2",
+          "MaxValue": 150
+        },
+        {
+          "Name": "FSV_IsAnimalSaved",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050001",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_CenterScreen",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_4DMissionCheck",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050002",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050003",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050004",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MainMusicLevel",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockLimao10501",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ChangeMap",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelCrowd",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Achievement",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_TrainingChange",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim_FlyCar_Enable",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockZX",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_1",
+          "MaxValue": 100
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_2",
+          "MaxValue": 200
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_3",
+          "MaxValue": 150
+        },
+        {
+          "Name": "FSV_EntranceUnlockHY",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_430AirBattleState",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
         }
       ]
     },
@@ -13805,79 +14313,11 @@
           "MaxValue": 1
         },
         {
-          "Name": "FSV_StoneChange01",
-          "MaxValue": 5
+          "Name": "FSV_Stone01Change",
+          "MaxValue": 2
         },
         {
-          "Name": "FSV_StoneChange02",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_StoneChange03",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_StoneChange04",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_StoneChange05",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_StoneChange06",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_StoneChange07",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_StoneChange08",
-          "MaxValue": 5
-        },
-        {
-          "Name": "FSV_Stone01",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Stone02",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Stone03",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Stone04",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Stone05",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Stone06",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Stone07",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Stone08",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_StageChange",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Stone07up",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_Stone01down",
+          "Name": "FSV_Stone02up",
           "MaxValue": 1
         },
         {
@@ -13954,6 +14394,98 @@
         },
         {
           "Name": "FSV_Stone01down",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone01Change",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_Stone02up",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_StoneChange01",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_StoneChange02",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_StoneChange03",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_StoneChange04",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_StoneChange05",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_StoneChange06",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_StoneChange07",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_StoneChange08",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_Stone01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone03",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone04",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone05",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone06",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone07",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone08",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_StageChange",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone07up",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone01down",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone01Change",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_Stone02up",
           "MaxValue": 1
         }
       ]
@@ -13961,6 +14493,42 @@
     {
       "FloorID": 10521001,
       "SavedValues": [
+        {
+          "Name": "FSV_Dice2Entrance",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_qipao",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockMain",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockTvTower",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_UnlockRoad",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockB301Entrance",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1052102",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnyWhereDoor_1",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_QIPAO",
+          "MaxValue": 1
+        },
         {
           "Name": "FSV_Dice2Entrance",
           "MaxValue": 1
@@ -24889,6 +25457,14 @@
           "MaxValue": 1
         },
         {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_KeepGroup53Lock",
+          "MaxValue": 1
+        },
+        {
           "Name": "FSV_Lobby02_2F_Door",
           "MaxValue": 1
         },
@@ -25027,12 +25603,372 @@
         {
           "Name": "FSV_longJieNPC",
           "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_KeepGroup53Lock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lobby02_2F_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lobby02_Corridor_Block",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Building03_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OldRoom_Corridor_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lobby03Headmaster_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FirstMainMission_Lock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_ConjuringRoom",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ConjuringRoom _Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Archives_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_ArtRoom_Wall",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Rooftop_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_GymRoom_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_Library",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_Archives",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lobby02_1F_2F",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DustDuelState",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_5D_Gym",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lobby02_Corridor_CLBlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Gym_SecretRoom",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnywhereDoor01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_OldRoom_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_GetMountainMoon",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SubStateByMainMission",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_OceanWave",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Load_G311",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Gym_Platform_Controller",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_Lobby01_Corridor_Block",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2050101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_Class",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_TeleportPMCY",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_Class_Locked",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockLimao20501",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DuskRoomDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_longJieNPC",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_KeepGroup53Lock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lobby02_2F_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lobby02_Corridor_Block",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Building03_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OldRoom_Corridor_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lobby03Headmaster_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FirstMainMission_Lock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_ConjuringRoom",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ConjuringRoom _Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Archives_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_ArtRoom_Wall",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Rooftop_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_GymRoom_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_Library",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_Archives",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lobby02_1F_2F",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DustDuelState",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_5D_Gym",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lobby02_Corridor_CLBlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Gym_SecretRoom",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnywhereDoor01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_OldRoom_Door",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_GetMountainMoon",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SubStateByMainMission",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_OceanWave",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Load_G311",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Gym_Platform_Controller",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_Lobby01_Corridor_Block",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2050101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_Class",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_TeleportPMCY",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_Class_Locked",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockLimao20501",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DuskRoomDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_longJieNPC",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_KeepGroup53Lock",
+          "MaxValue": 1
         }
       ]
     },
     {
       "FloorID": 20502001,
       "SavedValues": [
+        {
+          "Name": "FSV_HospitalSwitch",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_400DiceBattleOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ShelfDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OneSideGlass",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_StellaJade",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_ComicShelfDoors",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DiscoLight",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MonsterPaintFrame",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnywhereDoor01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_AnywhereDoor02",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_CollectionRoomChest",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ActivityPost",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_UnlockLimao20502",
+          "MaxValue": 1
+        },
         {
           "Name": "FSV_HospitalSwitch",
           "MaxValue": 2
@@ -25347,8 +26283,28 @@
           "MaxValue": 1
         },
         {
+          "Name": "FSV_4.4FateCup",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_4.4FateBoard",
+          "MaxValue": 1
+        },
+        {
           "Name": "FSV_Busitu",
           "MaxValue": 1
+        },
+        {
+          "Name": "FSV_4.4Fate_BlackBoard",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_BaosheDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Moon",
+          "MaxValue": 2
         },
         {
           "Name": "SceneStateByMainMission",
@@ -25435,8 +26391,28 @@
           "MaxValue": 1
         },
         {
+          "Name": "FSV_4.4FateCup",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_4.4FateBoard",
+          "MaxValue": 1
+        },
+        {
           "Name": "FSV_Busitu",
           "MaxValue": 1
+        },
+        {
+          "Name": "FSV_4.4Fate_BlackBoard",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_BaosheDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Moon",
+          "MaxValue": 2
         },
         {
           "Name": "SceneStateByMainMission",
@@ -25523,8 +26499,28 @@
           "MaxValue": 1
         },
         {
+          "Name": "FSV_4.4FateCup",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_4.4FateBoard",
+          "MaxValue": 1
+        },
+        {
           "Name": "FSV_Busitu",
           "MaxValue": 1
+        },
+        {
+          "Name": "FSV_4.4Fate_BlackBoard",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_BaosheDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Moon",
+          "MaxValue": 2
         },
         {
           "Name": "SceneStateByMainMission",
@@ -25611,8 +26607,28 @@
           "MaxValue": 1
         },
         {
+          "Name": "FSV_4.4FateCup",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_4.4FateBoard",
+          "MaxValue": 1
+        },
+        {
           "Name": "FSV_Busitu",
           "MaxValue": 1
+        },
+        {
+          "Name": "FSV_4.4Fate_BlackBoard",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_BaosheDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Moon",
+          "MaxValue": 2
         },
         {
           "Name": "SceneStateByMainMission",
@@ -25699,14 +26715,218 @@
           "MaxValue": 1
         },
         {
+          "Name": "FSV_4.4FateCup",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_4.4FateBoard",
+          "MaxValue": 1
+        },
+        {
           "Name": "FSV_Busitu",
           "MaxValue": 1
+        },
+        {
+          "Name": "FSV_4.4Fate_BlackBoard",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_BaosheDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Moon",
+          "MaxValue": 2
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "SeaCondition",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MoonBossClear",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_Office",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_Gang",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_CrossRiverEnter_Tingyun",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Office_Yinlang",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_GechuanMissionFinished",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnywhereDoor01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_FiveDim_FlyCar_Enable",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_BuSiTuLoad",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OfficeOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DBridgeOpen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DBridgeUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_RandomLili",
+          "MaxValue": 15
+        },
+        {
+          "Name": "FSV_SwitchConnection",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_LiliEvent",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_LiliForMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2050301",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockLimao20503",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim_DownCar_Enable",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_4.4FateCup",
+          "MaxValue": 4
+        },
+        {
+          "Name": "FSV_4.4FateBoard",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Busitu",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_4.4Fate_BlackBoard",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_BaosheDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Moon",
+          "MaxValue": 2
         }
       ]
     },
     {
       "FloorID": 20511001,
       "SavedValues": [
+        {
+          "Name": "MainLine_Area02_FixState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_atmosphereForMission",
+          "MaxValue": 5
+        },
+        {
+          "Name": "FSV_Area02StateForMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FDTrain1_Active",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FDTrain2_Active",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Area02FDCase01_Active",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Area03FDCase01_Active",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_PoiHead_Phase",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_BookShop_Active",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MainMusicLevel",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_BetaUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_G7Gaming",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2051101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MainBalloonFight",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnyWhereDoor_01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_AnyWhereDoor_02",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_MainBefoFire",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Limao20511001",
+          "MaxValue": 1
+        },
         {
           "Name": "MainLine_Area02_FixState",
           "MaxValue": 1
@@ -26051,6 +27271,98 @@
         {
           "Name": "FSV_NPCsecretary",
           "MaxValue": 1
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_BuildRobot_Finish",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_BuildRobot_Phase",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_InCity_Debug",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_LiftOpen",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_PaintState",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_CityFinish",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_CityStart",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_InCity_AsRobot",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_HeroQTE_Done",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_IsInCity5D",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_HeroCity_BlockWay",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_SmallRobot_Count",
+          "MaxValue": 10
+        },
+        {
+          "Name": "FSV_IsStayInMainLine",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ReEnterBuild_StartIndex",
+          "MaxValue": 30
+        },
+        {
+          "Name": "FSV_BetaUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2051301",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SideQuest1_Complete",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ReEnter5D_AfterMainLine",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnywhereDoor01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_G26_Load5D",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_InBuildRobot5D",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_NPCsecretary",
+          "MaxValue": 1
         }
       ]
     },
@@ -26160,6 +27472,118 @@
         {
           "Name": "FSV_5DLock03",
           "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SkyState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ShowStageState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FlowerState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_BigScreen",
+          "MaxValue": 1
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SceneSubByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MergeScreen01",
+          "MaxValue": 7
+        },
+        {
+          "Name": "FSV_StageScreen_R",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_StageScreen_L",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_MergeScreen02",
+          "MaxValue": 7
+        },
+        {
+          "Name": "FSV_MergeScreen03",
+          "MaxValue": 7
+        },
+        {
+          "Name": "FSV_MergeScreen04",
+          "MaxValue": 7
+        },
+        {
+          "Name": "FSV_MainStoryAtmosphere",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MergeScreenAll",
+          "MaxValue": 7
+        },
+        {
+          "Name": "FSV_Chair",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DTempLock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DTempLock02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2052101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_LoadStageIcon",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DLock01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Emoji",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_GuLangMission02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_GuLangMission01",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SunnyMergeScreenAll",
+          "MaxValue": 7
+        },
+        {
+          "Name": "FSV_5DLock02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DLock03",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DevilCityTeleportUnlock",
+          "MaxValue": 1
         }
       ]
     },
@@ -26188,6 +27612,328 @@
         },
         {
           "Name": "FSV_UnlockFlute2053101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SetMap",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockPipe_Sub_2",
+          "MaxValue": 1
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ShipProgress",
+          "MaxValue": 3
+        },
+        {
+          "Name": "FSV_UnlockPipe_Sub_1",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Lantern",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5D_UnlockPipe_2",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2053101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SetMap",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockPipe_Sub_2",
+          "MaxValue": 1
+        }
+      ]
+    },
+    {
+      "FloorID": 20541001,
+      "SavedValues": [
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FDMain01Unlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DevilBallDissolve",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ExitDevilsGateFD",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_LeiqiuAppear",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EnableLightning",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ScreenPipeAppear",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFog1",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFog2",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MainMissionMazeBuff",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MonsterState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelState02",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_UnlockFlute2054101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FlyMe2theMoon",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FDMain02Unlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FDMain01Unlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DevilBallDissolve",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ExitDevilsGateFD",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_LeiqiuAppear",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EnableLightning",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ScreenPipeAppear",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFog1",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFog2",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MainMissionMazeBuff",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MonsterState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelState02",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_UnlockFlute2054101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FlyMe2theMoon",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FDMain02Unlock",
+          "MaxValue": 1
+        }
+      ]
+    },
+    {
+      "FloorID": 20542001,
+      "SavedValues": [
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim01Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FourRotate01Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FourRotate02Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Door01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Projection01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Projection03State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Door02State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DEntrance01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DEntrance02State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DHospitalState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2054201",
+          "MaxValue": 1
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim01Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FourRotate01Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FourRotate02Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Door01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Projection01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Projection03State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Door02State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DEntrance01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DEntrance02State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DHospitalState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2054201",
+          "MaxValue": 1
+        },
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim01Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FourRotate01Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FourRotate02Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Door01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Projection01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Projection03State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Door02State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DEntrance01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DEntrance02State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DHospitalState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2054201",
           "MaxValue": 1
         }
       ]
@@ -27586,6 +29332,10 @@
       ]
     },
     {
+      "FloorID": 30144001,
+      "SavedValues": []
+    },
+    {
       "FloorID": 30201001,
       "SavedValues": []
     },
@@ -28176,6 +29926,155 @@
         {
           "Name": "FSV_EntranceUnlockHY",
           "MaxValue": 1
+        },
+        {
+          "Name": "MonsterKilled",
+          "MaxValue": 1
+        }
+      ]
+    },
+    {
+      "FloorID": 30544001,
+      "SavedValues": [
+        {
+          "Name": "FSV_MoonSwitch",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_WhiteSparkle",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_OpenMusic",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MetroTeleport",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockGe",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockWu",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_SpecialRoom",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_AnywhereDoor01",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_AnywhereDoor02",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_SubStateByMainMission",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_FirstTran",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_2054004_1",
+          "MaxValue": 20
+        },
+        {
+          "Name": "FSV_2054004_2",
+          "MaxValue": 150
+        },
+        {
+          "Name": "FSV_IsAnimalSaved",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050001",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_CenterScreen",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_4DMissionCheck",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050002",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050003",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute1050004",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MainMusicLevel",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockLimao10501",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ChangeMap",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelCrowd",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Achievement",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_TrainingChange",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim_FlyCar_Enable",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_OpenDoor",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EntranceUnlockZX",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_1",
+          "MaxValue": 100
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_2",
+          "MaxValue": 200
+        },
+        {
+          "Name": "FSV_1054110_Pedestrian_3",
+          "MaxValue": 150
+        },
+        {
+          "Name": "FSV_EntranceUnlockHY",
+          "MaxValue": 2
+        },
+        {
+          "Name": "FSV_430AirBattleState",
+          "MaxValue": 3
         },
         {
           "Name": "MonsterKilled",
@@ -29402,10 +31301,6 @@
           "MaxValue": 1
         },
         {
-          "Name": "FSV_MapChangeWithBrigde",
-          "MaxValue": 0
-        },
-        {
           "Name": "FSV_EraFlipper_LightFollowState",
           "MaxValue": 1
         }
@@ -29868,203 +31763,6 @@
     },
     {
       "FloorID": 40442002,
-      "SavedValues": []
-    },
-    {
-      "FloorID": 40443001,
-      "SavedValues": [
-        {
-          "Name": "YH_Phase",
-          "MaxValue": 10
-        },
-        {
-          "Name": "CT_Phase",
-          "MaxValue": 10
-        }
-      ]
-    },
-    {
-      "FloorID": 40444001,
-      "SavedValues": []
-    },
-    {
-      "FloorID": 40445001,
-      "SavedValues": [
-        {
-          "Name": "CurtainLeftUnlock",
-          "MaxValue": 1
-        },
-        {
-          "Name": "HughCurtainUnlock",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CurtainRightUnlock",
-          "MaxValue": 1
-        },
-        {
-          "Name": "Scene_Transit",
-          "MaxValue": 1
-        }
-      ]
-    },
-    {
-      "FloorID": 40446001,
-      "SavedValues": []
-    },
-    {
-      "FloorID": 40446002,
-      "SavedValues": []
-    },
-    {
-      "FloorID": 40447001,
-      "SavedValues": [
-        {
-          "Name": "CurtainLeftUnlock",
-          "MaxValue": 1
-        },
-        {
-          "Name": "HughCurtainUnlock",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CurtainRightUnlock",
-          "MaxValue": 1
-        },
-        {
-          "Name": "Scene_Transit",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CarpetShow",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ShowFeather",
-          "MaxValue": 1
-        }
-      ]
-    },
-    {
-      "FloorID": 40447002,
-      "SavedValues": []
-    },
-    {
-      "FloorID": 40447003,
-      "SavedValues": []
-    },
-    {
-      "FloorID": 40447004,
-      "SavedValues": [
-        {
-          "Name": "BuildingState",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_BlackHoleCrack",
-          "MaxValue": 1
-        }
-      ]
-    },
-    {
-      "FloorID": 40447005,
-      "SavedValues": []
-    },
-    {
-      "FloorID": 40448001,
-      "SavedValues": [
-        {
-          "Name": "GardenState",
-          "MaxValue": 2
-        },
-        {
-          "Name": "ScreenState",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CurtainState",
-          "MaxValue": 1
-        }
-      ]
-    },
-    {
-      "FloorID": 40448002,
-      "SavedValues": [
-        {
-          "Name": "DoorSetsState",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_DoorOpen",
-          "MaxValue": 1
-        },
-        {
-          "Name": "FSV_TVSetCtrl",
-          "MaxValue": 3
-        }
-      ]
-    },
-    {
-      "FloorID": 40448003,
-      "SavedValues": [
-        {
-          "Name": "Polymer_B2Trash",
-          "MaxValue": 1
-        },
-        {
-          "Name": "BlockStateSave",
-          "MaxValue": 1
-        }
-      ]
-    },
-    {
-      "FloorID": 40449001,
-      "SavedValues": [
-        {
-          "Name": "CurtainLeftUnlock",
-          "MaxValue": 1
-        },
-        {
-          "Name": "HughCurtainUnlock",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CurtainRightUnlock",
-          "MaxValue": 1
-        },
-        {
-          "Name": "Scene_Transit",
-          "MaxValue": 1
-        },
-        {
-          "Name": "CarpetShow",
-          "MaxValue": 1
-        },
-        {
-          "Name": "ShowFeather",
-          "MaxValue": 1
-        }
-      ]
-    },
-    {
-      "FloorID": 40449002,
-      "SavedValues": [
-        {
-          "Name": "YH_Phase",
-          "MaxValue": 10
-        },
-        {
-          "Name": "CT_Phase",
-          "MaxValue": 10
-        }
-      ]
-    },
-    {
-      "FloorID": 40449003,
-      "SavedValues": []
-    },
-    {
-      "FloorID": 40449004,
       "SavedValues": []
     },
     {
@@ -33865,6 +35563,14 @@
         {
           "Name": "FSV_StoneChange05",
           "MaxValue": 5
+        },
+        {
+          "Name": "FSV_Stone07up",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone01down",
+          "MaxValue": 1
         }
       ]
     },
@@ -34194,6 +35900,14 @@
         {
           "Name": "FSV_StoneChange05",
           "MaxValue": 5
+        },
+        {
+          "Name": "FSV_Stone07up",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Stone01down",
+          "MaxValue": 1
         }
       ]
     },
@@ -34572,6 +36286,185 @@
           "MaxValue": 1
         }
       ]
+    },
+    {
+      "FloorID": 40545001,
+      "SavedValues": [
+        {
+          "Name": "FSV_FDMain01Unlock",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_DevilBallDissolve",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ExitDevilsGateFD",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_LeiqiuAppear",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_EnableLightning",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_ScreenPipeAppear",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFog1",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFog2",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MainMissionMazeBuff",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MonsterState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_MusicLevelState02",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2054101",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FlyMe2theMoon",
+          "MaxValue": 1
+        }
+      ]
+    },
+    {
+      "FloorID": 40545002,
+      "SavedValues": [
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim01Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FourRotate01Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FourRotate02Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Door01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Projection01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Projection03State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Door02State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DEntrance01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DEntrance02State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DHospitalState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2054201",
+          "MaxValue": 1
+        }
+      ]
+    },
+    {
+      "FloorID": 40546001,
+      "SavedValues": [
+        {
+          "Name": "SceneStateByMainMission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FiveDim01Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FourRotate01Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_FourRotate02Mission",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Door01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Projection01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Projection03State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_Door02State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DEntrance01State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DEntrance02State",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_5DHospitalState",
+          "MaxValue": 1
+        },
+        {
+          "Name": "FSV_UnlockFlute2054201",
+          "MaxValue": 1
+        }
+      ]
+    },
+    {
+      "FloorID": 40548001,
+      "SavedValues": []
+    },
+    {
+      "FloorID": 40548002,
+      "SavedValues": []
+    },
+    {
+      "FloorID": 40548003,
+      "SavedValues": []
     },
     {
       "FloorID": 41000001,
@@ -35233,10 +37126,6 @@
       "FloorID": 41401013,
       "SavedValues": [
         {
-          "Name": "FSV_LastRoomBlock",
-          "MaxValue": 0
-        },
-        {
           "Name": "FSV_FinishSwitchHand",
           "MaxValue": 1
         },
@@ -35268,10 +37157,6 @@
         {
           "Name": "FSV_GetCoinNum",
           "MaxValue": 99
-        },
-        {
-          "Name": "FSV_LastRoomBlock",
-          "MaxValue": 0
         },
         {
           "Name": "FSV_Show3DMap",
@@ -35845,14 +37730,6 @@
         {
           "Name": "FSV_MapChangeWithBrigde",
           "MaxValue": 1
-        },
-        {
-          "Name": "FSV_EraFlipper_LightFollowState",
-          "MaxValue": 0
-        },
-        {
-          "Name": "FSV_EraFli",
-          "MaxValue": 0
         }
       ]
     },
@@ -38013,10 +39890,6 @@
         {
           "Name": "GardenState",
           "MaxValue": 2
-        },
-        {
-          "Name": "CurtainState",
-          "MaxValue": 0
         }
       ]
     },
@@ -39078,6 +40951,10 @@
           "MaxValue": 1
         }
       ]
+    },
+    {
+      "FloorID": 80705001,
+      "SavedValues": []
     },
     {
       "FloorID": 81001001,

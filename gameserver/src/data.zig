@@ -18,7 +18,7 @@ pub var AvatarSkinMap = [_]struct {
 };
 
 // Battle group
-pub const IgnoreBattle = [_]u32{ 1504, 1501, 1414, 1405, 1404, 1225, 1321, 1314, 1312, 1305, 1302, 1217, 1108 };
+pub const IgnoreBattle = [_]u32{ 1509, 1504, 1501, 1414, 1405, 1404, 1225, 1321, 1314, 1312, 1305, 1302, 1217, 1108 };
 pub const SkipBattle = [_]u32{ 1506, 1408, 1308, 1510 };
 
 //TODO: update id for characters have ignore toughness in their technique in future
