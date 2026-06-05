@@ -221,6 +221,8 @@ pub fn onUpdateGroupProperty(session: *Session, packet: *const Packet, allocator
     rsp.floor_id = req.floor_id;
     rsp.group_id = req.group_id;
     rsp.dimension_id = req.dimension_id;
+    rsp.new_value = req.OLBEPIBLDBD;
+    rsp.old_value = req.OLBEPIBLDBD;
     rsp.property_name = req.property_name;
     try session.send(CmdID.CmdUpdateGroupPropertyScRsp, rsp);
 }

@@ -93,7 +93,7 @@ function queueToast(text)
     processQueue()
 end
 
-queueToast("Hi, EvanesciaPlap is a free server for Honkai Star Rail")
-queueToast("This server is reimplemented by gugun from the original EvanesciaSR")
-queueToast("Evanescia my beloved")
+queueToast("Hi, PlanarcadiaPS is a free server for Honkai Star Rail")
+queueToast("This server is reimplemented by gugun from the original HimekoNovaSR")
+queueToast("Yaoguang my beloved")
               

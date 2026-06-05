@@ -45,8 +45,11 @@ pub fn onGetAvatarData(session: *Session, packet: *const Packet, allocator: Allo
 
 pub fn onGetBasicInfo(session: *Session, _: *const Packet, allocator: Allocator) !void {
     var rsp = protocol.GetBasicInfoScRsp.init(allocator);
-    rsp.gender = AvatarManager.gender;
+    rsp.gender = if (ConfigManager.global_misc_defaults.avatar.tb_gender == .female) 2 else 1;
     rsp.is_gender_set = true;
+    rsp.player_setting_info = .{
+        .OKAHMFOINPM = std.ArrayList(protocol.KVP).init(allocator),
+    };
     try session.send(CmdID.CmdGetBasicInfoScRsp, rsp);
 }
 
@@ -56,15 +59,15 @@ pub fn onSetAvatarPath(session: *Session, packet: *const Packet, allocator: Allo
     defer req.deinit();
     rsp.avatar_id = req.avatar_id;
     switch (rsp.avatar_id) {
-        protocol.MultiPathAvatarType.Mar_7thKnightType => AvatarManager.m7th = 1001,
-        protocol.MultiPathAvatarType.Mar_7thRogueType => AvatarManager.m7th = 1224,
-        else => AvatarManager.mc_id = @intCast(@intFromEnum(rsp.avatar_id)),
+        protocol.MultiPathAvatarType.Mar_7thKnightType => AvatarManager.setM7th(1001),
+        protocol.MultiPathAvatarType.Mar_7thRogueType => AvatarManager.setM7th(1224),
+        else => AvatarManager.setMcId(@intCast(@intFromEnum(rsp.avatar_id))),
     }
     var change = protocol.AvatarPathChangedNotify.init(allocator);
     switch (req.avatar_id) {
         protocol.MultiPathAvatarType.Mar_7thKnightType => change.base_avatar_id = 1001,
-        protocol.MultiPathAvatarType.Mar_7thRogueType => change.base_avatar_id = 1001,
-        else => change.base_avatar_id = 8001,
+        protocol.MultiPathAvatarType.Mar_7thRogueType => change.base_avatar_id = 1224,
+        else => change.base_avatar_id = @intCast(@intFromEnum(req.avatar_id)),
     }
     change.cur_multi_path_avatar_type = req.avatar_id;
     try session.send(CmdID.CmdAvatarPathChangedNotify, change);

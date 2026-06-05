@@ -193,6 +193,7 @@ pub const ChallengeSceneManager = struct {
         floor_id: u32,
         entry_id: u32,
         world_id: ?u32,
+        _: u32,
     ) !protocol.SceneInfo {
         var scene_info = protocol.SceneInfo.init(self.allocator);
         scene_info.game_mode_type = game_mode_type;
@@ -296,8 +297,9 @@ pub const ChallengeSceneManager = struct {
         monster_id: u32,
         event_id: u32,
         group_id: u32,
+        maze_group_id: u32,
     ) !protocol.SceneInfo {
-        var scene_info = try self.createBaseScene(4, avatar_list, plane_id, floor_id, entry_id, world_id);
+        var scene_info = try self.createBaseScene(4, avatar_list, plane_id, floor_id, entry_id, world_id, maze_group_id);
         var generator = Uid.BaseUidGen().init();
         try self.addChallengeEntities(&scene_info, group_id, monster_id, event_id, &generator);
         return scene_info;
@@ -311,8 +313,9 @@ pub const ChallengeSceneManager = struct {
         monster_id: u32,
         event_id: u32,
         group_id: u32,
+        maze_group_id: u32,
     ) !protocol.SceneInfo {
-        var scene_info = try self.createBaseScene(4, avatar_list, plane_id, floor_id, entry_id, null);
+        var scene_info = try self.createBaseScene(4, avatar_list, plane_id, floor_id, entry_id, null, maze_group_id);
         var generator = Uid.BaseUidGen().init();
         try self.addChallengeEntities(&scene_info, group_id, monster_id, event_id, &generator);
         return scene_info;

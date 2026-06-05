@@ -102,7 +102,7 @@ pub const HandlerList = [_]struct { CmdID, Action }{
     .{ CmdID.CmdGetChatEmojiListCsReq, chat.onChatEmojiList },
     .{ CmdID.CmdSendMsgCsReq, chat.onSendMsg },
     .{ CmdID.CmdTriggerAiPamSpeakCsReq, chat.onTriggerAiPamSpeak },
-    //.{ CmdID.CmdGetAiPamChatHistoryCsReq, chat.onGetAiPamChatHistory },
+    .{ CmdID.CmdGetAiPamChatHistoryCsReq, chat.onGetAiPamChatHistory },
     //scene
     .{ CmdID.CmdGetCurSceneInfoCsReq, scene.onGetCurSceneInfo },
     .{ CmdID.CmdSceneEntityMoveCsReq, scene.onSceneEntityMove },
@@ -130,10 +130,8 @@ pub const HandlerList = [_]struct { CmdID, Action }{
     .{ CmdID.CmdStartChallengeCsReq, challenge.onStartChallenge },
     .{ CmdID.CmdLeaveChallengeCsReq, challenge.onLeaveChallenge },
     .{ CmdID.CmdLeaveChallengePeakCsReq, challenge.onLeaveChallengePeak },
-    .{ CmdID.CmdLeaveChallengeTierceCsReq, challenge.onLeaveChallengeTierce },
     .{ CmdID.CmdGetCurChallengeCsReq, challenge.onGetCurChallengeScRsp },
     .{ CmdID.CmdGetChallengePeakDataCsReq, challenge.onGetChallengePeakData },
-    .{ CmdID.CmdGetChallengeTierceControllerCsReq, challenge.onGetChallengeTierceController },
     .{ CmdID.CmdGetCurChallengePeakCsReq, challenge.onGetCurChallengePeak },
     .{ CmdID.CmdTakeChallengeRewardCsReq, challenge.onTakeChallengeReward },
     .{ CmdID.CmdStartChallengePeakCsReq, challenge.onStartChallengePeak },
@@ -141,117 +139,6 @@ pub const HandlerList = [_]struct { CmdID, Action }{
     .{ CmdID.CmdSetChallengePeakMobLineupAvatarCsReq, challenge.onSetChallengePeakMobLineupAvatar },
     .{ CmdID.CmdSetChallengePeakBossHardModeCsReq, challenge.onSetChallengePeakBossHardMode },
     .{ CmdID.CmdGetFriendBattleRecordDetailCsReq, challenge.onGetFriendBattleRecordDetail },
-    .{ CmdID.CmdStartChallengeTierceCsReq, challenge.onStartChallengeTierce },
-    .{ CmdID.CmdSetChallengeTierceLineupCsReq, challenge.onSetChallengeTierceLineup },
-    .{ CmdID.CmdGetChallengeTierceDataCsReq, challenge.onGetChallengeTierceData },
-};
-
-const DummyCmdList = [_]struct { CmdID, CmdID }{
-    .{ CmdID.CmdGetBagCsReq, CmdID.CmdGetBagScRsp },
-    .{ CmdID.CmdGetMarkItemListCsReq, CmdID.CmdGetMarkItemListScRsp },
-    .{ CmdID.CmdGetPlayerBoardDataCsReq, CmdID.CmdGetPlayerBoardDataScRsp },
-    .{ CmdID.CmdGetCurAssistCsReq, CmdID.CmdGetCurAssistScRsp },
-    .{ CmdID.CmdGetAllLineupDataCsReq, CmdID.CmdGetAllLineupDataScRsp },
-    .{ CmdID.CmdGetAllServerPrefsDataCsReq, CmdID.CmdGetAllServerPrefsDataScRsp },
-    .{ CmdID.CmdGetMissionDataCsReq, CmdID.CmdGetMissionDataScRsp },
-    //.{ CmdID.CmdGetRogueCommonDialogueDataCsReq, CmdID.CmdGetRogueCommonDialogueDataScRsp },
-    .{ CmdID.CmdGetRogueInfoCsReq, CmdID.CmdGetRogueInfoScRsp },
-    //.{ CmdID.CmdGetRogueHandbookDataCsReq, CmdID.CmdGetRogueHandbookDataScRsp },
-    .{ CmdID.CmdGetRogueEndlessActivityDataCsReq, CmdID.CmdGetRogueEndlessActivityDataScRsp },
-    .{ CmdID.CmdChessRogueQueryCsReq, CmdID.CmdChessRogueQueryScRsp },
-    .{ CmdID.CmdRogueTournQueryCsReq, CmdID.CmdRogueTournQueryScRsp },
-    .{ CmdID.CmdDailyFirstMeetPamCsReq, CmdID.CmdDailyFirstMeetPamScRsp },
-    .{ CmdID.CmdGetBattleCollegeDataCsReq, CmdID.CmdGetBattleCollegeDataScRsp },
-    .{ CmdID.CmdGetNpcStatusCsReq, CmdID.CmdGetNpcStatusScRsp },
-    .{ CmdID.CmdGetSecretKeyInfoCsReq, CmdID.CmdGetSecretKeyInfoScRsp },
-    .{ CmdID.CmdGetHeartDialInfoCsReq, CmdID.CmdGetHeartDialInfoScRsp },
-    .{ CmdID.CmdGetVideoVersionKeyCsReq, CmdID.CmdGetVideoVersionKeyScRsp },
-    .{ CmdID.CmdHeliobusActivityDataCsReq, CmdID.CmdHeliobusActivityDataScRsp },
-    .{ CmdID.CmdGetAetherDivideInfoCsReq, CmdID.CmdGetAetherDivideInfoScRsp },
-    .{ CmdID.CmdGetMapRotationDataCsReq, CmdID.CmdGetMapRotationDataScRsp },
-    .{ CmdID.CmdPlayerReturnInfoQueryCsReq, CmdID.CmdPlayerReturnInfoQueryScRsp },
-    .{ CmdID.CmdGetLevelRewardTakenListCsReq, CmdID.CmdGetLevelRewardTakenListScRsp },
-    .{ CmdID.CmdGetMainMissionCustomValueCsReq, CmdID.CmdGetMainMissionCustomValueScRsp },
-    .{ CmdID.CmdGetMaterialSubmitActivityDataCsReq, CmdID.CmdGetMaterialSubmitActivityDataScRsp },
-    .{ CmdID.CmdRogueTournGetCurRogueCocoonInfoCsReq, CmdID.CmdRogueTournGetCurRogueCocoonInfoScRsp },
-    .{ CmdID.CmdRogueMagicQueryCsReq, CmdID.CmdRogueMagicQueryScRsp },
-    .{ CmdID.CmdMusicRhythmDataCsReq, CmdID.CmdMusicRhythmDataScRsp },
-    //friendlist
-    .{ CmdID.CmdGetFriendApplyListInfoCsReq, CmdID.CmdGetFriendApplyListInfoScRsp },
-    .{ CmdID.CmdGetChatFriendHistoryCsReq, CmdID.CmdGetChatFriendHistoryScRsp },
-    .{ CmdID.CmdGetFriendLoginInfoCsReq, CmdID.CmdGetFriendLoginInfoScRsp },
-    .{ CmdID.CmdGetFriendDevelopmentInfoCsReq, CmdID.CmdGetFriendDevelopmentInfoScRsp },
-    .{ CmdID.CmdGetFriendRecommendListInfoCsReq, CmdID.CmdGetFriendRecommendListInfoScRsp },
-    //add
-    .{ CmdID.CmdSwitchHandDataCsReq, CmdID.CmdSwitchHandDataScRsp },
-    .{ CmdID.CmdRogueArcadeGetInfoCsReq, CmdID.CmdRogueArcadeGetInfoScRsp },
-    //.{ CmdID.CmdGetMissionMessageInfoCsReq, CmdID.CmdGetMissionMessageInfoScRsp },//
-    .{ CmdID.CmdTrainPartyGetDataCsReq, CmdID.CmdTrainPartyGetDataScRsp },
-    .{ CmdID.CmdQueryProductInfoCsReq, CmdID.CmdQueryProductInfoScRsp },
-    .{ CmdID.CmdGetPamSkinDataCsReq, CmdID.CmdGetPamSkinDataScRsp },
-    //.{ CmdID.CmdGetRogueScoreRewardInfoCsReq, CmdID.CmdGetRogueScoreRewardInfoScRsp },
-    .{ CmdID.CmdGetQuestRecordCsReq, CmdID.CmdGetQuestRecordScRsp },
-    .{ CmdID.CmdGetDailyActiveInfoCsReq, CmdID.CmdGetDailyActiveInfoScRsp },
-    .{ CmdID.CmdGetChessRogueNousStoryInfoCsReq, CmdID.CmdGetChessRogueNousStoryInfoScRsp },
-    //.{ CmdID.CmdCommonRogueQueryCsReq, CmdID.CmdCommonRogueQueryScRsp },
-    .{ CmdID.CmdGetFightActivityDataCsReq, CmdID.CmdGetFightActivityDataScRsp },
-    .{ CmdID.CmdGetStarFightDataCsReq, CmdID.CmdGetStarFightDataScRsp },
-    .{ CmdID.CmdGetMultipleDropInfoCsReq, CmdID.CmdGetMultipleDropInfoScRsp },
-    .{ CmdID.CmdGetPlayerReturnMultiDropInfoCsReq, CmdID.CmdGetPlayerReturnMultiDropInfoScRsp },
-    .{ CmdID.CmdGetShareDataCsReq, CmdID.CmdGetShareDataScRsp },
-    .{ CmdID.CmdGetTreasureDungeonActivityDataCsReq, CmdID.CmdGetTreasureDungeonActivityDataScRsp },
-    .{ CmdID.CmdGetAetherDivideChallengeInfoCsReq, CmdID.CmdGetAetherDivideChallengeInfoScRsp },
-    //.{ CmdID.CmdGetStrongChallengeActivityDataCsReq, CmdID.CmdGetStrongChallengeActivityDataScRsp },//
-    .{ CmdID.CmdGetOfferingInfoCsReq, CmdID.CmdGetOfferingInfoScRsp },
-    .{ CmdID.CmdClockParkGetInfoCsReq, CmdID.CmdClockParkGetInfoScRsp },
-    //.{ CmdID.CmdGetGunPlayDataCsReq, CmdID.CmdGetGunPlayDataScRsp },//
-    .{ CmdID.CmdGetTrackPhotoActivityDataCsReq, CmdID.CmdGetTrackPhotoActivityDataScRsp },
-    .{ CmdID.CmdGetSwordTrainingDataCsReq, CmdID.CmdGetSwordTrainingDataScRsp },
-    .{ CmdID.CmdGetFightFestDataCsReq, CmdID.CmdGetFightFestDataScRsp },
-    .{ CmdID.CmdDifficultyAdjustmentGetDataCsReq, CmdID.CmdDifficultyAdjustmentGetDataScRsp },
-    .{ CmdID.CmdSpaceZooDataCsReq, CmdID.CmdSpaceZooDataScRsp },
-    .{ CmdID.CmdGetExpeditionDataCsReq, CmdID.CmdGetExpeditionDataScRsp },
-    .{ CmdID.CmdTravelBrochureGetDataCsReq, CmdID.CmdTravelBrochureGetDataScRsp },
-    .{ CmdID.CmdRaidCollectionDataCsReq, CmdID.CmdRaidCollectionDataScRsp },
-    .{ CmdID.CmdGetRaidInfoCsReq, CmdID.CmdGetRaidInfoScRsp },
-    .{ CmdID.CmdGetLoginActivityCsReq, CmdID.CmdGetLoginActivityScRsp },
-    .{ CmdID.CmdGetTrialActivityDataCsReq, CmdID.CmdGetTrialActivityDataScRsp },
-    .{ CmdID.CmdGetJukeboxDataCsReq, CmdID.CmdGetJukeboxDataScRsp },
-    .{ CmdID.CmdGetMuseumInfoCsReq, CmdID.CmdGetMuseumInfoScRsp },
-    .{ CmdID.CmdGetTelevisionActivityDataCsReq, CmdID.CmdGetTelevisionActivityDataScRsp },
-    .{ CmdID.CmdGetTrainVisitorRegisterCsReq, CmdID.CmdGetTrainVisitorRegisterScRsp },
-    .{ CmdID.CmdGetBoxingClubInfoCsReq, CmdID.CmdGetBoxingClubInfoScRsp },
-    .{ CmdID.CmdTextJoinQueryCsReq, CmdID.CmdTextJoinQueryScRsp },
-    .{ CmdID.CmdGetLoginChatInfoCsReq, CmdID.CmdGetLoginChatInfoScRsp },
-    .{ CmdID.CmdGetFeverTimeActivityDataCsReq, CmdID.CmdGetFeverTimeActivityDataScRsp },
-    .{ CmdID.CmdGetSummonActivityDataCsReq, CmdID.CmdGetSummonActivityDataScRsp },
-    .{ CmdID.CmdTarotBookGetDataCsReq, CmdID.CmdTarotBookGetDataScRsp },
-    .{ CmdID.CmdGetMarkChestCsReq, CmdID.CmdGetMarkChestScRsp },
-    //.{ CmdID.CmdMatchThreeGetDataCsReq, CmdID.CmdMatchThreeGetDataScRsp },//
-    //.{ CmdID.CmdUpdateTrackMainMissionCsReq, CmdID.CmdUpdateTrackMainMissionScRsp },
-    .{ CmdID.CmdGetNpcMessageGroupCsReq, CmdID.CmdGetNpcMessageGroupScRsp },
-    .{ CmdID.CmdGetAllSaveRaidCsReq, CmdID.CmdGetAllSaveRaidScRsp },
-    .{ CmdID.CmdGetAssistHistoryCsReq, CmdID.CmdGetAssistHistoryScRsp },
-    //.{ CmdID.CmdGetEraFlipperDataCsReq, CmdID.CmdGetEraFlipperDataScRsp },//
-    .{ CmdID.CmdGetRechargeGiftInfoCsReq, CmdID.CmdGetRechargeGiftInfoScRsp },
-    .{ CmdID.CmdGetRechargeBenefitInfoCsReq, CmdID.CmdGetRechargeBenefitInfoScRsp },
-    .{ CmdID.CmdRelicSmartWearGetPlanCsReq, CmdID.CmdRelicSmartWearGetPlanScRsp },
-    .{ CmdID.CmdRelicSmartWearGetPinRelicCsReq, CmdID.CmdRelicSmartWearGetPinRelicScRsp },
-    .{ CmdID.CmdSetGrowthTargetAvatarCsReq, CmdID.CmdSetGrowthTargetAvatarScRsp },
-    .{ CmdID.CmdFateQueryCsReq, CmdID.CmdFateQueryScRsp },
-    .{ CmdID.CmdGetPlanetFesDataCsReq, CmdID.CmdGetPlanetFesDataScRsp },
-    .{ CmdID.CmdParkourGetDataCsReq, CmdID.CmdParkourGetDataScRsp },
-    //.{ CmdID.CmdMatchThreeV2GetDataCsReq, CmdID.CmdMatchThreeV2GetDataScRsp },//
-    .{ CmdID.CmdGetMonopolyInfoCsReq, CmdID.CmdGetMonopolyInfoScRsp },
-    .{ CmdID.CmdMonopolyGetRegionProgressCsReq, CmdID.CmdMonopolyGetRegionProgressScRsp },
-    .{ CmdID.CmdGetMbtiReportCsReq, CmdID.CmdGetMbtiReportScRsp },
-    .{ CmdID.CmdGetDrinkMakerDataCsReq, CmdID.CmdGetDrinkMakerDataScRsp },
-    .{ CmdID.CmdGetDataCsReq, CmdID.CmdGetDataScRsp },
-    .{ CmdID.CmdMarbleGetDataCsReq, CmdID.CmdMarbleGetDataScRsp },
-    .{ CmdID.CmdGetPreAvatarActivityListCsReq, CmdID.CmdGetPreAvatarActivityListScRsp },
-    .{ CmdID.CmdGetUnreleasedBlockInfoCsReq, CmdID.CmdGetUnreleasedBlockInfoScRsp }, //
-    .{ CmdID.CmdGetAssistListCsReq, CmdID.CmdGetAssistListScRsp },
-    .{ CmdID.CmdGetFriendAssistListCsReq, CmdID.CmdGetFriendAssistListScRsp },
 };
 
 const SuppressLogList = [_]CmdID{CmdID.CmdSceneEntityMoveCsReq};
@@ -268,13 +155,6 @@ pub fn handle(session: *Session, packet: *const Packet) !void {
             if (!std.mem.containsAtLeast(CmdID, &SuppressLogList, 1, &[_]CmdID{cmd_id})) {
                 log.debug("packet {} was handled", .{cmd_id});
             }
-            return;
-        }
-    }
-
-    inline for (DummyCmdList) |pair| {
-        if (pair[0] == cmd_id) {
-            try session.send_empty(pair[1]);
             return;
         }
     }

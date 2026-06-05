@@ -236,57 +236,6 @@ pub fn Challenge() type {
                 challenge_maze_groupID,
             });
         }
-        const StageInfo = struct {
-            lineup: ArrayList(u32),
-            buff_id: u32,
-        };
-
-        var stage_map: std.AutoHashMap(u32, ArrayList(StageInfo)) = std.AutoHashMap(u32, ArrayList(StageInfo)).init(std.heap.page_allocator);
-
-        pub fn SaveStageInfoList(challenge_id: u32, stage_info_list: anytype) !void {
-            var stage_list = ArrayList(StageInfo).init(std.heap.page_allocator);
-
-            for (stage_info_list.items) |info| {
-                var avatar_ids = ArrayList(u32).init(std.heap.page_allocator);
-                for (info.lineup.items) |lineup| {
-                    try avatar_ids.append(lineup.id);
-                }
-                try stage_list.append(.{
-                    .lineup = avatar_ids,
-                    .buff_id = info.buff_id,
-                });
-            }
-
-            try stage_map.put(challenge_id, stage_list);
-        }
-
-        pub fn LoadStageInfo(challenge_id: u32, stage_index: usize) !void {
-            const stages = stage_map.get(challenge_id) orelse {
-                const default_ids = switch (stage_index) {
-                    0 => &[_]u32{1508},
-                    1 => &[_]u32{1509},
-                    2 => &[_]u32{1510},
-                    else => return,
-                };
-                avatar_list.clearRetainingCapacity();
-                try AddAvatar(default_ids);
-                challenge_buffID = 0;
-                return;
-            };
-            if (stage_index >= stages.items.len) return;
-
-            const stage = stages.items[stage_index];
-            avatar_list.clearRetainingCapacity();
-            try AddAvatar(stage.lineup.items);
-            challenge_buffID = stage.buff_id;
-
-            std.log.debug("CHALLENGE TIERCE STAGE INFO: CHALLENGE ID: {}, STAGE INDEX: {}, LINEUP ID: {any} SELLECTED BUFF ID: {}\n", .{
-                challenge_id,
-                stage_index,
-                stage.lineup.items,
-                stage.buff_id,
-            });
-        }
     };
 }
 
@@ -342,7 +291,7 @@ pub fn CustomMode() type {
 pub fn Banner() type {
     return struct {
         var StandardBanner = [_]u32{ 1003, 1004, 1101, 1104, 1209, 1211 };
-        var RateUp = [_]u32{1510};
+        var RateUp = [_]u32{1505};
         var RateUpFourStars = [_]u32{ 1210, 1108, 1207 };
 
         pub fn GetStandardBanner() []const u32 {

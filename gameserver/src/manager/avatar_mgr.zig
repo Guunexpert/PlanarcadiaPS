@@ -16,7 +16,44 @@ const skill_config = &ConfigManager.global_game_config_cache.avatar_skill_config
 
 pub var m7th: u32 = 1224;
 pub var mc_id: u32 = 8010;
-pub var gender: u32 = 2;
+var mc_overridden: bool = false;
+var m7_overridden: bool = false;
+
+fn stableItemUid(tag: []const u8, avatar_id: u32, seed_tid: u32, slot: u32) u32 {
+    var h = std.hash.Wyhash.init(0);
+    h.update(tag);
+    h.update(std.mem.asBytes(&avatar_id));
+    h.update(std.mem.asBytes(&seed_tid));
+    h.update(std.mem.asBytes(&slot));
+    const v = h.final();
+    return @as(u32, @intCast(1 + (v % 0xFFFF_FFFE)));
+}
+
+fn resolveItemUid(tag: []const u8, avatar_id: u32, tid: u32, slot: u32, internal_uid: u32) u32 {
+    if (avatar_id == 0) return Uid.nextGlobalId();
+    const seed_tid = if (internal_uid != 0) internal_uid else tid;
+    return stableItemUid(tag, avatar_id, seed_tid, slot);
+}
+
+pub fn currentMcId() u32 {
+    if (mc_overridden) return mc_id;
+    return ConfigManager.global_misc_defaults.avatar.tbAvatarId();
+}
+
+pub fn currentM7th() u32 {
+    if (m7_overridden) return m7th;
+    return ConfigManager.global_misc_defaults.avatar.marchAvatarId();
+}
+
+pub fn setMcId(id: u32) void {
+    mc_id = id;
+    mc_overridden = true;
+}
+
+pub fn setM7th(id: u32) void {
+    m7th = id;
+    m7_overridden = true;
+}
 
 pub fn createAvatar(
     allocator: Allocator,
@@ -34,11 +71,7 @@ pub fn createAvatar(
     for (1..6) |i| {
         try avatar.has_taken_promotion_reward_list.append(@intCast(i));
     }
-    avatar.cur_multi_path_avatar_type = switch (avatarConf.id) {
-        8001...8010 => mc_id,
-        1001, 1224 => m7th,
-        else => avatarConf.id,
-    };
+    avatar.cur_multi_path_avatar_type = avatarConf.id;
     return avatar;
 }
 pub fn createAllAvatar(
@@ -67,11 +100,18 @@ pub fn createAvatarPathData(
     if (Logic.inlist(avatar.avatar_id, &Data.EnhanceAvatarID)) {
         avatar.unk_enhanced_id = 1;
     }
-    avatar.path_equipment_id = Uid.nextGlobalId();
+    avatar.path_equipment_id = if (avatarConf.lightcone.id == 0)
+        0
+    else
+        resolveItemUid("LC", avatar.avatar_id, avatarConf.lightcone.id, 0, avatarConf.lightcone.internal_uid);
     avatar.equip_relic_list = ArrayList(protocol.EquipRelic).init(allocator);
     for (0..6) |i| {
+        const has_relic = i < avatarConf.relics.items.len and avatarConf.relics.items[i].id != 0;
         try avatar.equip_relic_list.append(.{
-            .relic_unique_id = Uid.nextGlobalId(),
+            .relic_unique_id = if (has_relic)
+                resolveItemUid("RELIC", avatar.avatar_id, avatarConf.relics.items[i].id, @as(u32, @intCast(i)), avatarConf.relics.items[i].internal_uid)
+            else
+                0,
             .type = @intCast(i),
         });
     }
@@ -113,7 +153,10 @@ pub fn createEquipment(
     dress_avatar_id: u32,
 ) !protocol.Equipment {
     return protocol.Equipment{
-        .unique_id = Uid.nextGlobalId(),
+        .unique_id = if (lightconeConf.id == 0)
+            0
+        else
+            resolveItemUid("LC", dress_avatar_id, lightconeConf.id, 0, lightconeConf.internal_uid),
         .tid = lightconeConf.id,
         .is_protected = true,
         .level = lightconeConf.level,
@@ -127,11 +170,12 @@ pub fn createRelic(
     allocator: Allocator,
     relicConf: Config.Relic,
     dress_avatar_id: u32,
+    relic_slot_index: usize,
 ) !protocol.Relic {
     var r = protocol.Relic{
         .tid = relicConf.id,
         .main_affix_id = relicConf.main_affix_id,
-        .unique_id = Uid.nextGlobalId(),
+        .unique_id = resolveItemUid("RELIC", dress_avatar_id, relicConf.id, @as(u32, @intCast(relic_slot_index)), relicConf.internal_uid),
         .exp = 0,
         .dress_avatar_id = dress_avatar_id,
         .is_protected = true,
@@ -140,11 +184,32 @@ pub fn createRelic(
         .reforge_sub_affix_list = ArrayList(protocol.RelicAffix).init(allocator),
         .preview_sub_affix_list = ArrayList(protocol.RelicAffix).init(allocator),
     };
-    try r.sub_affix_list.append(protocol.RelicAffix{ .affix_id = relicConf.stat1, .cnt = relicConf.cnt1, .step = relicConf.step1 });
-    try r.sub_affix_list.append(protocol.RelicAffix{ .affix_id = relicConf.stat2, .cnt = relicConf.cnt2, .step = relicConf.step2 });
-    try r.sub_affix_list.append(protocol.RelicAffix{ .affix_id = relicConf.stat3, .cnt = relicConf.cnt3, .step = relicConf.step3 });
-    try r.sub_affix_list.append(protocol.RelicAffix{ .affix_id = relicConf.stat4, .cnt = relicConf.cnt4, .step = relicConf.step4 });
+    if (relicConf.stat1 != 0) try r.sub_affix_list.append(protocol.RelicAffix{ .affix_id = relicConf.stat1, .cnt = relicConf.cnt1, .step = relicConf.step1 });
+    if (relicConf.stat2 != 0) try r.sub_affix_list.append(protocol.RelicAffix{ .affix_id = relicConf.stat2, .cnt = relicConf.cnt2, .step = relicConf.step2 });
+    if (relicConf.stat3 != 0) try r.sub_affix_list.append(protocol.RelicAffix{ .affix_id = relicConf.stat3, .cnt = relicConf.cnt3, .step = relicConf.step3 });
+    if (relicConf.stat4 != 0) try r.sub_affix_list.append(protocol.RelicAffix{ .affix_id = relicConf.stat4, .cnt = relicConf.cnt4, .step = relicConf.step4 });
     return r;
+}
+
+fn getAvatarType(id: u32) protocol.MultiPathAvatarType {
+    return switch (id) {
+        1001 => .Mar_7thKnightType,
+        1224 => .Mar_7thRogueType,
+        else => {
+            if (id < 8001 or id > 8010) return .MultiPathAvatarTypeNone; // fallback
+            const base = (id - 8001) / 2;
+            const is_boy = (id % 2) == 1;
+
+            return switch (base) {
+                0 => if (is_boy) .BoyWarriorType else .GirlWarriorType,
+                1 => if (is_boy) .BoyKnightType else .GirlKnightType,
+                2 => if (is_boy) .BoyShamanType else .GirlShamanType,
+                3 => if (is_boy) .BoyMemoryType else .GirlMemoryType,
+                4 => if (is_boy) .BoyElationType else .GirlElationType,
+                else => .GirlElationType,
+            };
+        },
+    };
 }
 pub fn getSkinId(avatar_id: u32) u32 {
     for (Data.AvatarSkinMap) |entry| {

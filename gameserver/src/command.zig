@@ -73,7 +73,6 @@ pub fn sendMessage(session: *Session, msg: []const u8, allocator: Allocator) !vo
         .message_datas = message_datas,
         .CKHPFFENOBE = .{
             .role_id = 2000,
-            .KPOBMNLKLOK = .HCMEILLLKBD_JDOAIPKBIPE,
         },
     };
     try session.send(CmdID.CmdRevcMsgScNotify, chat);

@@ -6,12 +6,12 @@ const Packet = @import("../Packet.zig");
 const Allocator = std.mem.Allocator;
 const CmdID = protocol.CmdID;
 
-const OwnedPet = [_]u32{ 251001, 251002, 251003, 251004 };
+const OwnedPet = [_]u32{ 251001, 251002, 251003 };
 
 pub fn onGetPetData(session: *Session, _: *const Packet, allocator: Allocator) !void {
     var rsp = protocol.GetPetDataScRsp.init(allocator);
     rsp.retcode = 0;
-    rsp.cur_pet_id = 1004;
+    rsp.cur_pet_id = 1003;
     try rsp.unlocked_pet_id.appendSlice(&OwnedPet);
     try session.send(CmdID.CmdGetPetDataScRsp, rsp);
 }

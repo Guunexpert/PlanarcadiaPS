@@ -14,6 +14,12 @@ pub fn build(b: *std.Build) void {
     });
 
     exe.root_module.addImport("protocol", protocol.module("protocol"));
+    const terminal_commands_mod = b.addModule("terminal_commands", .{
+        .root_source_file = b.path("../program/src/terminal_commands.zig"),
+        .target = target,
+        .optimize = optimize,
+    });
+    exe.root_module.addImport("terminal_commands", terminal_commands_mod);
     b.installArtifact(exe);
 
     const run_cmd = b.addRunArtifact(exe);

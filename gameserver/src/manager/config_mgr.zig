@@ -3,8 +3,6 @@ const protocol = @import("protocol");
 const Session = @import("../session.zig");
 const Packet = @import("../Packet.zig");
 
-const AvatarManager = @import("../manager/avatar_mgr.zig");
-
 pub const GameConfig = @import("../data/game_config.zig");
 pub const StageConfig = @import("../data/stage_config.zig");
 pub const ChallengeConfig = @import("../data/challenge_config.zig");
@@ -20,8 +18,10 @@ const Allocator = std.mem.Allocator;
 const Data = @import("../data.zig");
 
 fn gameConfigFilePath() []const u8 {
-    std.fs.cwd().access("config.json", .{}) catch return "freesr-data.json";
-    return "config.json";
+    if (std.fs.cwd().access("freesr-data.json", .{}) == error.FileNotFound) {
+        return "config.json";
+    }
+    return "freesr-data.json";
 }
 
 fn loadGameConfig(allocator: Allocator) !GameConfig.GameConfig {
@@ -46,7 +46,6 @@ pub const GameConfigCache = struct {
     quest_config: MiscConfig.QuestConfig,
     challenge_maze_config: ChallengeConfig.ChallengeMazeConfig,
     challenge_peak_config: ChallengeConfig.ChallengePeakConfig,
-    challenge_tierce_config: ChallengeConfig.ChallengeTierceConfig,
     challenge_peak_group_config: ChallengeConfig.ChallengePeakGroupConfig,
     challenge_peak_boss_config: ChallengeConfig.ChallengePeakBossConfig,
     activity_config: MiscConfig.ActivityConfig,
@@ -93,9 +92,6 @@ pub const GameConfigCache = struct {
         var challenge_peak_cfg = try loadConfig(ChallengeConfig.ChallengePeakConfig, ChallengeConfig.parseChallengePeakConfig, allocator, "resources/ChallengePeakConfig.json");
         errdefer challenge_peak_cfg.deinit();
 
-        var challenge_tierce_cfg = try loadConfig(ChallengeConfig.ChallengeTierceConfig, ChallengeConfig.parseChallengeTierceConfig, allocator, "resources/ChallengeMazeTierceConfig.json");
-        errdefer challenge_tierce_cfg.deinit();
-
         var challenge_peak_group_cfg = try loadConfig(ChallengeConfig.ChallengePeakGroupConfig, ChallengeConfig.parseChallengePeakGroupConfig, allocator, "resources/ChallengePeakGroupConfig.json");
         errdefer challenge_peak_group_cfg.deinit();
 
@@ -133,7 +129,6 @@ pub const GameConfigCache = struct {
             .quest_config = quest_cfg,
             .challenge_maze_config = challenge_maze_cfg,
             .challenge_peak_config = challenge_peak_cfg,
-            .challenge_tierce_config = challenge_tierce_cfg,
             .challenge_peak_group_config = challenge_peak_group_cfg,
             .challenge_peak_boss_config = challenge_peak_boss_cfg,
             .activity_config = activity_cfg,
@@ -157,7 +152,6 @@ pub const GameConfigCache = struct {
         self.quest_config.deinit();
         self.challenge_maze_config.deinit();
         self.challenge_peak_config.deinit();
-        self.challenge_tierce_config.deinit();
         self.challenge_peak_group_config.deinit();
         self.challenge_peak_boss_config.deinit();
         self.activity_config.deinit();
@@ -171,7 +165,6 @@ pub const GameConfigCache = struct {
 pub var global_game_config_cache: GameConfigCache = undefined;
 pub var global_main_allocator: Allocator = undefined;
 pub var global_misc_defaults: MiscDefaults.MiscDefaults = undefined;
-
 pub fn initGameGlobals(main_allocator: Allocator) !void {
     global_main_allocator = main_allocator;
     global_misc_defaults = MiscDefaults.loadFromFile(main_allocator, "misc.json") catch |err| switch (err) {
@@ -190,27 +183,18 @@ pub fn initGameGlobals(main_allocator: Allocator) !void {
     var four_star = ArrayList(u32).init(main_allocator);
 
     for (avatars.*) |avatar| {
-        if (avatar.avatar_id == avatar.adventure_player_id and avatar.avatar_id <= 8001 and avatar.avatar_id != 1224) {
+        if (avatar.avatar_id == avatar.adventure_player_id and avatar.avatar_id <= 8001 and avatar.avatar_id != 1224 and (avatar.avatar_id == 1001 or avatar.avatar_id != 1001)) {
             try all.append(avatar.avatar_id);
             if (avatar.rarity == 4) try four_star.append(avatar.avatar_id);
         }
     }
     Data.AllAvatars = try all.toOwnedSlice();
     Data.AvatarList = try four_star.toOwnedSlice();
-    const configs = &global_game_config_cache.game_config.avatar_config.items;
-    for (configs.*) |config| {
-        if (config.id >= 8001) {
-            AvatarManager.mc_id = config.id;
-            AvatarManager.gender = if (config.id % 2 == 0) 2 else 1;
-        }
-    }
 }
-
 pub fn deinitGameGlobals() void {
     global_misc_defaults.deinit(global_main_allocator);
     global_game_config_cache.deinit();
 }
-
 var game_config_mtime: i128 = 0;
 
 pub fn getGameConfigMtime() i128 {

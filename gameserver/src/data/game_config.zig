@@ -16,6 +16,7 @@ pub const Lightcone = struct {
     rank: u32,
     level: u32,
     promotion: u32,
+    internal_uid: u32,
 };
 
 pub const Relic = struct {
@@ -35,12 +36,14 @@ pub const Relic = struct {
     stat4: u32,
     cnt4: u32,
     step4: u32,
+    internal_uid: u32,
 };
 
 pub const Avatar = struct {
     id: u32,
     hp: u32,
     sp: u32,
+    sp_max: u32,
     level: u32,
     promotion: u32,
     rank: u32,
@@ -101,6 +104,7 @@ pub fn parseConfig(root: std.json.Value, allocator: Allocator) anyerror!GameConf
             .id = @intCast(avatar_json.object.get("id").?.integer),
             .hp = @intCast(avatar_json.object.get("hp").?.integer),
             .sp = @intCast(avatar_json.object.get("sp").?.integer),
+            .sp_max = if (avatar_json.object.get("sp_max")) |v| @intCast(v.integer) else @intCast(avatar_json.object.get("sp").?.integer),
             .level = @intCast(avatar_json.object.get("level").?.integer),
             .promotion = @intCast(avatar_json.object.get("promotion").?.integer),
             .rank = @intCast(avatar_json.object.get("rank").?.integer),
@@ -115,6 +119,7 @@ pub fn parseConfig(root: std.json.Value, allocator: Allocator) anyerror!GameConf
             .rank = @intCast(lightcone_json.object.get("rank").?.integer),
             .level = @intCast(lightcone_json.object.get("level").?.integer),
             .promotion = @intCast(lightcone_json.object.get("promotion").?.integer),
+            .internal_uid = if (lightcone_json.object.get("internal_uid")) |v| @intCast(v.integer) else 0,
         };
 
         for (avatar_json.object.get("relics").?.array.items) |relic_str| {
@@ -170,6 +175,7 @@ fn parseRelic(relic_str: []const u8, allocator: Allocator) !Relic {
         .stat4 = stat4.stat,
         .cnt4 = stat4.count,
         .step4 = stat4.step,
+        .internal_uid = 0,
     };
 
     return relic;

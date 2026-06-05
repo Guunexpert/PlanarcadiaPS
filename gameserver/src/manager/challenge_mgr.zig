@@ -14,7 +14,6 @@ const challenge_config = &ConfigManager.global_game_config_cache.challenge_maze_
 const entrance_config = &ConfigManager.global_game_config_cache.map_entrance_config;
 const maze_config = &ConfigManager.global_game_config_cache.maze_config;
 const peak_config = &ConfigManager.global_game_config_cache.challenge_peak_config;
-const challenge_tierce = &ConfigManager.global_game_config_cache.challenge_tierce_config;
 const peak_boss_config = &ConfigManager.global_game_config_cache.challenge_peak_boss_config;
 
 pub const ChallengeManager = struct {
@@ -45,8 +44,8 @@ pub const ChallengeManager = struct {
                                         var story_buff = protocol.ChallengeStoryBuffList{
                                             .buff_list = ArrayList(u32).init(self.allocator),
                                         };
-                                        try story_buff.buff_list.append(buff_id);
                                         try story_buff.buff_list.append(challengeConf.maze_buff_id);
+                                        try story_buff.buff_list.append(buff_id);
                                         try Logic.Challenge().AddBlessing(story_buff.buff_list.items);
                                         cur_challenge_info.stage_info = .{
                                             .KKNBOACNCON = .{
@@ -59,8 +58,8 @@ pub const ChallengeManager = struct {
                                             .buff_list = ArrayList(u32).init(self.allocator),
                                             .challenge_boss_const = 1,
                                         };
-                                        try boss_buff.buff_list.append(buff_id);
                                         try boss_buff.buff_list.append(challengeConf.maze_buff_id);
+                                        try boss_buff.buff_list.append(buff_id);
                                         try Logic.Challenge().AddBlessing(boss_buff.buff_list.items);
                                         cur_challenge_info.stage_info = .{
                                             .KKNBOACNCON = .{
@@ -174,90 +173,6 @@ pub const ChallengeManager = struct {
                 }
             }
         }
-    }
-    pub fn createChallengeTierce(
-        self: *ChallengeManager,
-        challenge_id: u32,
-        is_single_stage: bool,
-        stage_index: u32,
-        buff_id: u32,
-        lineup: protocol.LineupInfo,
-    ) !protocol.ChallengeTierceChallengeInfo {
-        var challenge_tierce_info = protocol.ChallengeTierceChallengeInfo.init(self.allocator);
-        challenge_tierce_info.challenge_id = challenge_id;
-        challenge_tierce_info.is_single_stage = is_single_stage;
-        try challenge_tierce_info.lineup_list.append(lineup);
-
-        for (challenge_config.challenge_config.items) |challengeConf| {
-            for (challenge_tierce.challenge_tierce.items) |tierce| {
-                if (challengeConf.id == challenge_id - 1 and tierce.id == challenge_id) {
-                    std.debug.print("CHALLENGE CONFIG ID: {}, CHALLENGE TIERCE CONFIG ID: {} CHALLENGE TIERCE ID: {}\n", .{ challengeConf.id, tierce.id, challenge_id });
-                    for (entrance_config.map_entrance_config.items) |entrance| {
-                        if (entrance.id == challengeConf.map_entrance_id) {
-                            for (maze_config.maze_plane_config.items) |maze| {
-                                if (Logic.contains(&maze.floor_id_list, entrance.floor_id)) {
-                                    if (challenge_id > 20000 and challenge_id < 30000) {
-                                        var story_buff = ArrayList(u32).init(self.allocator);
-                                        try story_buff.append(buff_id);
-                                        try story_buff.append(challengeConf.maze_buff_id);
-                                        try Logic.Challenge().AddBlessing(story_buff.items);
-                                        Logic.Challenge().SetChallengeMode(1);
-                                    } else if (challenge_id > 30000) {
-                                        var boss_buff = ArrayList(u32).init(self.allocator);
-                                        try boss_buff.append(buff_id);
-                                        try boss_buff.append(challengeConf.maze_buff_id);
-                                        try Logic.Challenge().AddBlessing(boss_buff.items);
-                                        Logic.Challenge().SetChallengeMode(2);
-                                    }
-                                    const StageParams = struct {
-                                        npc_monster_id: u32,
-                                        event_id: u32,
-                                        maze_group_id: u32,
-                                        map_entrance_id: u32,
-                                    };
-
-                                    const params: ?StageParams = switch (stage_index) {
-                                        0 => .{
-                                            .npc_monster_id = challengeConf.npc_monster_id_list1.items[challengeConf.npc_monster_id_list1.items.len - 1],
-                                            .event_id = challengeConf.event_id_list1.items[challengeConf.event_id_list1.items.len - 1],
-                                            .maze_group_id = challengeConf.maze_group_id1,
-                                            .map_entrance_id = challengeConf.map_entrance_id,
-                                        },
-                                        1 => .{
-                                            .npc_monster_id = challengeConf.npc_monster_id_list2.items[challengeConf.npc_monster_id_list2.items.len - 1],
-                                            .event_id = challengeConf.event_id_list2.items[challengeConf.event_id_list2.items.len - 1],
-                                            .maze_group_id = challengeConf.maze_group_id1,
-                                            .map_entrance_id = challengeConf.map_entrance_id,
-                                        },
-                                        2 => .{
-                                            .npc_monster_id = tierce.npc_monster_id_list.items[tierce.npc_monster_id_list.items.len - 1],
-                                            .event_id = tierce.event_id_list.items[tierce.event_id_list.items.len - 1],
-                                            .maze_group_id = challengeConf.maze_group_id1,
-                                            .map_entrance_id = challengeConf.map_entrance_id,
-                                        },
-                                        else => null,
-                                    };
-
-                                    if (params) |p| {
-                                        Logic.Challenge().SetChallengeInfo(
-                                            entrance.floor_id,
-                                            maze.world_id,
-                                            p.npc_monster_id,
-                                            p.event_id,
-                                            p.maze_group_id,
-                                            p.maze_group_id,
-                                            maze.challenge_plane_id,
-                                            p.map_entrance_id,
-                                        );
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return challenge_tierce_info;
     }
 };
 

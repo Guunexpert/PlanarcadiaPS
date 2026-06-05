@@ -21,26 +21,43 @@ pub fn FunMode(session: *Session, input: []const u8, allocator: Allocator) !void
     if (args.next()) |subcmd| {
         if (std.mem.eql(u8, subcmd, "on")) {
             Logic.FunMode().SetFunMode(true);
-            const config = &ConfigManager.global_game_config_cache.game_config;
-            var ids = std.ArrayList(u32).init(allocator);
-            defer ids.deinit();
-            var picked_mc = false;
-            var picked_m7th = false;
-            for (config.avatar_config.items) |avatarConf| {
-                const id = switch (avatarConf.id) {
-                    8001...8010 => if (!picked_mc) blk: {
-                        picked_mc = true;
-                        break :blk AvatatarManager.mc_id;
-                    } else continue,
-                    1224, 1001 => if (!picked_m7th) blk: {
-                        picked_m7th = true;
-                        break :blk AvatatarManager.m7th;
-                    } else continue,
-                    else => avatarConf.id,
-                };
-                try ids.append(id);
+            const misc_funmode = ConfigManager.global_misc_defaults.funmode_lineup;
+            if (misc_funmode.len != 0) {
+                var ids = std.ArrayList(u32).init(allocator);
+                defer ids.deinit();
+                try ids.ensureUnusedCapacity(misc_funmode.len);
+                for (misc_funmode) |id| {
+                    const mapped = if (id >= 8001 and id <= 8010)
+                        AvatatarManager.currentMcId()
+                    else if (id == 1001 or id == 1224)
+                        AvatatarManager.currentM7th()
+                    else
+                        id;
+                    try ids.append(mapped);
+                }
+                try LineupManager.getFunModeAvatarID(ids.items);
+            } else {
+                const config = &ConfigManager.global_game_config_cache.game_config;
+                var ids = std.ArrayList(u32).init(allocator);
+                defer ids.deinit();
+                var picked_mc = false;
+                var picked_m7th = false;
+                for (config.avatar_config.items) |avatarConf| {
+                    const id = switch (avatarConf.id) {
+                        8001...8010 => if (!picked_mc) blk: {
+                            picked_mc = true;
+                            break :blk AvatatarManager.currentMcId();
+                        } else continue,
+                        1224, 1001 => if (!picked_m7th) blk: {
+                            picked_m7th = true;
+                            break :blk AvatatarManager.currentM7th();
+                        } else continue,
+                        else => avatarConf.id,
+                    };
+                    try ids.append(id);
+                }
+                try LineupManager.getFunModeAvatarID(ids.items);
             }
-            try LineupManager.getFunModeAvatarID(ids.items);
             try commandhandler.sendMessage(session, "Fun mode ON\n", allocator);
         } else if (std.mem.eql(u8, subcmd, "off")) {
             Logic.FunMode().SetFunMode(false);

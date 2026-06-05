@@ -19,6 +19,10 @@ pub const LineupManager = struct {
         return LineupManager{ .allocator = allocator };
     }
     pub fn createLineup(self: *LineupManager) !protocol.LineupInfo {
+        if (ConfigManager.global_misc_defaults.avatar.lineup.len != 0) {
+            return try buildLineup(self.allocator, ConfigManager.global_misc_defaults.avatar.lineup, null);
+        }
+
         var ids = ArrayList(u32).init(self.allocator);
         defer ids.deinit();
         var picked_mc = false;
@@ -28,11 +32,11 @@ pub const LineupManager = struct {
             const id = switch (avatarConf.id) {
                 8001...8010 => if (!picked_mc) blk: {
                     picked_mc = true;
-                    break :blk AvatarManager.mc_id;
+                    break :blk AvatarManager.currentMcId();
                 } else continue,
                 1224, 1001 => if (!picked_m7th) blk: {
                     picked_m7th = true;
-                    break :blk AvatarManager.m7th;
+                    break :blk AvatarManager.currentM7th();
                 } else continue,
                 else => avatarConf.id,
             };
@@ -67,16 +71,18 @@ pub fn buildLineup(
     var lineup = protocol.LineupInfo.init(allocator);
     lineup.mp = 5;
     lineup.max_mp = 5;
+    lineup.leader_slot = ConfigManager.global_misc_defaults.avatar.leader;
+    lineup.index = 0;
     if (extra_type) |t| {
         lineup.extra_lineup_type = t;
     } else {
-        lineup.name = .{ .Const = "Himeko•NovaSR" };
+        lineup.name = .{ .Const = "CastoricePS" };
     }
 
     for (ids, 0..) |id, idx| {
         var avatar = protocol.LineupAvatar.init(allocator);
         avatar.id = id;
-        if (id == 1408 or id == 1510) {
+        if (id == 1408) {
             lineup.mp = 7;
             lineup.max_mp = 7;
         }
@@ -109,8 +115,8 @@ pub fn getSelectedAvatarID(allocator: Allocator, input: []const u32) !void {
     defer tempList.deinit();
     try tempList.appendSlice(input);
     for (tempList.items) |*item| {
-        if (item.* == 8001) item.* = AvatarManager.mc_id;
-        if (item.* == 1001) item.* = AvatarManager.m7th;
+        if (item.* >= 8001 and item.* <= 8010) item.* = AvatarManager.currentMcId();
+        if (item.* == 1001 or item.* == 1224) item.* = AvatarManager.currentM7th();
     }
     var i: usize = 0;
     while (i < BattleManager.selectedAvatarID.len and i < tempList.items.len) : (i += 1) {

@@ -57,7 +57,10 @@ fn createBattleAvatar(allocator: Allocator, avatarConf: Config.Avatar) !protocol
     var avatar = protocol.BattleAvatar.init(allocator);
     avatar.id = avatarConf.id;
     avatar.hp = avatarConf.hp * 100;
-    avatar.sp_bar = .{ .cur_sp = avatarConf.sp * 100, .max_sp = 10000 };
+    avatar.sp_bar = .{
+        .cur_sp = avatarConf.sp * 100,
+        .max_sp = avatarConf.sp_max * 100,
+    };
     avatar.level = avatarConf.level;
     avatar.rank = avatarConf.rank;
     avatar.promotion = avatarConf.promotion;
@@ -433,6 +436,7 @@ pub const BattleManager = struct {
     }
 
     pub fn createBattle(self: *BattleManager) !protocol.SceneBattleInfo {
+        try ConfigManager.UpdateGameConfig();
         var battle = createBattleInfo(
             self.allocator,
             config,
@@ -472,6 +476,7 @@ pub const ChallegeStageManager = struct {
             return protocol.SceneBattleInfo.init(self.allocator);
         }
 
+        try ConfigManager.UpdateGameConfig();
         const stage_config = &self.game_config_cache.stage_config;
         var battle: protocol.SceneBattleInfo = undefined;
         var found_stage = false;

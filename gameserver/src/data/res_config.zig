@@ -51,6 +51,10 @@ pub const SavedValues = struct {
     saved_values: ArrayList(Values),
 
     pub fn deinit(self: *SavedValues) void {
+        const allocator = self.saved_values.allocator;
+        for (self.saved_values.items) |value| {
+            if (value.name) |name| allocator.free(name);
+        }
         self.saved_values.deinit();
     }
 };

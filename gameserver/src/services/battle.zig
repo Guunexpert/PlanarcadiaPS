@@ -114,6 +114,7 @@ pub fn onSceneCastSkill(session: *Session, packet: *const Packet, allocator: All
             }
         }
     }
+
     try session.send(CmdID.CmdSceneCastSkillScRsp, protocol.SceneCastSkillScRsp{
         .retcode = 0,
         .cast_entity_id = req.cast_entity_id,

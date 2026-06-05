@@ -61,10 +61,11 @@ pub fn loadFromFreesr(allocator: Allocator) !GameConfig {
                 .id = avatar_id,
                 .hp = hp_val,
                 .sp = sp_cur_val,
+                .sp_max = sp_max_val,
                 .level = level,
                 .promotion = promotion,
                 .rank = rank,
-                .lightcone = .{ .id = 0, .rank = 1, .level = 1, .promotion = 0 },
+                .lightcone = .{ .id = 0, .rank = 1, .level = 1, .promotion = 0, .internal_uid = 0 },
                 .relics = std.ArrayList(Relic).init(allocator),
                 .use_technique = techniques_enabled,
             });
@@ -81,6 +82,7 @@ pub fn loadFromFreesr(allocator: Allocator) !GameConfig {
                 .rank = @intCast(lc.object.get("rank").?.integer),
                 .level = @intCast(lc.object.get("level").?.integer),
                 .promotion = @intCast(lc.object.get("promotion").?.integer),
+                .internal_uid = if (lc.object.get("internal_uid")) |v| @intCast(v.integer) else 0,
             };
         }
     }
@@ -153,6 +155,7 @@ pub fn loadFromFreesr(allocator: Allocator) !GameConfig {
                 .stat4 = s4,
                 .cnt4 = c4,
                 .step4 = t4,
+                .internal_uid = if (r.object.get("internal_uid")) |v| @intCast(v.integer) else 0,
             });
         }
     }

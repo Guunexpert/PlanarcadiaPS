@@ -25,15 +25,6 @@ pub const ChallengePeak = struct {
     event_id_list: ArrayList(u32),
     tag_list: ArrayList(u32),
 };
-pub const ChallengeTierce = struct {
-    id: u32,
-    maze_group_id: u32,
-    map_entrance_id: u32,
-    npc_monster_id_list: ArrayList(u32),
-    event_id_list: ArrayList(u32),
-    target_id: ArrayList(u32),
-    tierce_target_id: u32,
-};
 
 pub const ChallengePeakGroup = struct {
     id: u32,
@@ -69,18 +60,6 @@ pub const ChallengePeakConfig = struct {
             challenge.event_id_list.deinit();
         }
         self.challenge_peak.deinit();
-    }
-};
-
-pub const ChallengeTierceConfig = struct {
-    challenge_tierce: ArrayList(ChallengeTierce),
-
-    pub fn deinit(self: *ChallengeTierceConfig) void {
-        for (self.challenge_tierce.items) |*challenge| {
-            challenge.npc_monster_id_list.deinit();
-            challenge.event_id_list.deinit();
-        }
-        self.challenge_tierce.deinit();
     }
 };
 
@@ -165,34 +144,6 @@ pub fn parseChallengePeakConfig(root: std.json.Value, allocator: Allocator) anye
     }
     return ChallengePeakConfig{
         .challenge_peak = challenge_config,
-    };
-}
-
-pub fn parseChallengeTierceConfig(root: std.json.Value, allocator: Allocator) anyerror!ChallengeTierceConfig {
-    var challenge_config = ArrayList(ChallengeTierce).init(allocator);
-    for (root.object.get("challenge_tierce_config").?.array.items) |challenge_json| {
-        var challenge = ChallengeTierce{
-            .id = @intCast(challenge_json.object.get("ID").?.integer),
-            .tierce_target_id = @intCast(challenge_json.object.get("ChallengeTierceTargetID").?.integer),
-            .npc_monster_id_list = ArrayList(u32).init(allocator),
-            .event_id_list = ArrayList(u32).init(allocator),
-            .target_id = ArrayList(u32).init(allocator),
-            .map_entrance_id = @intCast(challenge_json.object.get("MapEntranceID").?.integer),
-            .maze_group_id = @intCast(challenge_json.object.get("MazeGroupID").?.integer),
-        };
-        for (challenge_json.object.get("NpcMonsterIDList").?.array.items) |npc| {
-            try challenge.npc_monster_id_list.append(@intCast(npc.integer));
-        }
-        for (challenge_json.object.get("EventIDList").?.array.items) |event| {
-            try challenge.event_id_list.append(@intCast(event.integer));
-        }
-        for (challenge_json.object.get("ChallengeTargetID").?.array.items) |target| {
-            try challenge.target_id.append(@intCast(target.integer));
-        }
-        try challenge_config.append(challenge);
-    }
-    return ChallengeTierceConfig{
-        .challenge_tierce = challenge_config,
     };
 }
 

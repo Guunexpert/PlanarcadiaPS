@@ -10,10 +10,10 @@ local function setTextComponent(path, newText)
     return false
 end
 
---setTextComponent(
---    "UIRoot/AboveDialog/BetaHintDialog(Clone)",
---    "<color=#E7DFEB>PlanarcadiaPS is free server</color>"
---)
+setTextComponent(
+   "UIRoot/AboveDialog/BetaHintDialog(Clone)",
+   "<color=#E7DFEB></color>"
+)
 
 setTextComponent(
     "VersionText",

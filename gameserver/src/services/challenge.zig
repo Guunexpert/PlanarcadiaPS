@@ -14,7 +14,6 @@ const Allocator = std.mem.Allocator;
 const CmdID = protocol.CmdID;
 
 const challenge_config = &ConfigManager.global_game_config_cache.challenge_maze_config;
-const challenge_tierce = &ConfigManager.global_game_config_cache.challenge_tierce_config;
 const peak_group = &ConfigManager.global_game_config_cache.challenge_peak_group_config;
 const peak_boss = &ConfigManager.global_game_config_cache.challenge_peak_boss_config;
 
@@ -101,25 +100,6 @@ pub fn onLeaveChallengePeak(session: *Session, _: *const Packet, allocator: Allo
     });
 }
 
-pub fn onLeaveChallengeTierce(session: *Session, _: *const Packet, allocator: Allocator) !void {
-    var lineup_mgr = LineupManager.LineupManager.init(allocator);
-    var lineup = try lineup_mgr.createLineup();
-    _ = &lineup;
-    var scene_manager = SceneManager.SceneManager.init(allocator);
-    var scene_info = try scene_manager.createScene(20503, 20503001, 2050301, 1029);
-    _ = &scene_info;
-    try session.send(CmdID.CmdQuitBattleScNotify, protocol.QuitBattleScNotify{});
-    try session.send(CmdID.CmdEnterSceneByServerScNotify, protocol.EnterSceneByServerScNotify{
-        .reason = protocol.EnterSceneReason.ENTER_SCENE_REASON_NONE,
-        .lineup = lineup,
-        .scene = scene_info,
-    });
-    Logic.Challenge().resetChallengeState();
-    try session.send(CmdID.CmdLeaveChallengeTierceScRsp, protocol.LeaveChallengeTierceScRsp{
-        .retcode = 0,
-    });
-}
-
 pub fn onGetCurChallengeScRsp(session: *Session, _: *const Packet, allocator: Allocator) !void {
     var rsp = protocol.GetCurChallengeScRsp.init(allocator);
     var lineup_manager = LineupManager.ChallengeLineupManager.init(allocator);
@@ -147,38 +127,24 @@ pub fn onStartChallenge(session: *Session, packet: *const Packet, allocator: All
     const req = try packet.getProto(protocol.StartChallengeCsReq, allocator);
     defer req.deinit();
     var rsp = protocol.StartChallengeScRsp.init(allocator);
-    var first_lineup = ArrayList(u32).init(allocator);
-    var second_lineup = ArrayList(u32).init(allocator);
     if (Logic.CustomMode().CustomMode()) {
         Logic.Challenge().SetChallengeID(Logic.CustomMode().GetCustomChallengeID());
         Logic.Challenge().SetChallengeBuffID(Logic.CustomMode().GetCustomBuffID());
         if (Logic.CustomMode().FirstNode()) {
-            for (req.avatar_lineup_first.items) |first| {
-                try first_lineup.append(first.id);
-            }
-            try Logic.Challenge().AddAvatar(first_lineup.items);
+            try Logic.Challenge().AddAvatar(req.first_lineup.items);
         } else {
-            for (req.avatar_lineup_second.items) |second| {
-                try second_lineup.append(second.id);
-            }
-            try Logic.Challenge().AddAvatar(second_lineup.items);
+            try Logic.Challenge().AddAvatar(req.second_lineup.items);
         }
     } else {
         Logic.Challenge().SetChallengeID(req.challenge_id);
         if (Logic.CustomMode().FirstNode()) {
-            for (req.avatar_lineup_first.items) |first| {
-                try first_lineup.append(first.id);
-            }
-            try Logic.Challenge().AddAvatar(first_lineup.items);
+            try Logic.Challenge().AddAvatar(req.first_lineup.items);
             if (Logic.Challenge().GameModePF())
                 Logic.Challenge().SetChallengeBuffID(req.stage_info.?.KKNBOACNCON.?.story_info.buff_one);
             if (Logic.Challenge().GameModeAS())
                 Logic.Challenge().SetChallengeBuffID(req.stage_info.?.KKNBOACNCON.?.boss_info.buff_one);
         } else {
-            for (req.avatar_lineup_second.items) |second| {
-                try second_lineup.append(second.id);
-            }
-            try Logic.Challenge().AddAvatar(second_lineup.items);
+            try Logic.Challenge().AddAvatar(req.second_lineup.items);
             if (Logic.Challenge().GameModePF())
                 Logic.Challenge().SetChallengeBuffID(req.stage_info.?.KKNBOACNCON.?.story_info.buff_two);
             if (Logic.Challenge().GameModeAS())
@@ -207,6 +173,7 @@ pub fn onStartChallenge(session: *Session, packet: *const Packet, allocator: All
         ids[4],
         ids[5],
         ids[6],
+        ids[7],
     );
     _ = &scene_info;
 
@@ -262,7 +229,7 @@ pub fn onGetChallengePeakData(session: *Session, _: *const Packet, allocator: Al
         try reward.append(@intCast(i));
     }
     var ava = ArrayList(u32).init(allocator);
-    try ava.appendSlice(&[_]u32{1508});
+    try ava.appendSlice(&[_]u32{1505});
 
     const BossType = @TypeOf(peak_boss.challenge_peak_boss_config.items[0]);
     var boss_map = std.AutoHashMap(u32, *const BossType).init(allocator);
@@ -273,7 +240,7 @@ pub fn onGetChallengePeakData(session: *Session, _: *const Packet, allocator: Al
     for (peak_group.challenge_peak_group.items) |id| {
         if (boss_map.get(id.boss_level_id)) |boss| {
             var data = protocol.ChallengePeakGroup.init(allocator);
-            const unk = ArrayList(protocol.ABCHBKBKCDF).init(allocator);
+            const unk2 = ArrayList(u32).init(allocator);
             data.peak_group_id = id.id;
             data.taken_star_rewards = reward;
             data.count_of_peaks = 3;
@@ -290,8 +257,8 @@ pub fn onGetChallengePeakData(session: *Session, _: *const Packet, allocator: Al
                     .best_cycle_count = 0,
                     .buff_id = boss.buff_list.items[0],
                     .peak_avatar_id_list = ava,
-                    .LAMPCACOCHP = ava,
-                    .EBNNJAEPBGD = unk,
+                    .EBNNJAEPBGD = ArrayList(protocol.ABCHBKBKCDF).init(allocator),
+                    .LAMPCACOCHP = unk2,
                 },
             };
             try rsp.challenge_peak_groups.append(data);
@@ -300,46 +267,6 @@ pub fn onGetChallengePeakData(session: *Session, _: *const Packet, allocator: Al
     }
     try session.send(CmdID.CmdGetChallengePeakDataScRsp, rsp);
 }
-pub fn onGetChallengeTierceController(session: *Session, _: *const Packet, allocator: Allocator) !void {
-    var rsp = protocol.GetChallengeTierceControllerScRsp.init(allocator);
-    rsp.retcode = 0;
-    try session.send(CmdID.CmdGetChallengeTierceControllerScRsp, rsp);
-}
-pub fn onGetChallengeTierceData(session: *Session, _: *const Packet, allocator: Allocator) !void {
-    var rsp = protocol.GetChallengeTierceDataScRsp.init(allocator);
-    rsp.retcode = 0;
-
-    for (challenge_tierce.challenge_tierce.items) |info| {
-        var data = protocol.ChallengeTierceData.init(allocator);
-        data.challenge_id = info.id;
-        data.is_passed = true;
-        for (info.target_id.items) |target| {
-            try data.finished_target_list.append(target);
-        }
-        try data.finished_target_list.append(info.tierce_target_id);
-        for (0..3) |index| {
-            var result = protocol.ChallengeTierceStageData.init(allocator);
-            result.end_status = .BATTLE_END_WIN;
-            result.stage_index = @intCast(index);
-            if (info.id > 20000 and info.id < 30000) {
-                result.score_id = 40000;
-            } else if (info.id > 30000) {
-                result.score_id = 4000;
-            }
-            var stage_info = protocol.ChallengeTierceStageInfo.init(allocator);
-            stage_info.stage_index = @intCast(index);
-            var lineup = protocol.AvatarIdentifier.init(allocator);
-            lineup.id = 1508 + @as(u32, @intCast(index));
-            lineup.avatar_type = .AVATAR_FORMAL_TYPE;
-            try stage_info.lineup.append(lineup);
-            try data.stage_info_list.append(stage_info);
-            try data.result_list.append(result);
-        }
-        try rsp.challenge_info_list.append(data);
-    }
-    try session.send(CmdID.CmdGetChallengeTierceDataScRsp, rsp);
-}
-
 pub fn onReStartChallengePeak(session: *Session, _: *const Packet, _: Allocator) !void {
     try session.send(CmdID.CmdReStartChallengePeakScRsp, protocol.ReStartChallengePeakScRsp{
         .retcode = 0,
@@ -396,6 +323,7 @@ pub fn onStartChallengePeak(session: *Session, packet: *const Packet, allocator:
         ids[3],
         ids[4],
         ids[5],
+        ids[6],
     );
     _ = &scene_info;
     try session.send(CmdID.CmdEnterSceneByServerScNotify, protocol.EnterSceneByServerScNotify{
@@ -443,7 +371,7 @@ pub fn onGetFriendBattleRecordDetail(session: *Session, packet: *const Packet, a
     rsp.uid = req.uid;
     var record_list = ArrayList(protocol.ChallengeAvatarInfo).init(allocator);
     try record_list.appendSlice(&[_]protocol.ChallengeAvatarInfo{
-        .{ .level = 80, .index = 0, .id = 1508, .avatar_type = protocol.AvatarType.AVATAR_UPGRADE_AVAILABLE_TYPE },
+        .{ .level = 80, .index = 0, .id = 1505, .avatar_type = protocol.AvatarType.AVATAR_UPGRADE_AVAILABLE_TYPE },
     });
 
     const BossType = @TypeOf(peak_boss.challenge_peak_boss_config.items[0]);
@@ -455,93 +383,19 @@ pub fn onGetFriendBattleRecordDetail(session: *Session, packet: *const Packet, a
 
     for (peak_group.challenge_peak_group.items) |group| {
         if (boss_map.get(group.boss_level_id)) |boss| {
-            var peak_record = protocol.DBFHOCOBPMK.init(allocator);
-            peak_record.group_id = group.id;
-            peak_record.CDFFIGJLGMM = .{
-                .buff_id = boss.buff_list.items[0],
-                .peak_id = group.boss_level_id,
-                .HAMDKIHGKGO = true,
-                .CFLDOMPACKI = true,
-                .MCJNLLBBDHN = std.ArrayList(u32).init(allocator),
-                .lineup = .{ .avatar_list = record_list },
+            const peak_record = protocol.DBFHOCOBPMK{
+                .HDCHFBKDCEB = ArrayList(protocol.PlayerChallengePeakRecordMobData).init(allocator),
+                .group_id = group.id,
+                .CDFFIGJLGMM = .{
+                    .MCJNLLBBDHN = ArrayList(u32).init(allocator),
+                    .buff_id = boss.buff_list.items[0],
+                    .peak_id = group.boss_level_id,
+                    .best_cycle_count = 0,
+                    .lineup = .{ .avatar_list = record_list },
+                },
             };
             try rsp.LGIBJLFBFCG.append(peak_record);
         }
     }
     try session.send(CmdID.CmdGetFriendBattleRecordDetailScRsp, rsp);
-}
-//CHALLENGE TIERCE WIP
-pub fn onStartChallengeTierce(session: *Session, packet: *const Packet, allocator: Allocator) !void {
-    const req = try packet.getProto(protocol.StartChallengeTierceCsReq, allocator);
-    defer req.deinit();
-    std.log.debug("REQ CHALLENGE ID: {}, IS SINGLE STAGE: {}, STAGE INDEX: {}", .{ req.challenge_id, req.is_single_stage, req.stage_index });
-
-    Logic.Challenge().SetChallengeID(req.challenge_id);
-
-    if (req.is_single_stage == false) {
-        try Logic.Challenge().SaveStageInfoList(req.challenge_id, req.stage_info_list);
-    }
-
-    try Logic.Challenge().LoadStageInfo(req.challenge_id, req.stage_index);
-
-    var lineup_manager = LineupManager.ChallengeLineupManager.init(allocator);
-    var lineup_info = try lineup_manager.createLineup(Logic.Challenge().GetAvatarIDs());
-    _ = &lineup_info;
-
-    var challenge_manager = ChallengeManager.ChallengeManager.init(allocator);
-    var cur_challenge_info = try challenge_manager.createChallengeTierce(
-        Logic.Challenge().GetChallengeID(),
-        req.is_single_stage,
-        req.stage_index,
-        Logic.Challenge().GetChallengeBuffID(),
-        lineup_info,
-    );
-    _ = &cur_challenge_info;
-
-    const ids = Logic.Challenge().GetSceneIDs();
-    var scene_challenge_manager = SceneManager.ChallengeSceneManager.init(allocator);
-    var scene_info = try scene_challenge_manager.createScene(
-        Logic.Challenge().GetAvatarIDs(),
-        ids[0],
-        ids[1],
-        ids[2],
-        ids[3],
-        ids[4],
-        ids[5],
-        ids[6],
-    );
-    _ = &scene_info;
-
-    var rsp = protocol.StartChallengeTierceScRsp.init(allocator);
-    rsp.retcode = 0;
-    rsp.scene = scene_info;
-    rsp.challenge_tierce_info = cur_challenge_info;
-    Logic.Challenge().SetChallenge();
-    const anchor_motion = SceneManager.ChallengeSceneManager.getAnchorMotion(scene_info.entry_id);
-    if (anchor_motion) |motion| {
-        for (scene_info.entity_group_list.items) |*group| {
-            for (group.entity_list.items) |*entity| {
-                if (entity.entity) |ent| if (ent == .actor) {
-                    try session.send(
-                        CmdID.CmdSceneEntityMoveScNotify,
-                        protocol.SceneEntityMoveScNotify{
-                            .entity_id = entity.entity_id,
-                            .entry_id = scene_info.entry_id,
-                            .motion = motion,
-                        },
-                    );
-                };
-            }
-        }
-    }
-    try session.send(CmdID.CmdStartChallengeTierceScRsp, rsp);
-}
-
-pub fn onSetChallengeTierceLineup(session: *Session, packet: *const Packet, allocator: Allocator) !void {
-    const req = try packet.getProto(protocol.SetChallengeTierceLineupCsReq, allocator);
-    defer req.deinit();
-    try Logic.Challenge().SaveStageInfoList(req.challenge_id, req.stage_info_list);
-    try session.send(CmdID.CmdSetChallengeTierceLineupScRsp, protocol.SetChallengeTierceLineupScRsp{
-        .retcode = 0,
-    });
 }

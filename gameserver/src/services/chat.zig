@@ -18,9 +18,9 @@ pub fn onGetFriendListInfo(session: *Session, _: *const Packet, allocator: Alloc
 
     var assist_list = ArrayList(protocol.AssistSimpleInfo).init(allocator);
     try assist_list.appendSlice(&[_]protocol.AssistSimpleInfo{
-        .{ .pos = 0, .level = 80, .avatar_id = 1510, .dressed_skin_id = 0 },
-        .{ .pos = 1, .level = 80, .avatar_id = 1508, .dressed_skin_id = 0 },
-        .{ .pos = 2, .level = 80, .avatar_id = 1505, .dressed_skin_id = 0 },
+        .{ .pos = 0, .level = 80, .avatar_id = 1505, .dressed_skin_id = 0 },
+        .{ .pos = 1, .level = 80, .avatar_id = 1502, .dressed_skin_id = 0 },
+        .{ .pos = 2, .level = 80, .avatar_id = 1506, .dressed_skin_id = 0 },
     });
 
     var friend = protocol.FriendSimpleInfo.init(allocator);
@@ -30,11 +30,11 @@ pub fn onGetFriendListInfo(session: *Session, _: *const Packet, allocator: Alloc
     friend.is_marked = true;
     friend.player_info = protocol.PlayerSimpleInfo{
         .personal_card = 253001,
-        .signature = .{ .Const = "Anjai mabar" },
-        .nickname = .{ .Const = "Rin Tohsaka" },
+        .signature = .{ .Const = "Hai Trailblazer" },
+        .nickname = .{ .Const = "PlanarcadiaPS" },
         .level = 70,
         .uid = 2000,
-        .head_icon = 200140,
+        .head_icon = 200139,
         .head_frame_info = .{
             .head_frame_expire_time = 4294967295,
             .head_frame_item_id = 226004,
@@ -76,7 +76,7 @@ pub fn onGetAiPamChatHistory(session: *Session, _: *const Packet, allocator: All
     rsp.retcode = 0;
     rsp.target_side = 1;
     try rsp.JPCMGNGNONJ.appendSlice(&[_]protocol.ChatMessageData{
-        try makeTextChat(allocator, 2000, "Rin Tohsaka beloved"),
+        try makeTextChat(allocator, 2000, "Nothing here yet"),
     });
 
     try session.send(CmdID.CmdGetAiPamChatHistoryScRsp, rsp);
@@ -101,34 +101,32 @@ fn makeTextChat(
         .message_datas = datas,
         .CKHPFFENOBE = .{
             .role_id = uid,
-            .KPOBMNLKLOK = .HCMEILLLKBD_JDOAIPKBIPE,
         },
     };
 }
 
 pub fn onSendMsg(session: *Session, packet: *const Packet, allocator: Allocator) !void {
-    std.debug.print("Received packet: {any}\n", .{packet});
-    const req = protocol.SendMsgCsReq.init(allocator);
+    const req = try packet.getProto(protocol.SendMsgCsReq, allocator);
     defer req.deinit();
 
-    std.debug.print("Decoded request: {any}\n", .{req});
-    std.debug.print("Raw packet body: {any}\n", .{packet.body});
     var msg_text: []const u8 = "";
-    if (packet.body.len > 9 and packet.body[11] == 47) {
-        msg_text = packet.body[11 .. packet.body.len - 4];
+    if (req.message_datas) |message| {
+        if (message.chat_data) |chat_data| {
+            if (chat_data.extend_type) |extend_type| {
+                switch (extend_type) {
+                    .message_text => |text| msg_text = text.getSlice(),
+                    else => {},
+                }
+            }
+        }
     }
-    std.debug.print("Manually extracted message text: '{s}'\n", .{msg_text});
 
     if (msg_text.len > 0) {
         if (std.mem.indexOf(u8, msg_text, "/") != null) {
-            std.debug.print("Message contains a '/'\n", .{});
             try commandhandler.handleCommand(session, msg_text, allocator);
         } else {
-            std.debug.print("Message does not contain a '/'\n", .{});
             try commandhandler.sendMessage(session, msg_text, allocator);
         }
-    } else {
-        std.debug.print("Empty message received\n", .{});
     }
 
     var rsp = protocol.SendMsgScRsp.init(allocator);
