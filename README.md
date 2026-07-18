@@ -8,11 +8,9 @@
 - Run the server ```zig build run-program```
 - Build release ```zig build -Doptimize=ReleaseSafe```
 
-# List 
+# List that i added
 - [x] Lua Execute
 - [x] SRTools sync
-- [x] Challenge Tierce (Starward Mode)
-- [x] Dummy Command Responses
 
 For HSR 4.4.51
 
