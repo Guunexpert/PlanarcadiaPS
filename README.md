@@ -12,8 +12,8 @@
 - [x] Lua Execute
 - [x] SRTools sync
 
-For HSR 4.4.51
+For HSR 4.5.51
 
 # Thanks To
 - [Reversed Rooms](https://discord.gg/reversedrooms)
-- [Based On Project](https://git.xeondev.com/HonkaiSlopRail/himeko-nova-sr)
+- [Based On Project](https://git.xeondev.com/HonkaiSlopRail/pearl-sr)
