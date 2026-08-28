@@ -17,5 +17,5 @@ setTextComponent(
 
 setTextComponent(
     "VersionText",
-    "<color=#40EDE7>Robin</color> <color=FFFFFF>Summerretto</color>"
+    "<color=#40EDE7>Pearl</color> <color=FFFFFF></color>"
 )

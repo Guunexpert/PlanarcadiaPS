@@ -127,7 +127,7 @@ pub const SceneManager = struct {
         scene_info.scene_identifier = .{ .floor_id = floor_id };
 
         for (saved_values_config.floor_saved_values.items) |saved| {
-            if (saved.floor_id == floor_id) {
+            if (saved.floor_id == floor_id and plane_id != 10000) {
                 for (saved.saved_values.items) |values| {
                     try scene_info.floor_saved_data.append(.{
                         .key = .{ .Const = values.name orelse "" },
@@ -151,7 +151,7 @@ pub const SceneManager = struct {
                 try scene_info.entity_group_list.append(scene_group);
                 break;
             }
-            if (sceneConf.planeID == plane_id and sceneConf.entryID == entry_id) {
+            if (sceneConf.planeID == plane_id and sceneConf.entryID == entry_id and plane_id != 10000) {
                 try addPropEntities(self.allocator, &group_map, sceneConf.props.items, &generator);
                 try addMonsterEntities(self.allocator, &group_map, sceneConf.monsters.items, &generator);
             }
@@ -161,7 +161,7 @@ pub const SceneManager = struct {
             const g = entry.value_ptr.*;
             try scene_info.entity_group_list.append(g);
             try scene_info.entity_list.appendSlice(g.entity_list.items);
-            try scene_info.opened_chests_list.append(g.group_id);
+            try scene_info.opened_chest_id_list.append(g.group_id);
             try scene_info.custom_data_list.append(.{ .group_id = g.group_id });
         }
         const ranges = [_][2]usize{ .{ 0, 101 }, .{ 10000, 10051 }, .{ 20000, 20001 }, .{ 30000, 30020 } };

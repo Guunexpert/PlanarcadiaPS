@@ -14956,6 +14956,114 @@
       "RewardID": 100
     },
     {
+      "GroupID": 10310,
+      "TutorialGuideIDList": [1031001, 1031002, 1031003],
+      "TutorialType": 3,
+      "TutorialShowType": "BattleStart",
+      "TriggerParams": [
+        {
+          "TriggerType": "EnterBattleByStageID",
+          "TriggerParam": "431001"
+        }
+      ],
+      "FinishTriggerParams": [],
+      "MessageText": {
+        "Hash": -958258536,
+        "Hash64": 10443295050007488147
+      },
+      "RewardID": 100
+    },
+    {
+      "GroupID": 10311,
+      "TutorialGuideIDList": [1031101, 1031102, 1031103],
+      "TutorialType": 3,
+      "TutorialShowType": "BattleStart",
+      "TriggerParams": [
+        {
+          "TriggerType": "EnterBattleByStageID",
+          "TriggerParam": "431002"
+        }
+      ],
+      "FinishTriggerParams": [],
+      "MessageText": {
+        "Hash": 607825405,
+        "Hash64": 380715550829891796
+      },
+      "RewardID": 100
+    },
+    {
+      "GroupID": 10312,
+      "TutorialGuideIDList": [1031201, 1031202, 1031203],
+      "TutorialType": 3,
+      "TutorialShowType": "BattleStart",
+      "TriggerParams": [
+        {
+          "TriggerType": "EnterBattleByStageID",
+          "TriggerParam": "431004"
+        }
+      ],
+      "FinishTriggerParams": [],
+      "MessageText": {
+        "Hash": 204540878,
+        "Hash64": 15394208644441832104
+      },
+      "RewardID": 100
+    },
+    {
+      "GroupID": 10313,
+      "TutorialGuideIDList": [1031301, 1031302, 1031303],
+      "TutorialType": 3,
+      "TutorialShowType": "BattleStart",
+      "TriggerParams": [
+        {
+          "TriggerType": "EnterBattleByStageID",
+          "TriggerParam": "431003"
+        }
+      ],
+      "FinishTriggerParams": [],
+      "MessageText": {
+        "Hash": 1770624819,
+        "Hash64": 12344484705120107002
+      },
+      "RewardID": 100
+    },
+    {
+      "GroupID": 10314,
+      "TutorialGuideIDList": [1031401, 1031402, 1031403],
+      "TutorialType": 3,
+      "TutorialShowType": "BattleStart",
+      "TriggerParams": [
+        {
+          "TriggerType": "EnterBattleByStageID",
+          "TriggerParam": "431005"
+        }
+      ],
+      "FinishTriggerParams": [],
+      "MessageText": {
+        "Hash": 1011109932,
+        "Hash64": 480098814795333063
+      },
+      "RewardID": 100
+    },
+    {
+      "GroupID": 10315,
+      "TutorialGuideIDList": [1031501, 1031502, 1031503],
+      "TutorialType": 3,
+      "TutorialShowType": "AutoShow",
+      "TriggerParams": [
+        {
+          "TriggerType": "ShowUIPage",
+          "TriggerParam": "FinalityBattleEntrancePage"
+        }
+      ],
+      "FinishTriggerParams": [],
+      "MessageText": {
+        "Hash": -1717773423,
+        "Hash64": 3870714728507819161
+      },
+      "RewardID": 100
+    },
+    {
       "GroupID": 10401,
       "TutorialGuideIDList": [1040101],
       "TutorialType": 2,
@@ -14973,6 +15081,37 @@
         "Hash64": 7009125185095580573
       },
       "RewardID": 201
+    },
+    {
+      "GroupID": 45001,
+      "TutorialGuideIDList": [4500101, 4500102, 4500103],
+      "TutorialType": 3,
+      "TutorialShowType": "NonTutorial",
+      "TriggerParams": [],
+      "FinishTriggerParams": [],
+      "MessageText": {
+        "Hash": 556189571,
+        "Hash64": 18286186341551527973
+      },
+      "RewardID": 100
+    },
+    {
+      "GroupID": 10502,
+      "TutorialGuideIDList": [1050201, 1050202],
+      "TutorialType": 1,
+      "TutorialShowType": "BattleStart",
+      "TriggerParams": [
+        {
+          "TriggerType": "TaskUnlock",
+          "TriggerParam": "TantaoInvasion"
+        }
+      ],
+      "FinishTriggerParams": [],
+      "MessageText": {
+        "Hash": -1838732947,
+        "Hash64": 6955586708204124249
+      },
+      "RewardID": 100
     }
   ]
 }

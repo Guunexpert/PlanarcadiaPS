@@ -1738,6 +1738,17 @@
       "FinishSubMissionList": []
     },
     {
+      "ID": 1034108,
+      "EntranceType": "Town",
+      "PlaneID": 20503,
+      "FloorID": 20503001,
+      "StartGroupID": 404,
+      "StartAnchorID": 6,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
       "ID": 1030601,
       "EntranceType": "Town",
       "PlaneID": 10306,
@@ -3240,6 +3251,28 @@
       "FinishSubMissionList": []
     },
     {
+      "ID": 1055105,
+      "EntranceType": "Town",
+      "PlaneID": 10551,
+      "FloorID": 10551001,
+      "StartGroupID": 1,
+      "StartAnchorID": 3,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
+      "ID": 1055151,
+      "EntranceType": "Town",
+      "PlaneID": 10551,
+      "FloorID": 10551001,
+      "StartGroupID": 369,
+      "StartAnchorID": 1,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
       "ID": 1055201,
       "EntranceType": "Town",
       "PlaneID": 10552,
@@ -3408,6 +3441,50 @@
       "FloorID": 20551001,
       "StartGroupID": 1,
       "StartAnchorID": 2,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
+      "ID": 2055104,
+      "EntranceType": "Mission",
+      "PlaneID": 20551,
+      "FloorID": 20551001,
+      "StartGroupID": 47,
+      "StartAnchorID": 1,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
+      "ID": 2056101,
+      "EntranceType": "Mission",
+      "PlaneID": 20561,
+      "FloorID": 20561001,
+      "StartGroupID": 1,
+      "StartAnchorID": 1,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
+      "ID": 2056102,
+      "EntranceType": "Mission",
+      "PlaneID": 20561,
+      "FloorID": 20561001,
+      "StartGroupID": 1,
+      "StartAnchorID": 42,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
+      "ID": 2056103,
+      "EntranceType": "Mission",
+      "PlaneID": 20561,
+      "FloorID": 20561001,
+      "StartGroupID": 39,
+      "StartAnchorID": 1,
       "BeginMainMissionList": [],
       "FinishMainMissionList": [],
       "FinishSubMissionList": []
@@ -3796,6 +3873,26 @@
       "EntranceType": "Explore",
       "PlaneID": 30145,
       "FloorID": 30145001,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
+      "ID": 3014601,
+      "EntranceType": "Explore",
+      "PlaneID": 30146,
+      "FloorID": 30146001,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
+      "ID": 3014602,
+      "EntranceType": "Explore",
+      "PlaneID": 30146,
+      "FloorID": 30146001,
+      "StartGroupID": 8,
+      "StartAnchorID": 2,
       "BeginMainMissionList": [],
       "FinishMainMissionList": [],
       "FinishSubMissionList": []
@@ -5888,6 +5985,15 @@
       "EntranceType": "Explore",
       "PlaneID": 40555,
       "FloorID": 40555001,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
+      "ID": 40561001,
+      "EntranceType": "Explore",
+      "PlaneID": 40561,
+      "FloorID": 40561001,
       "BeginMainMissionList": [],
       "FinishMainMissionList": [],
       "FinishSubMissionList": []
@@ -8688,6 +8794,17 @@
       "PlaneID": 40534,
       "FloorID": 40534001,
       "StartGroupID": 1,
+      "StartAnchorID": 1,
+      "BeginMainMissionList": [],
+      "FinishMainMissionList": [],
+      "FinishSubMissionList": []
+    },
+    {
+      "ID": 40548004,
+      "EntranceType": "Explore",
+      "PlaneID": 20501,
+      "FloorID": 20501001,
+      "StartGroupID": 412,
       "StartAnchorID": 1,
       "BeginMainMissionList": [],
       "FinishMainMissionList": [],

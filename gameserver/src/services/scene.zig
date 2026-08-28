@@ -93,7 +93,7 @@ pub fn onGetSceneMapInfo(session: *Session, packet: *const Packet, allocator: Al
 
         for (res_config.scene_config.items) |sceneConf| {
             if (sceneConf.planeID != info.floor_id / 1000) continue;
-            try map_info.unlock_teleport_list.ensureUnusedCapacity(sceneConf.teleports.items.len);
+            try map_info.unlocked_teleport_list.ensureUnusedCapacity(sceneConf.teleports.items.len);
             try map_info.maze_prop_list.ensureUnusedCapacity(sceneConf.props.items.len);
             try map_info.maze_group_list.ensureUnusedCapacity(sceneConf.props.items.len);
             for (ranges) |range| {
@@ -102,7 +102,7 @@ pub fn onGetSceneMapInfo(session: *Session, packet: *const Packet, allocator: Al
                 }
             }
             for (sceneConf.teleports.items) |teleConf| {
-                try map_info.unlock_teleport_list.append(@intCast(teleConf.teleportId));
+                try map_info.unlocked_teleport_list.append(@intCast(teleConf.teleportId));
             }
             for (sceneConf.props.items) |propConf| {
                 try map_info.maze_prop_list.append(protocol.MazePropState{
@@ -280,6 +280,6 @@ pub fn onSetTrainWorldId(session: *Session, packet: *const Packet, allocator: Al
 
     try session.send(CmdID.CmdSetTrainWorldIdScRsp, protocol.SetTrainWorldIdScRsp{
         .retcode = 0,
-        .CFDCEEMIOCO = req.CFDCEEMIOCO,
+        .train_world_id = req.train_world_id,
     });
 }

@@ -86,7 +86,7 @@ pub fn onSetPlayerOutfit(session: *Session, packet: *const Packet, allocator: Al
     const req = try packet.getProto(protocol.SetPlayerOutfitCsReq, allocator);
     defer req.deinit();
     var sync = protocol.PlayerSyncScNotify.init(allocator);
-    sync.DHKFCDAGHDM = req.DHKFCDAGHDM;
+    sync.player_outfit_data = req.player_outfit_data;
     try session.send(CmdID.CmdPlayerSyncScNotify, sync);
     try session.send(CmdID.CmdSetPlayerOutfitScRsp, protocol.SetPlayerOutfitScRsp{
         .retcode = 0,

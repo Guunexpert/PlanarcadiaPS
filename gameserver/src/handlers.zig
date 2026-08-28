@@ -123,7 +123,7 @@ pub const HandlerList = [_]struct { CmdID, Action }{
     .{ CmdID.CmdSetTrainWorldIdCsReq, scene.onSetTrainWorldId },
     //events
     //.{ CmdID.CmdGetActivityScheduleConfigCsReq, events.onGetActivity },
-    //.{ CmdID.CmdUpdateServerPrefsDataCsReq, events.onUpdateServerPrefsData },
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdUpdateServerPrefsDataCsReq
     //challenge
     .{ CmdID.CmdGetChallengeCsReq, challenge.onGetChallenge },
     .{ CmdID.CmdGetChallengeGroupStatisticsCsReq, challenge.onGetChallengeGroupStatistics },
@@ -135,7 +135,7 @@ pub const HandlerList = [_]struct { CmdID, Action }{
     .{ CmdID.CmdGetChallengePeakDataCsReq, challenge.onGetChallengePeakData },
     .{ CmdID.CmdGetChallengeTierceControllerCsReq, challenge.onGetChallengeTierceController },
     .{ CmdID.CmdGetCurChallengePeakCsReq, challenge.onGetCurChallengePeak },
-    .{ CmdID.CmdTakeChallengeRewardCsReq, challenge.onTakeChallengeReward },
+    .{ CmdID.CmdTakeChallengePeakRewardCsReq, challenge.onTakeChallengeReward }, // patched 4.5.51
     .{ CmdID.CmdStartChallengePeakCsReq, challenge.onStartChallengePeak },
     .{ CmdID.CmdReStartChallengePeakCsReq, challenge.onReStartChallengePeak },
     .{ CmdID.CmdSetChallengePeakMobLineupAvatarCsReq, challenge.onSetChallengePeakMobLineupAvatar },
@@ -185,13 +185,13 @@ const DummyCmdList = [_]struct { CmdID, CmdID }{
     .{ CmdID.CmdGetFriendDevelopmentInfoCsReq, CmdID.CmdGetFriendDevelopmentInfoScRsp },
     .{ CmdID.CmdGetFriendRecommendListInfoCsReq, CmdID.CmdGetFriendRecommendListInfoScRsp },
     //add
-    .{ CmdID.CmdSwitchHandDataCsReq, CmdID.CmdSwitchHandDataScRsp },
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdSwitchHandDataCsReq
     .{ CmdID.CmdRogueArcadeGetInfoCsReq, CmdID.CmdRogueArcadeGetInfoScRsp },
-    //.{ CmdID.CmdGetMissionMessageInfoCsReq, CmdID.CmdGetMissionMessageInfoScRsp },//
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdGetMissionMessageInfoCsReq
     .{ CmdID.CmdTrainPartyGetDataCsReq, CmdID.CmdTrainPartyGetDataScRsp },
     .{ CmdID.CmdQueryProductInfoCsReq, CmdID.CmdQueryProductInfoScRsp },
     .{ CmdID.CmdGetPamSkinDataCsReq, CmdID.CmdGetPamSkinDataScRsp },
-    //.{ CmdID.CmdGetRogueScoreRewardInfoCsReq, CmdID.CmdGetRogueScoreRewardInfoScRsp },
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdGetRogueScoreRewardInfoCsReq
     .{ CmdID.CmdGetQuestRecordCsReq, CmdID.CmdGetQuestRecordScRsp },
     .{ CmdID.CmdGetDailyActiveInfoCsReq, CmdID.CmdGetDailyActiveInfoScRsp },
     .{ CmdID.CmdGetChessRogueNousStoryInfoCsReq, CmdID.CmdGetChessRogueNousStoryInfoScRsp },
@@ -203,10 +203,10 @@ const DummyCmdList = [_]struct { CmdID, CmdID }{
     .{ CmdID.CmdGetShareDataCsReq, CmdID.CmdGetShareDataScRsp },
     .{ CmdID.CmdGetTreasureDungeonActivityDataCsReq, CmdID.CmdGetTreasureDungeonActivityDataScRsp },
     .{ CmdID.CmdGetAetherDivideChallengeInfoCsReq, CmdID.CmdGetAetherDivideChallengeInfoScRsp },
-    //.{ CmdID.CmdGetStrongChallengeActivityDataCsReq, CmdID.CmdGetStrongChallengeActivityDataScRsp },//
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdGetStrongChallengeActivityDataCsReq
     .{ CmdID.CmdGetOfferingInfoCsReq, CmdID.CmdGetOfferingInfoScRsp },
     .{ CmdID.CmdClockParkGetInfoCsReq, CmdID.CmdClockParkGetInfoScRsp },
-    //.{ CmdID.CmdGetGunPlayDataCsReq, CmdID.CmdGetGunPlayDataScRsp },//
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdGetGunPlayDataCsReq
     .{ CmdID.CmdGetTrackPhotoActivityDataCsReq, CmdID.CmdGetTrackPhotoActivityDataScRsp },
     .{ CmdID.CmdGetSwordTrainingDataCsReq, CmdID.CmdGetSwordTrainingDataScRsp },
     .{ CmdID.CmdGetFightFestDataCsReq, CmdID.CmdGetFightFestDataScRsp },
@@ -229,7 +229,7 @@ const DummyCmdList = [_]struct { CmdID, CmdID }{
     .{ CmdID.CmdGetSummonActivityDataCsReq, CmdID.CmdGetSummonActivityDataScRsp },
     .{ CmdID.CmdTarotBookGetDataCsReq, CmdID.CmdTarotBookGetDataScRsp },
     .{ CmdID.CmdGetMarkChestCsReq, CmdID.CmdGetMarkChestScRsp },
-    //.{ CmdID.CmdMatchThreeGetDataCsReq, CmdID.CmdMatchThreeGetDataScRsp },//
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdMatchThreeGetDataCsReq
     //.{ CmdID.CmdUpdateTrackMainMissionCsReq, CmdID.CmdUpdateTrackMainMissionScRsp },
     .{ CmdID.CmdGetNpcMessageGroupCsReq, CmdID.CmdGetNpcMessageGroupScRsp },
     .{ CmdID.CmdGetAllSaveRaidCsReq, CmdID.CmdGetAllSaveRaidScRsp },
@@ -243,12 +243,12 @@ const DummyCmdList = [_]struct { CmdID, CmdID }{
     .{ CmdID.CmdFateQueryCsReq, CmdID.CmdFateQueryScRsp },
     .{ CmdID.CmdGetPlanetFesDataCsReq, CmdID.CmdGetPlanetFesDataScRsp },
     .{ CmdID.CmdParkourGetDataCsReq, CmdID.CmdParkourGetDataScRsp },
-    //.{ CmdID.CmdMatchThreeV2GetDataCsReq, CmdID.CmdMatchThreeV2GetDataScRsp },//
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdMatchThreeV2GetDataCsReq
     .{ CmdID.CmdGetMonopolyInfoCsReq, CmdID.CmdGetMonopolyInfoScRsp },
     .{ CmdID.CmdMonopolyGetRegionProgressCsReq, CmdID.CmdMonopolyGetRegionProgressScRsp },
     .{ CmdID.CmdGetMbtiReportCsReq, CmdID.CmdGetMbtiReportScRsp },
     .{ CmdID.CmdGetDrinkMakerDataCsReq, CmdID.CmdGetDrinkMakerDataScRsp },
-    .{ CmdID.CmdGetAvatarDeliverRewardActivityDataCsReq, CmdID.CmdGetAvatarDeliverRewardActivityDataScRsp },
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdGetAvatarDeliverRewardActivityDataCsReq
     .{ CmdID.CmdMarbleGetDataCsReq, CmdID.CmdMarbleGetDataScRsp },
     .{ CmdID.CmdGetPreAvatarActivityListCsReq, CmdID.CmdGetPreAvatarActivityListScRsp },
     .{ CmdID.CmdGetUnreleasedBlockInfoCsReq, CmdID.CmdGetUnreleasedBlockInfoScRsp }, //
@@ -261,7 +261,7 @@ const DummyCmdList = [_]struct { CmdID, CmdID }{
     .{ CmdID.CmdJoinLineupCsReq, CmdID.CmdJoinLineupScRsp },
     .{ CmdID.CmdQuitLineupCsReq, CmdID.CmdQuitLineupScRsp },
     .{ CmdID.CmdSwapLineupCsReq, CmdID.CmdSwapLineupScRsp },
-    .{ CmdID.CmdRecoverAllLineupCsReq, CmdID.CmdRecoverAllLineupScRsp },
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdRecoverAllLineupCsReq
     //avatar equip/skill
     .{ CmdID.CmdDressAvatarCsReq, CmdID.CmdDressAvatarScRsp },
     .{ CmdID.CmdDressRelicAvatarCsReq, CmdID.CmdDressRelicAvatarScRsp },
@@ -275,7 +275,7 @@ const DummyCmdList = [_]struct { CmdID, CmdID }{
     .{ CmdID.CmdRankUpAvatarCsReq, CmdID.CmdRankUpAvatarScRsp },
     .{ CmdID.CmdUnlockAvatarPathCsReq, CmdID.CmdUnlockAvatarPathScRsp },
     .{ CmdID.CmdSetMultipleAvatarPathsCsReq, CmdID.CmdSetMultipleAvatarPathsScRsp },
-    .{ CmdID.CmdAvatarQuickUpCsReq, CmdID.CmdAvatarQuickUpScRsp },
+    // // 4.5.51 obsolete: // // 4.5.51 obsolete: CmdID.CmdAvatarQuickUpCsReq
     .{ CmdID.CmdSetIsDisplayAvatarInfoCsReq, CmdID.CmdSetIsDisplayAvatarInfoScRsp },
     //relic/equipment
     .{ CmdID.CmdExpUpRelicCsReq, CmdID.CmdExpUpRelicScRsp },

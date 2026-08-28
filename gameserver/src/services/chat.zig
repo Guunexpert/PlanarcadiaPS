@@ -72,13 +72,7 @@ pub fn onPrivateChatHistory(session: *Session, _: *const Packet, allocator: Allo
 
 pub fn onGetAiPamChatHistory(session: *Session, _: *const Packet, allocator: Allocator) !void {
     var rsp = protocol.GetAiPamChatHistoryScRsp.init(allocator);
-
-    rsp.retcode = 0;
-    rsp.target_side = 1;
-    try rsp.JPCMGNGNONJ.appendSlice(&[_]protocol.ChatMessageData{
-        try makeTextChat(allocator, 2000, "jomok jomok mania"),
-    });
-
+    rsp.BDPIMPJOJBK = @enumFromInt(0);
     try session.send(CmdID.CmdGetAiPamChatHistoryScRsp, rsp);
 }
 

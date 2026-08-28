@@ -1,2 +1,2 @@
 @echo
-start zig build run-program
+start zig build -Doptimize=ReleaseSafe

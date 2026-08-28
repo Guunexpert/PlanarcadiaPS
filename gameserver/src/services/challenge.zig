@@ -238,15 +238,12 @@ pub fn onStartChallenge(session: *Session, packet: *const Packet, allocator: All
     }
 }
 pub fn onTakeChallengeReward(session: *Session, packet: *const Packet, allocator: Allocator) !void {
-    const req = try packet.getProto(protocol.TakeChallengeRewardCsReq, allocator);
+    const req = try packet.getProto(protocol.TakeChallengePeakRewardCsReq, allocator);
     defer req.deinit();
-    var rsp = protocol.TakeChallengeRewardScRsp.init(allocator);
-    var reward = protocol.TakenChallengeRewardInfo.init(allocator);
-    if (req.group_id > 2000) reward.star_count = 12 else reward.star_count = 36;
-    try rsp.taken_reward_list.append(reward);
+    var rsp = protocol.TakeChallengePeakRewardScRsp.init(allocator);
     rsp.retcode = 0;
-    rsp.group_id = req.group_id;
-    try session.send(CmdID.CmdTakeChallengeRewardScRsp, rsp);
+    rsp.peak_group_id = req.peak_group_id;
+    try session.send(CmdID.CmdTakeChallengePeakRewardScRsp, rsp);
 }
 
 pub fn onGetCurChallengePeak(session: *Session, _: *const Packet, allocator: Allocator) !void {
