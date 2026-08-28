@@ -13,7 +13,7 @@
 - [x] SRTools sync
 
 For HSR 4.5.51
-
+PROGRESSION
 # Thanks To
 - [Reversed Rooms](https://discord.gg/reversedrooms)
 - [Based On Project](https://git.xeondev.com/HonkaiSlopRail/pearl-sr)
