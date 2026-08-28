@@ -22,10 +22,11 @@ jobs:
           BRANCH: ${{ github.ref_name }}
           COMMIT_URL: ${{ github.event.head_commit.url }}
         run: |
-          # Safely fetch the last commit message text
-          MSG=$(git log -1 --pretty=%B | head -n 1)
+          # 1. Fetch message and save it to an environment variable to pass to Python
+          COMMIT_MSG=$(git log -1 --pretty=%B | head -n 1)
+          export COMMIT_MSG
           
-          # Use an inline python script to safely build and POST the json payload
+          # 2. Run Python script using safe environment access
           python3 -c "
           import os, json, requests
           
@@ -38,13 +39,15 @@ jobs:
           repo = os.environ.get('REPO')
           branch = os.environ.get('BRANCH')
           commit_url = os.environ.get('COMMIT_URL')
+          msg = os.environ.get('COMMIT_MSG', '')
+          
           diff_url = f'{commit_url}.diff'
           avatar_url = f'https://github.com{author}.png'
           
           payload = {
               'embeds': [{
                   'title': f'🔨 New Commit in {repo} [{branch}]',
-                  'description': f'**Author:** {author}\n**Message:** '"'''$MSG'''"'',
+                  'description': f'**Author:** {author}\n**Message:** {msg}',
                   'url': commit_url,
                   'color': 5814783,
                   'thumbnail': {'url': avatar_url},
