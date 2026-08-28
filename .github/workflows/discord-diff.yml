@@ -1,0 +1,47 @@
+name: Send Git Diff to Discord
+
+on:
+  push:
+    branches:
+      - main  # Change this if your default branch is called master
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # Fetches the current and previous commit to calculate the diff
+
+      - name: Extract Commit Details and Send to Discord
+        env:
+          DISCORD_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          # Get commit details
+          AUTHOR="${{ github.actor }}"
+          MSG=$(git log -1 --pretty=%B | head -n 1)
+          REPO="${{ github.repository }}"
+          BRANCH="${{ github.ref_name }}"
+          COMMIT_URL="${{ github.event.head_commit.url }}"
+          DIFF_URL="${COMMIT_URL}.diff"
+
+          # Construct a clean JSON payload for the Discord Embed
+          PAYLOAD=$(cat <<EOF
+          {
+            "embeds": [{
+              "title": "🔨 New Commit in ${REPO} [${BRANCH}]",
+              "description": "**Author:** ${AUTHOR}\n**Message:** ${MSG}",
+              "url": "${COMMIT_URL}",
+              "color": 5814783,
+              "fields": [{
+                "name": "📄 View Changes",
+                "value": "[Click here to view raw git diff](${DIFF_URL})"
+              }]
+            }]
+          }
+          EOF
+          )
+
+          # Send it over to Discord via cURL
+          curl -H "Content-Type: application/json" -X POST -d "$PAYLOAD" "$DISCORD_URL"
