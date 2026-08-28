@@ -20,6 +20,7 @@ jobs:
         run: |
           # Get commit details
           AUTHOR="${{ github.actor }}"
+          AVATAR_URL="https://github.com{AUTHOR}.png"
           MSG=$(git log -1 --pretty=%B | head -n 1)
           REPO="${{ github.repository }}"
           BRANCH="${{ github.ref_name }}"
@@ -34,6 +35,9 @@ jobs:
               "description": "**Author:** ${AUTHOR}\n**Message:** ${MSG}",
               "url": "${COMMIT_URL}",
               "color": 5814783,
+              "thumbnail": {
+                "url": "${AVATAR_URL}"
+              },
               "fields": [{
                 "name": "📄 View Changes",
                 "value": "[Click here to view changes](${DIFF_URL})"
