@@ -36,7 +36,7 @@ jobs:
               "color": 5814783,
               "fields": [{
                 "name": "📄 View Changes",
-                "value": "[Click here to view raw git diff](${DIFF_URL})"
+                "value": "[Click here to view changes](${DIFF_URL})"
               }]
             }]
           }
