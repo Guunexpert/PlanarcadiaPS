@@ -8,12 +8,14 @@
 - Run the server ```zig build run-program```
 - Build release ```zig build -Doptimize=ReleaseSafe```
 
+<img src="skrinsot.png" alt="pearl" align="center"></img>
+
 # List that i added
 - [x] Lua Execute
 - [x] SRTools sync
 
 For HSR 4.5.51
-PROGRESSION
+
 # Thanks To
 - [Reversed Rooms](https://discord.gg/reversedrooms)
 - [Based On Project](https://git.xeondev.com/HonkaiSlopRail/pearl-sr)
