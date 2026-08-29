@@ -1,6 +1,5 @@
 const std = @import("std");
 const builtin = @import("builtin");
-const native_os = builtin.os.tag;
 
 const color = struct {
     const blue = "\x1b[36m"; // cyan / sky blue
@@ -189,10 +188,9 @@ pub fn main() !void {
         \\
     ) catch {};
     // Pink notices at the very start.
-    std.debug.print("{s}PlanarcadiaPS by gugun, reimplementation game server from HimekoNovaSR{s}\n", .{ color.blue, color.reset });
-    std.debug.print("{s}{s}\n", .{ color.blue, color.reset });
-    //std.debug.print("{s}Welcome to PlanarcadiaPS!{s}\n", .{ color.blue, color.reset });
-    //std.debug.print("{s}Enjoy the game!{s}\n", .{ color.blue, color.reset });
+    std.debug.print("{s}PlanarcadiaPS by gugun , reimplementation game server from EvanesciaSR{s}\n", .{ color.blue, color.reset });
+    std.debug.print("{s}Welcome to PlanarcadiaPS!{s}\n", .{ color.blue, color.reset });
+    std.debug.print("{s}Enjoy the game!{s}\n", .{ color.blue, color.reset });
 
     // Device info: HWID and IP addresses.
     const hwid_opt: ?[]u8 = computeHwId(allocator) catch |err| blk: {
@@ -200,7 +198,7 @@ pub fn main() !void {
         break :blk null;
     };
     defer if (hwid_opt) |v| allocator.free(v);
-    // const hwid = hwid_opt orelse "unknown";
+    const hwid = hwid_opt orelse "unknown";
 
     const ip_list_opt: ?[]const []const u8 = collectIpStrings(allocator) catch |err| blk: {
         std.log.err("Failed to collect IP addresses: {s}", .{@errorName(err)});
@@ -212,7 +210,7 @@ pub fn main() !void {
     };
     const ip_list = ip_list_opt orelse &[_][]const u8{"unknown"};
 
-    // std.log.info("Device HWID: {s}", .{hwid});
+    std.log.info("Device HWID: {s}", .{hwid});
     for (ip_list) |ip| {
         std.log.info("Detected IP: {s}", .{ip});
     }
@@ -317,4 +315,4 @@ pub fn main() !void {
         try stdout.print("{s}", .{prompt_prefix});
         io_mutex.unlock();
     }
-}                                                             
+}

@@ -76,5 +76,6 @@ pub fn sendMessage(session: *Session, msg: []const u8, allocator: Allocator) !vo
             .KPOBMNLKLOK = .HCMEILLLKBD_JDOAIPKBIPE,
         },
     };
+    std.log.debug("{s}", .{msg}); //tandain
     try session.send(CmdID.CmdRevcMsgScNotify, chat);
 }

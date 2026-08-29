@@ -23,8 +23,8 @@ pub fn main() !void {
     .port = PORT,
     .request = .{
         .max_body_size = 16 * 1024 * 1024,
-    },
-}, {});
+        },
+    }, {});
 
     defer server.stop();
     defer server.deinit();

@@ -106,8 +106,12 @@ pub fn onLeaveChallengeTierce(session: *Session, _: *const Packet, allocator: Al
     var lineup = try lineup_mgr.createLineup();
     _ = &lineup;
     var scene_manager = SceneManager.SceneManager.init(allocator);
-    var scene_info = try scene_manager.createScene(20503, 20503001, 2050301, 1029);
-    _ = &scene_info;
+    const challenge_mode = Logic.Challenge().GetChallengeMode(); // tandain ini
+    const scene_info: protocol.SceneInfo = switch (challenge_mode) {
+        0 => try scene_manager.createScene(10000, 10000000, 100000104, 2206),
+        1 => try scene_manager.createScene(10202, 10202001, 102020107, 0),
+        else => try scene_manager.createScene(10304, 10304001, 1030402, 0),
+    };
     try session.send(CmdID.CmdQuitBattleScNotify, protocol.QuitBattleScNotify{});
     try session.send(CmdID.CmdEnterSceneByServerScNotify, protocol.EnterSceneByServerScNotify{
         .reason = protocol.EnterSceneReason.ENTER_SCENE_REASON_NONE,
@@ -238,12 +242,15 @@ pub fn onStartChallenge(session: *Session, packet: *const Packet, allocator: All
     }
 }
 pub fn onTakeChallengeReward(session: *Session, packet: *const Packet, allocator: Allocator) !void {
-    const req = try packet.getProto(protocol.TakeChallengePeakRewardCsReq, allocator);
+    const req = try packet.getProto(protocol.TakeChallengeCumulativeRewardCsReq, allocator);
     defer req.deinit();
-    var rsp = protocol.TakeChallengePeakRewardScRsp.init(allocator);
+    var rsp = protocol.TakeChallengeCumulativeRewardScRsp.init(allocator);
+    var reward = protocol.TakenChallengeRewardInfo.init(allocator);
+    if (req.group_id > 2000) reward.star_count = 12 else reward.star_count = 36;
+    try rsp.taken_reward_list.append(reward);
     rsp.retcode = 0;
-    rsp.peak_group_id = req.peak_group_id;
-    try session.send(CmdID.CmdTakeChallengePeakRewardScRsp, rsp);
+    rsp.group_id = req.group_id;
+    try session.send(CmdID.CmdTakeChallengeCumulativeRewardScRsp, rsp);
 }
 
 pub fn onGetCurChallengePeak(session: *Session, _: *const Packet, allocator: Allocator) !void {
@@ -508,7 +515,7 @@ pub fn onStartChallengeTierce(session: *Session, packet: *const Packet, allocato
         ids[4],
         ids[5],
         ids[6],
-        ids[7],
+        ids[7]
     );
     _ = &scene_info;
 

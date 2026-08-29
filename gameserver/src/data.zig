@@ -2,9 +2,11 @@ const std = @import("std");
 const ConfigManager = @import("./manager/config_mgr.zig");
 
 // Avatar group
-pub const MultiAvatar = [_]u32{
-    8002, 8004, 8006, 8008, 8010, 1001, 1224,
-};
+
+//pub const MultiAvatar = [_]u32{ kepake nanti kalo misal ada yng gak bisa
+//    8002, 8004, 8006, 8008, 8010, 1001, 1224,
+//};
+
 pub var EnhanceAvatarID = [_]u32{ 1005, 1006, 1205, 1212, 1306, 1307, 1306, 1102, 1217, 1310, 1004 };
 
 pub var AllAvatars: []const u32 = &.{};
@@ -18,6 +20,7 @@ pub var AvatarSkinMap = [_]struct {
     .{ .avatar_id = 1310, .skin_id = 1131001 },
     .{ .avatar_id = 1415, .skin_id = 1141501 },
     .{ .avatar_id = 1407, .skin_id = 1140701 },
+    .{ .avatar_id = 1501, .skin_id = 1150101 }, // Sparxie
 };
 
 // Battle group

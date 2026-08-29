@@ -16,33 +16,33 @@ pub fn onGetFriendListInfo(session: *Session, _: *const Packet, allocator: Alloc
     var rsp = protocol.GetFriendListInfoScRsp.init(allocator);
     rsp.retcode = 0;
 
-    var assist_list = ArrayList(protocol.AssistSimpleInfo).init(allocator);
-    try assist_list.appendSlice(&[_]protocol.AssistSimpleInfo{
-        .{ .pos = 0, .level = 80, .avatar_id = 1510, .dressed_skin_id = 0 },
-        .{ .pos = 1, .level = 80, .avatar_id = 1508, .dressed_skin_id = 0 },
-        .{ .pos = 2, .level = 80, .avatar_id = 1505, .dressed_skin_id = 0 },
-    });
+    const assist_list = ArrayList(protocol.AssistSimpleInfo).init(allocator);
+    //try assist_list.appendSlice(&[_]protocol.AssistSimpleInfo{
+    //    .{ .pos = 0, .level = 80, .avatar_id = 1510, .dressed_skin_id = 0 },
+    //    .{ .pos = 1, .level = 80, .avatar_id = 1508, .dressed_skin_id = 0 },
+    //    .{ .pos = 2, .level = 80, .avatar_id = 1505, .dressed_skin_id = 0 },
+    //});
 
     var friend = protocol.FriendSimpleInfo.init(allocator);
     friend.playing_state = .PLAYING_CHALLENGE_PEAK;
     friend.create_time = 0; //timestamp
-    friend.remark_name = .{ .Const = "Planarcadia" }; //friend_custom_nickname
+    friend.remark_name = .{ .Const = "Pearl" }; //friend_custom_nickname
     friend.is_marked = true;
     friend.player_info = protocol.PlayerSimpleInfo{
-        .personal_card = 253001,
-        .signature = .{ .Const = "AHA is joking bro" },
-        .nickname = .{ .Const = "Robin Summeretto" },
+        //.personal_card = 253001,
+        .signature = .{ .Const = "https://github.com/Guunexpert/PlanarcadiaPS" },
+        .nickname = .{ .Const = "Pearl Beloved" },
         .level = 70,
         .uid = 2000,
         .head_icon = 200140,
-        .head_frame_info = .{
-            .head_frame_expire_time = 4294967295,
-            .head_frame_item_id = 226004,
-        },
-        .chat_bubble = 220008,
+        //.head_frame_info = .{
+        //    .head_frame_expire_time = 4294967295,
+        //    .head_frame_item_id = 226004,
+        //},
+        //.chat_bubble = 220008,
         .assist_info_list = assist_list,
-        .platform = protocol.PlatformType.ANDROID,
-        .online_status = protocol.FriendOnlineStatus.FRIEND_ONLINE_STATUS_ONLINE,
+        //.platform = protocol.PlatformType.PC,
+        //.online_status = protocol.FriendOnlineStatus.FRIEND_ONLINE_STATUS_ONLINE,
     };
     try rsp.friend_list.append(friend);
     try session.send(CmdID.CmdGetFriendListInfoScRsp, rsp);
@@ -55,11 +55,14 @@ pub fn onChatEmojiList(session: *Session, _: *const Packet, allocator: Allocator
 
     try session.send(CmdID.CmdGetChatEmojiListScRsp, rsp);
 }
-pub fn onPrivateChatHistory(session: *Session, _: *const Packet, allocator: Allocator) !void {
+pub fn onPrivateChatHistory(session: *Session, packet: *const Packet, allocator: Allocator) !void {
+    const req = try packet.getProto(protocol.GetPrivateChatHistoryCsReq, allocator);
+    defer req.deinit();
+
     var rsp = protocol.GetPrivateChatHistoryScRsp.init(allocator);
 
     rsp.retcode = 0;
-    rsp.target_side = 1;
+    rsp.target_side = req.target_side; // tandain ini
     rsp.contact_side = 2000;
     try rsp.chat_message_list.appendSlice(&[_]protocol.ChatMessageData{
         try makeTextChat(allocator, 2000, "Use https://srtools.neonteam.dev to setup config"),
@@ -72,7 +75,13 @@ pub fn onPrivateChatHistory(session: *Session, _: *const Packet, allocator: Allo
 
 pub fn onGetAiPamChatHistory(session: *Session, _: *const Packet, allocator: Allocator) !void {
     var rsp = protocol.GetAiPamChatHistoryScRsp.init(allocator);
-    rsp.BDPIMPJOJBK = @enumFromInt(0);
+
+    rsp.retcode = 0;
+    rsp.target_side = 1;
+    try rsp.JPCMGNGNONJ.appendSlice(&[_]protocol.ChatMessageData{
+        try makeTextChat(allocator, 2000, "aku suka pearl"),
+    });
+
     try session.send(CmdID.CmdGetAiPamChatHistoryScRsp, rsp);
 }
 
@@ -93,7 +102,7 @@ fn makeTextChat(
 
     return .{
         .message_datas = datas,
-        .CKHPFFENOBE = .{
+        .BKOALKHDLOB = .{
             .role_id = uid,
             .KPOBMNLKLOK = .HCMEILLLKBD_JDOAIPKBIPE,
         },
@@ -108,8 +117,8 @@ pub fn onSendMsg(session: *Session, packet: *const Packet, allocator: Allocator)
     std.debug.print("Decoded request: {any}\n", .{req});
     std.debug.print("Raw packet body: {any}\n", .{packet.body});
     var msg_text: []const u8 = "";
-    if (packet.body.len > 9 and packet.body[15] == 47) {
-        msg_text = packet.body[15..packet.body.len];
+    if (packet.body.len > 9 and packet.body[13] == 47) {
+        msg_text = packet.body[13 .. packet.body.len - 2];
     }
     std.debug.print("Manually extracted message text: '{s}'\n", .{msg_text});
 
@@ -135,6 +144,7 @@ pub fn onTriggerAiPamSpeak(session: *Session, packet: *const Packet, allocator: 
     defer req.deinit();
     try session.send(CmdID.CmdTriggerAiPamSpeakScRsp, protocol.TriggerAiPamSpeakScRsp{
         .JMPPMNAONHM = req.JMPPMNAONHM,
+        .BDPIMPJOJBK = req.BDPIMPJOJBK,
         .retcode = 0,
     });
 }

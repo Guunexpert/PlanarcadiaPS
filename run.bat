@@ -1,2 +1,4 @@
 @echo
-start zig build -Doptimize=ReleaseSafe
+
+start zig build run-dispatch
+start zig build run-gameserver

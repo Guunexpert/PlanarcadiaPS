@@ -25,9 +25,9 @@ pub fn build(b: *std.Build) void {
     const program = b.dependency("program", dep_opts);
  
     if (target.result.abi == .android) {
-        b.installArtifact(program.artifact("planarcadiaps"));
+        b.installArtifact(program.artifact("Pearl"));
     } else {
-        b.installArtifact(program.artifact("EvanesciaPS")); 
+        b.installArtifact(program.artifact("Pearl")); 
     }
 
     const version_files = b.addWriteFiles();
@@ -61,7 +61,7 @@ pub fn build(b: *std.Build) void {
     }
 
     if (target.result.abi != .android) {
-        const program_cmd = b.addRunArtifact(program.artifact("EvanesciaPS"));
+        const program_cmd = b.addRunArtifact(program.artifact("Pearl"));
         program_cmd.step.dependOn(b.getInstallStep());
 
         if (b.args) |args| {

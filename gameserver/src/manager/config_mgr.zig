@@ -1,7 +1,9 @@
 const std = @import("std");
 const protocol = @import("protocol");
-const Session = @import("../Session.zig");
+const Session = @import("../session.zig"); // tandain ini
 const Packet = @import("../Packet.zig");
+
+//const AvatarManager = @import("../manager/avatar_mgr.zig");
 
 pub const GameConfig = @import("../data/game_config.zig");
 pub const StageConfig = @import("../data/stage_config.zig");
@@ -11,6 +13,7 @@ pub const ResConfig = @import("../data/res_config.zig");
 pub const AvatarConfig = @import("../data/avatar_config.zig");
 pub const FreesrAdapter = @import("../data/freesr_adapter.zig");
 pub const MiscDefaults = @import("../data/misc_defaults.zig");
+
 
 const ArrayList = std.ArrayList;
 const Allocator = std.mem.Allocator;
@@ -181,39 +184,53 @@ pub fn initGameGlobals(main_allocator: Allocator) !void {
         },
     };
     errdefer global_misc_defaults.deinit(main_allocator);
+
     global_game_config_cache = try GameConfigCache.init(main_allocator);
     game_config_mtime = (try std.fs.cwd().statFile(gameConfigFilePath())).mtime;
+
 
     const avatars = &global_game_config_cache.avatar_config.avatar_config.items;
     var all = ArrayList(u32).init(main_allocator);
     var four_star = ArrayList(u32).init(main_allocator);
 
     for (avatars.*) |avatar| {
-        if (avatar.avatar_id == avatar.adventure_player_id and avatar.avatar_id <= 8001 and avatar.avatar_id != 1224 and (avatar.avatar_id == 1001 or avatar.avatar_id != 1001)) {
+            if (avatar.avatar_id == avatar.adventure_player_id and avatar.avatar_id <= 8001 and avatar.avatar_id != 1224 and (avatar.avatar_id == 1001 or avatar.avatar_id != 1001)) {
             try all.append(avatar.avatar_id);
             if (avatar.rarity == 4) try four_star.append(avatar.avatar_id);
         }
     }
     Data.AllAvatars = try all.toOwnedSlice();
     Data.AvatarList = try four_star.toOwnedSlice();
+
+    //const configs = &global_game_config_cache.game_config.avatar_config.items;
+    //for (configs.*) |config| {
+    //    if (config.id >= 8001) {
+    //        AvatarManager.mc_id = config.id;
+    //        AvatarManager.gender = if (config.id % 2 == 0) 2 else 1;
+    //    }
+    //}
+
 }
 pub fn deinitGameGlobals() void {
     global_misc_defaults.deinit(global_main_allocator);
     global_game_config_cache.deinit();
 }
+
 var game_config_mtime: i128 = 0;
 
 pub fn getGameConfigMtime() i128 {
     return game_config_mtime;
 }
 
+
 pub fn UpdateGameConfig() !void {
     const stat = try std.fs.cwd().statFile(gameConfigFilePath());
-    if (stat.mtime > game_config_mtime) {
-        global_game_config_cache.game_config.deinit();
-        global_game_config_cache.game_config = try loadGameConfig(global_main_allocator);
-        game_config_mtime = stat.mtime;
+        if (stat.mtime > game_config_mtime) {
+            global_game_config_cache.game_config.deinit();
+            global_game_config_cache.game_config = try loadGameConfig(global_main_allocator);
+            game_config_mtime = stat.mtime;
     }
+
 }
 pub fn loadConfig(
     comptime ConfigType: type,

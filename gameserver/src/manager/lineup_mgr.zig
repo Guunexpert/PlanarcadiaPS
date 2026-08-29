@@ -22,6 +22,7 @@ pub const LineupManager = struct {
         if (ConfigManager.global_misc_defaults.avatar.lineup.len != 0) {
             return try buildLineup(self.allocator, ConfigManager.global_misc_defaults.avatar.lineup, null);
         }
+
         var ids = ArrayList(u32).init(self.allocator);
         defer ids.deinit();
         var picked_mc = false;
@@ -73,7 +74,7 @@ pub fn buildLineup(
     if (extra_type) |t| {
         lineup.extra_lineup_type = t;
     } else {
-        lineup.name = .{ .Const = "Himeko•NovaSR" };
+        lineup.name = .{ .Const = "PlanarcadiaPearl" };
     }
 
     for (ids, 0..) |id, idx| {

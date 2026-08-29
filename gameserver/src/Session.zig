@@ -22,6 +22,7 @@ pending_lua_script: ?[]u8 = null,
 last_starlite_sent_ms: u64 = 0,
 last_seen_game_config_mtime: i128 = 0,
 
+
 pub fn init(
     address: Address,
     stream: Stream,

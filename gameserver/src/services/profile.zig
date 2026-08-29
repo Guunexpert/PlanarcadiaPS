@@ -10,7 +10,6 @@ const ArrayList = std.ArrayList;
 const Allocator = std.mem.Allocator;
 const CmdID = protocol.CmdID;
 const DefaultHeadIconId: u32 = 200139;
-
 // can change these id here for initial display
 const SupportAvatar = [_]u32{
     1510, 1508, 1505,

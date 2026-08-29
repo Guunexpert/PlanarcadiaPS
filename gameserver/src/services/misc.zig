@@ -42,10 +42,11 @@ fn buildLuaPayload(allocator: Allocator, pending_opt: ?[]const u8, include_starl
     return out;
 }
 
+
 pub fn onPlayerHeartBeat(session: *Session, packet: *const Packet, allocator: Allocator) !void {
     const req = try packet.getProto(protocol.PlayerHeartBeatCsReq, allocator);
     defer req.deinit();
-
+    
     try ConfigManager.UpdateGameConfig();
     const current_mtime = ConfigManager.getGameConfigMtime();
     if (current_mtime > session.last_seen_game_config_mtime) {
@@ -63,6 +64,7 @@ pub fn onPlayerHeartBeat(session: *Session, packet: *const Packet, allocator: Al
     const payload_buf = try buildLuaPayload(allocator, pending, include_starlite);
     var managed_str = protocol.ManagedString.move(payload_buf, allocator);
     defer managed_str.deinit();
+
 
     const download_data = protocol.ClientDownloadData{
         .version = 51,

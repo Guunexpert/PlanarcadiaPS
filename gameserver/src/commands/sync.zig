@@ -18,13 +18,14 @@ fn syncItemsInternal(session: *Session, allocator: Allocator, equip_avatar: bool
     const config = &ConfigManager.global_game_config_cache.game_config;
     for (config.avatar_config.items) |avatarConf| {
         const dress_avatar_id: u32 = if (equip_avatar) avatarConf.id else 0;
-        if (avatarConf.lightcone.id != 0) {
+            if (avatarConf.lightcone.id != 0) {
             const lc = try AvatarManager.createEquipment(avatarConf.lightcone, dress_avatar_id);
             try sync.equipment_list.append(lc);
         }
         for (avatarConf.relics.items, 0..) |input, relic_idx| {
             if (input.id == 0) continue;
             const r = try AvatarManager.createRelic(allocator, input, dress_avatar_id, relic_idx);
+
             try sync.relic_list.append(r);
         }
     }
@@ -38,6 +39,7 @@ pub fn syncItems(session: *Session, allocator: Allocator, equip_avatar: bool) !v
     try ConfigManager.UpdateGameConfig();
     try syncItemsInternal(session, allocator, equip_avatar);
 }
+
 pub fn onSyncAvatar(session: *Session, _: []const u8, allocator: Allocator) !void {
     Uid.resetGlobalUidGens();
     var sync = protocol.PlayerSyncScNotify.init(allocator);

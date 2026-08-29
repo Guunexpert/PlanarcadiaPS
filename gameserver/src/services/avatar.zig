@@ -24,7 +24,7 @@ pub fn onGetAvatarData(session: *Session, packet: *const Packet, allocator: Allo
     var rsp = protocol.GetAvatarDataScRsp.init(allocator);
     try rsp.skin_list.appendSlice(&Data.SkinList);
     rsp.is_get_all = req.is_get_all;
-    std.debug.print("onGetAvatarData: AllAvatars.len = {d}, config.avatar_config.items.len = {d}\n", .{ Data.AllAvatars.len, config.avatar_config.items.len });
+    std.debug.print("onGetAvatarData: AllAvatars.len = {d}, config.avatar_config.items.len = {d}\n", .{ Data.AllAvatars.len, config.avatar_config.items.len }); // for debugging
     for (Data.AllAvatars) |id| {
         const avatar = try AvatarManager.createAllAvatar(allocator, id);
         try rsp.avatar_list.append(avatar);
@@ -40,10 +40,10 @@ pub fn onGetAvatarData(session: *Session, packet: *const Packet, allocator: Allo
     for (config.avatar_config.items) |avatarConf| {
         const avatar = try AvatarManager.createAvatarPathData(allocator, avatarConf);
         try rsp.avatar_path_data_info_list.append(avatar);
+        std.debug.print("onGetAvatarData: sending {d} avatars, {d} path data\n", .{rsp.avatar_list.items.len, rsp.avatar_path_data_info_list.items.len}); //for debugging
     }
-    std.debug.print("onGetAvatarData: sending {d} avatars, {d} path data\n", .{rsp.avatar_list.items.len, rsp.avatar_path_data_info_list.items.len});
     try session.send(CmdID.CmdGetAvatarDataScRsp, rsp);
-    std.debug.print("onGetAvatarData: response sent!\n", .{});
+    std.debug.print("onGetAvatarData: response sent!\n", .{}); // for debugging
 }
 
 pub fn onGetBasicInfo(session: *Session, _: *const Packet, allocator: Allocator) !void {
@@ -62,15 +62,15 @@ pub fn onSetAvatarPath(session: *Session, packet: *const Packet, allocator: Allo
     defer req.deinit();
     rsp.avatar_id = req.avatar_id;
     switch (rsp.avatar_id) {
-        protocol.MultiPathAvatarType.Mar_7thKnightType => AvatarManager.setM7th(1001),
-        protocol.MultiPathAvatarType.Mar_7thRogueType => AvatarManager.setM7th(1224),
-        else => AvatarManager.setMcId(@intCast(@intFromEnum(rsp.avatar_id))),
+        protocol.MultiPathAvatarType.Mar_7thKnightType => AvatarManager.m7th = 1001, // tandain block ini
+        protocol.MultiPathAvatarType.Mar_7thRogueType => AvatarManager.m7th = 1224, //
+        else => AvatarManager.mc_id = @intCast(@intFromEnum(rsp.avatar_id)),    //
     }
     var change = protocol.AvatarPathChangedNotify.init(allocator);
     switch (req.avatar_id) {
         protocol.MultiPathAvatarType.Mar_7thKnightType => change.base_avatar_id = 1001,
-        protocol.MultiPathAvatarType.Mar_7thRogueType => change.base_avatar_id = 1224,
-        else => change.base_avatar_id = @intCast(@intFromEnum(req.avatar_id)),
+        protocol.MultiPathAvatarType.Mar_7thRogueType => change.base_avatar_id = 1001, // kalo gk bisa pake 1224, tapi harus diubah juga di AvatarManager.m7th
+        else => change.base_avatar_id = 8001, //
     }
     change.cur_multi_path_avatar_type = req.avatar_id;
     try session.send(CmdID.CmdAvatarPathChangedNotify, change);
@@ -86,7 +86,7 @@ pub fn onSetPlayerOutfit(session: *Session, packet: *const Packet, allocator: Al
     const req = try packet.getProto(protocol.SetPlayerOutfitCsReq, allocator);
     defer req.deinit();
     var sync = protocol.PlayerSyncScNotify.init(allocator);
-    sync.player_outfit_data = req.player_outfit_data;
+    sync.player_outfit_data = req.player_outfit_data; // gk bisa pake sync.DHKFCDAGHDM = req.DHKFCDAGHDM;
     try session.send(CmdID.CmdPlayerSyncScNotify, sync);
     try session.send(CmdID.CmdSetPlayerOutfitScRsp, protocol.SetPlayerOutfitScRsp{
         .retcode = 0,

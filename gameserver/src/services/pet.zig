@@ -15,12 +15,8 @@ pub fn onGetPetData(session: *Session, _: *const Packet, allocator: Allocator) !
     try session.send(CmdID.CmdGetPetDataScRsp, rsp);
 }
 pub fn onRecallPet(session: *Session, _: *const Packet, _: Allocator) !void {
-    try session.send(CmdID.CmdRecallPetScRsp, protocol.RecallPetScRsp{
-        .retcode = 0,
-    });
+    try session.send(CmdID.CmdRecallPetScRsp, protocol.RecallPetScRsp{ .retcode = 0 });
 }
 pub fn onSummonPet(session: *Session, _: *const Packet, _: Allocator) !void {
-    try session.send(CmdID.CmdSummonPetScRsp, protocol.SummonPetScRsp{
-        .retcode = 0,
-    });
+    try session.send(CmdID.CmdSummonPetScRsp, protocol.SummonPetScRsp{ .retcode = 0 });
 }

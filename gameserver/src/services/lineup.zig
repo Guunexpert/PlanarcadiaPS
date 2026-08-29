@@ -17,6 +17,7 @@ pub fn ensureLeaderDefault() void {
     leader_default_loaded = true;
 }
 
+
 pub fn onGetCurLineupData(session: *Session, _: *const Packet, allocator: Allocator) !void {
     ensureLeaderDefault();
     var lineup_mgr = LineupManager.LineupManager.init(allocator);

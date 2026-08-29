@@ -5,13 +5,13 @@ const Session = @import("../Session.zig");
 const Data = @import("../data.zig");
 const Logic = @import("../utils/logic.zig");
 const ConfigManager = @import("../manager/config_mgr.zig");
-const AvatarConfig = @import("../data/avatar_config.zig");
 const Uid = @import("../utils/uid.zig");
+const AvatarConfig = @import("../data/avatar_config.zig");
+
 
 const ArrayList = std.ArrayList;
 const Allocator = std.mem.Allocator;
 const CmdID = protocol.CmdID;
-
 const config = &ConfigManager.global_game_config_cache.game_config;
 const skill_config = &ConfigManager.global_game_config_cache.avatar_skill_config;
 const avatar_config = &ConfigManager.global_game_config_cache.avatar_config.avatar_config;
@@ -72,12 +72,14 @@ pub fn createAvatar(
     var avatar = protocol.Avatar.init(allocator);
     const meta = getAvatarMeta(avatarConf.id) orelse return error.AvatarMetaNotFound;
     avatar.base_avatar_id = meta.adventure_player_id;
+
     avatar.level = avatarConf.level;
     avatar.promotion = avatarConf.promotion;
     avatar.exp = 0; // TODO: calculate from level
     avatar.equipment_unique_id = if (avatarConf.lightcone.id == 0) 0 else resolveItemUid("LC", avatar.base_avatar_id, avatarConf.lightcone.id, 0, avatarConf.lightcone.internal_uid);
     avatar.first_met_time_stamp = 0; // TODO: actual timestamp
     avatar.is_marked = false;
+
     avatar.has_taken_promotion_reward_list = ArrayList(u32).init(allocator);
     for (1..6) |i| {
         try avatar.has_taken_promotion_reward_list.append(@intCast(i));
@@ -120,7 +122,8 @@ pub fn createAvatarPathData(
     avatar.path_equipment_id = if (avatarConf.lightcone.id == 0)
         0
     else
-        resolveItemUid("LC", avatar.avatar_id, avatarConf.lightcone.id, 0, avatarConf.lightcone.internal_uid);
+     resolveItemUid("LC", avatar.avatar_id, avatarConf.lightcone.id, 0, avatarConf.lightcone.internal_uid);
+
     avatar.equip_relic_list = ArrayList(protocol.EquipRelic).init(allocator);
     for (0..6) |i| {
         const has_relic = i < avatarConf.relics.items.len and avatarConf.relics.items[i].id != 0;
@@ -229,6 +232,7 @@ fn getAvatarType(id: u32) protocol.MultiPathAvatarType {
         },
     };
 }
+
 pub fn getSkinId(avatar_id: u32) u32 {
     for (Data.AvatarSkinMap) |entry| {
         if (entry.avatar_id == avatar_id) return entry.skin_id;
@@ -248,6 +252,16 @@ pub fn syncAvatarData(session: *Session, allocator: Allocator) !void {
     defer sync.deinit();
     Uid.resetGlobalUidGens();
     var char = protocol.AvatarSync.init(allocator);
+
+    //for (Data.AllAvatars) |id| {
+    //    const avatar = try createAllAvatar(allocator, id);
+    //    try char.avatar_list.append(avatar);
+    //}
+    //for (Data.AllAvatars) |id| {
+    //    const avatar = try createAllAvatarPathData(allocator, id);
+    //    try char.avatar_path_data_info_list.append(avatar);
+    //}
+
     for (config.avatar_config.items) |avatarConf| {
         const avatar = try createAvatar(allocator, avatarConf);
         try char.avatar_list.append(avatar);

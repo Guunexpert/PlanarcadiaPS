@@ -49,7 +49,7 @@ pub fn build(b: *std.Build) void {
     // Android JNI build removed (skipped and not needed).
 
     const exe = b.addExecutable(.{
-        .name = "EvanesciaPS",
+        .name = "Pearl",
         .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,
@@ -57,11 +57,11 @@ pub fn build(b: *std.Build) void {
     // Windows icon embedding (skip for non-Windows targets).
     if (target.result.os.tag == .windows) {
         const rc_files = b.addWriteFiles();
-        const rc_path = rc_files.add("evanesciaps.rc",
+        const rc_path = rc_files.add("pearl.rc",
             \\ 1 ICON "../icon_output.ico"
         );
         const rc_cmd = b.addSystemCommand(&.{ "zig", "rc", "/nologo", "/fo" });
-        const res_output = rc_cmd.addOutputFileArg("evanesciaps.res");
+        const res_output = rc_cmd.addOutputFileArg("pearl.res");
         rc_cmd.addFileArg(rc_path);
         exe.addWin32ResourceFile(.{ .file = res_output });
         exe.step.dependOn(&rc_cmd.step);

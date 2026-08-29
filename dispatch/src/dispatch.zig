@@ -24,13 +24,13 @@ const HotfixInfo = struct {
 
 pub fn onQueryDispatch(_: *httpz.Request, res: *httpz.Response) !void {
     var proto = protocol.Dispatch.init(res.arena);
-    //proto.retcode = 0; // removed in 4.5.51 GateServer (fd 14 obsolete)
+    proto.retcode = 0;
 
     try proto.region_list.append(.{
-        .name = .{ .Const = "PlanarcadiaPS" },
-        .display_name = .{ .Const = "PlanarcadiaPS" },
+        .name = .{ .Const = "Pearl-Beloved" },
+        .display_name = .{ .Const = "Pearl-Beloved" },
         .env_type = .{ .Const = "9" },
-        .title = .{ .Const = "PlanarcadiaPS" },
+        .title = .{ .Const = "Pearl-Beloved" },
         .dispatch_url = .{ .Const = "http://127.0.0.1:21000/query_gateway" },
     });
 
@@ -44,7 +44,7 @@ pub fn onQueryDispatch(_: *httpz.Request, res: *httpz.Response) !void {
 pub fn onQueryGateway(req: *httpz.Request, res: *httpz.Response) !void {
     var proto = protocol.GateServer.init(res.arena);
     proto.port = 23301;
-    //proto.retcode = 0; // removed in 4.5.51 GateServer (fd 14 obsolete)
+    //proto.retcode = 0;
     proto.ip = .{ .Const = "127.0.0.1" };
 
     const query = try req.query();
