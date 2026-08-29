@@ -3,45 +3,64 @@ name: Send Git Diff to Discord
 on:
   push:
     branches:
-      - main  # Change this if your default branch is called master
+      - main
 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code with full history
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2 # Fetches the current and previous commit to calculate the diff
+          fetch-depth: 2
 
-      - name: Extract Commit Details and Send to Discord
+      - name: Send robust payload via Python
         env:
           DISCORD_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          AUTHOR: ${{ github.actor }}
+          # Pulls the verified avatar ID string directly from the GitHub event pipeline
+          AVATAR_ID: ${{ github.event.sender.id }} 
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+          COMMIT_URL: ${{ github.event.head_commit.url }}
         run: |
-          # Get commit details
-          AUTHOR="${{ github.actor }}"
-          MSG=$(git log -1 --pretty=%B | head -n 1)
-          REPO="${{ github.repository }}"
-          BRANCH="${{ github.ref_name }}"
-          COMMIT_URL="${{ github.event.head_commit.url }}"
-          DIFF_URL="${COMMIT_URL}.diff"
-
-          # Construct a clean JSON payload for the Discord Embed
-          PAYLOAD=$(cat <<EOF
-          {
-            "embeds": [{
-              "title": "🔨 New Commit in ${REPO} [${BRANCH}]",
-              "description": "**Author:** ${AUTHOR}\n**Message:** ${MSG}",
-              "url": "${COMMIT_URL}",
-              "color": 5814783,
-              "fields": [{
-                "name": "📄 View Changes",
-                "value": "[Click here to view raw git diff](${DIFF_URL})"
+          COMMIT_MSG=$(git log -1 --pretty=%B | head -n 1)
+          export COMMIT_MSG
+          
+          python3 -c "
+          import os, json, requests
+          
+          discord_url = os.environ.get('DISCORD_URL')
+          if not discord_url:
+              print('ERROR: DISCORD_WEBHOOK_URL secret is empty!')
+              exit(1)
+              
+          author = os.environ.get('AUTHOR')
+          avatar_id = os.environ.get('AVATAR_ID')
+          repo = os.environ.get('REPO')
+          branch = os.environ.get('BRANCH')
+          commit_url = os.environ.get('COMMIT_URL')
+          msg = os.environ.get('COMMIT_MSG', '')
+          
+          diff_url = f'{commit_url}.diff'
+          
+          # Formats a hard-coded direct link bypass to GitHub's asset CDN
+          avatar_url = f'https://avatars.githubusercontent.com/u/{avatar_id}?v=4'
+          
+          payload = {
+              'embeds': [{
+                  'title': f'🔨 New Commit in {repo} [{branch}]',
+                  'description': f'**Author:** {author}\n**Message:** {msg}',
+                  'url': commit_url,
+                  'color': 5814783,
+                  'thumbnail': {'url': avatar_url},
+                  'fields': [{
+                      'name': '📄 View Changes',
+                      'value': f'[Click here to view changes]({diff_url})'
+                  }]
               }]
-            }]
           }
-          EOF
-          )
-
-          # Send it over to Discord via cURL
-          curl -H "Content-Type: application/json" -X POST -d "$PAYLOAD" "$DISCORD_URL"
+          
+          response = requests.post(discord_url, json=payload)
+          print(f'Discord Response Code: {response.status_code}')
+          "
