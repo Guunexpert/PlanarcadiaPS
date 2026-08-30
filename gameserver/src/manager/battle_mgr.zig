@@ -69,13 +69,23 @@ fn createBattleAvatar(allocator: Allocator, avatarConf: Config.Avatar) !protocol
         try avatar.relic_list.append(r);
     }
 
-    const lc = protocol.BattleEquipment{
-        .id = avatarConf.lightcone.id,
-        .rank = avatarConf.lightcone.rank,
-        .level = avatarConf.lightcone.level,
-        .promotion = avatarConf.lightcone.promotion,
-    };
-    try avatar.equipment_list.append(lc);
+   // const lc = protocol.BattleEquipment{ // commented this well its small bug if ungeared char join the battle...
+   //     .id = avatarConf.lightcone.id,    // the game battle freezed
+   //     .rank = avatarConf.lightcone.rank,
+   //     .level = avatarConf.lightcone.level,
+   //     .promotion = avatarConf.lightcone.promotion,
+   // };
+   // try avatar.equipment_list.append(lc);
+
+    if (avatarConf.lightcone.id != 0) {
+        const lc = protocol.BattleEquipment{
+            .id = avatarConf.lightcone.id,
+            .rank = avatarConf.lightcone.rank,
+            .level = avatarConf.lightcone.level,
+            .promotion = avatarConf.lightcone.promotion,
+        };
+        try avatar.equipment_list.append(lc);
+    }
 
     for (skill_config.avatar_skill_tree_config.items) |skill| {
         if (skill.avatar_id == avatar.id) {
