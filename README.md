@@ -1,4 +1,7 @@
 <div align="center">
+<kbd>
+<img src="banner.png" alt="banner" align="center" width="600" >
+</kbd>
 <h1>Planarcadia</h1>
 </div>
 
@@ -8,7 +11,9 @@
 - Run the server ```zig build run-program```
 - Build release ```zig build -Doptimize=ReleaseSafe```
 
-<img src="skrinsot.png" alt="pearl" align="center"></img>
+<div align="center">
+<img src="skrinsot.png" alt="pearl" width="700"></img>
+</div>
 
 # List that i added
 - [x] Lua Execute
