@@ -37,7 +37,7 @@ pub const OwnedPhoneCases = [_]u32{ 254000, 254001 };
 pub const OwnedPersonalCardSkin = [_]u32{ 253000, 253001, 253002, 253003, 253004, 253005 };
 
 pub const ItemList = [_]u32{ 251001, 251002, 251003, 251004, 101, 238, 239 };
-pub const SkinList = [_]u32{ 1130301, 1100101, 1131001, 1141501, 1140701 };
+pub const SkinList = [_]u32{ 1130301, 1100101, 1131001, 1141501, 1140701, 1150101 };
 pub const PlayerOutfitList = [_]u32{ 227015, 229001, 227013, 227012, 227010, 227009, 227008, 227007, 227006, 227005, 227003, 227002, 227001 };
 
 pub const LightconeList_3 = [_]u32{
