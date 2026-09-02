@@ -139,6 +139,33 @@ pub fn onSendMsg(session: *Session, packet: *const Packet, allocator: Allocator)
     try session.send(CmdID.CmdSendMsgScRsp, rsp);
 }
 
+//pub fn onSendMsg(session: *Session, packet: *const Packet, allocator: Allocator) !void {  pending snippet fixing chat history
+//    std.debug.print("Received packet: {any}\n", .{packet});
+    
+//    const req = try packet.getProto(protocol.SendMsgCsReq, allocator);
+//    defer req.deinit();
+
+//    std.debug.print("Decoded request: {any}\n", .{req});
+
+    // Extract message text safely from the parsed protobuf structure 
+    // (Adjust field name based on your protocol definition, e.g., req.chat_text, req.content, etc.)
+//    const msg_text = req.content; // or whatever the text field is named in SendMsgCsReq
+
+//    if (msg_text.len > 0) {
+//        if (msg_text[0] == '/') {
+//            std.debug.print("Executing command...\n", .{});
+//            try commandhandler.handleCommand(session, msg_text, allocator);
+//        } else {
+//            std.debug.print("Sending message...\n", .{});
+//            try commandhandler.sendMessage(session, msg_text, allocator);
+//        }
+//    }
+
+//    var rsp = protocol.SendMsgScRsp.init(allocator);
+//    rsp.retcode = 0;
+//    try session.send(CmdID.CmdSendMsgScRsp, rsp);
+//}
+
 pub fn onTriggerAiPamSpeak(session: *Session, packet: *const Packet, allocator: Allocator) !void {
     const req = try packet.getProto(protocol.TriggerAiPamSpeakCsReq, allocator);
     defer req.deinit();
